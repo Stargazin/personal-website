@@ -1,0 +1,35 @@
+/* modules/variables
+ =========================================================================== 
+ =========================================================================== */
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700);
+
+// /* Typography
+//  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+$roboto: 'Roboto', sans-serif;
+
+$font-light: 100;
+$font-regular: 400;
+$font-bold: 700;
+
+// /* Breakpoints
+//  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+// /* Very Large Devices, Wide Screens */
+$break-xxl: "only screen and (max-width: 1450px)";
+
+// /* Large Devices, Wide Screens */
+$break-xl: "only screen and (max-width: 1200px)";
+
+// /* Medium Devices, Desktops */
+$break-l: "only screen and (max-width: 992px)";
+
+// /* Small Devices, Tablets */
+$break-m: "only screen and (max-width: 768px)";
+
+// /* Extra Small Devices, Phones */ 
+$break-s: "only screen and (max-width: 480px)";
+
+$break-tablet: "only screen and (max-device-width: 768px)";
+$break-phone: "only screen and (max-device-width: 480px)";
