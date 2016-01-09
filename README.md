@@ -1,2 +1,2 @@
-# three-steps-taken
-my website
+# 3 Steps Taken
+Personal website

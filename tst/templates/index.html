@@ -1,18 +1,38 @@
 {% load staticfiles %}
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>3 Steps Taken</title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{% static 'css/index.min.css' %}">
+  <link href='https://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+  <title>3 Steps Taken</title>
 </head>
-
 <body>
 
+<header>
+  <div class="quote-outer">
+    <div class="quote-inner">
+      <span class="quote quote--1">One step forward</span><br>
+      <span class="quote quote--2">Two steps back</span><br>
+      <span class="quote quote--3">3 Steps Taken</span>
+    </div> <!-- .quote-inner -->
+  </div> <!-- .quote-outer -->
+  <div class="intro-outer">
+    <div class="intro-inner">
+      <p class="intro__text">Hi! I'm Alex 'Stargazin' Sun.<br>If you enjoy talking about<br>life, music, or web development</p>
+      <a class="intro__cta" href="#">Let's talk!</a>
+    </div> <!-- .intro-inner -->
+  </div> <!-- .intro-outer -->
+</header>
 
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script src="http://192.168.1.5:35729/livereload.js?snipver=1"></script>
-  <script src="{% static 'js/main.js' %}"></script>
+<main></main>
+<footer></footer>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="{% static 'js/main.js' %}"></script>
+<script src="http://192.168.1.5:35729/livereload.js?snipver=1"></script>
 </body>
 </html>
