@@ -7,9 +7,9 @@
 $dancing-script: 'Dancing Script', cursive;
 $eb-garamond: 'EB Garamond', serif;
 
-$font-light: 100;
-$font-regular: 400;
-$font-bold: 700;
+// blog_posts
+$oswald: 'Oswald', sans-serif;
+$lato: 'Lato', sans-serif;
 
 // /* Breakpoints
 //  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -19,6 +19,9 @@ $break-xxl: "only screen and (max-width: 1450px)";
 
 // /* Large Devices, Wide Screens */
 $break-xl: "only screen and (max-width: 1200px)"; //horipad
+
+// /* Special case for .hero in index.html */
+$break-vl: "only screen and (max-width: 1050px)";
 
 // /* Medium Devices, Desktops */
 $break-l: "only screen and (max-width: 992px)";

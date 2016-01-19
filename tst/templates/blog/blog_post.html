@@ -1,0 +1,42 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog Post</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,900|Oswald' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{% static 'css/blog_post.min.css' %}">
+</head>
+<body>
+<main>
+
+<div class="side-wrapper">
+  <div class="side">
+  
+  </div> <!-- .side -->
+</div> <!-- .side-wrapper -->
+
+<div class="post-wrapper">
+  <div class="post">
+    <div class="temp-filler"></div>
+<pre class="line-numbers "><code class="language-scss">
+.test {
+  color: blue;
+}
+</code></pre>
+  </div> <!-- .post -->
+</div> <!-- .post-wrapper -->
+
+
+</main>
+
+<footer></footer>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="{% static 'js/blog_post.js' %}"></script>
+<script src="{% static 'js/prism.js' %}"></script>
+
+</body>
+</html>

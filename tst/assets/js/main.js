@@ -12,7 +12,8 @@ var background = (function() {
   _bgHeight();
 
   function _bgHeight() {
-    $header.height($window.height());
+    var windowHt = $window.height();
+    windowHt <= 1010 ? $header.height(windowHt) : $header.height(1010);
   }
 
   function _resizeBackground() {
