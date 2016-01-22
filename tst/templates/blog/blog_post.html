@@ -6,103 +6,114 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Blog Post</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,900|Oswald' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,900|Oswald|Dancing+Script' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="{% static 'css/blog_post.min.css' %}">
 </head>
 <body>
 <main>
 
 <div class="side-wrapper">
-  <div class="side">
-  
-  </div> <!-- .side -->
+  <div class="side__home"><a target="_blank" href="../">3 Steps Taken</a></div>
+  <img class="side__pic" src="{% static 'media/poro_square.png' %}" alt="Self Pic">
+
+  <a class="side__social side__social--twitter cf" target="_blank" href="https://twitter.com/stargazin3">
+    <span>Follow!</span>
+    <img src="{% static 'media/twitter.png' %}" alt="T">
+  </a> <!-- .side__social-twitter -->
+  <a class="side__social side__social--github cf" target="_blank" href="https://github.com/stargazin">
+    <span>Browse!</span>
+    <img src="{% static 'media/github.png' %}" alt="G">
+  </a> <!-- .side__social-github -->
+  <a class="side__social side__social--linkedin cf" target="_blank" href="https://www.linkedin.com/in/stargazin">
+    <span>Connect!</span>
+    <img src="{% static 'media/linkedin.png' %}" alt="L">
+  </a> <!-- .side__social-linkedin -->
+
+
+  <div class="side__scroll-container">
+    <a href="#section-1" class="side__scroll">1. Installing some software</a>
+    <a href="#section-2" class="side__scroll">2. Preparing the virtual machine</a>
+    <a href="#section-3" class="side__scroll">3. Configuring the vagrantfile</a>
+    <a href="#section-4" class="side__scroll">4. Getting familiar with the virtual machine</a>
+    <a href="#section-5" class="side__scroll">5. Working with Django and Vagrant</a>
+    <a href="#section-6" class="side__scroll">6. A few points to keep in mind</a>
+  </div> <!-- .side__scroll-container -->
+
 </div> <!-- .side-wrapper -->
 
 <div class="post-wrapper">
   <div class="post">
 
     <h1 class="post__title">Vagrant Setup With VirtualBox</h1>
-    <h5 class="post__date">January 18th, 2016</h5>
+    <h5 class="post__info">Post #1 || January 18th, 2016</h5>
 
     <div class="post__breakdown">
       <h2 class="post__breakdown__header">Breakdown and Quicklinks</h2>
 
       <p class="post__breakdown__short">
-        1. <a href="#section-1">Installing the needed software</a>
+        1. <a href="#section-1">Installing some software</a>
       </p> <!-- .post__breakdown__short -->
-      <div class="post__breakdown__long">
-        <span></span>
-      </div> <!-- .post__breakdown__long -->
 
       <p class="post__breakdown__short">
-        2. <a href="#section-2">Preparing our virtual machine</a>
+        2. <a href="#section-2">Preparing the virtual machine</a>
       </p> <!-- .post__breakdown__short -->
-      <div class="post__breakdown__long">
-        <span></span>
-      </div> <!-- .post__breakdown__long -->
 
       <p class="post__breakdown__short">
-        3. <a href="#section-3">Configuring our vagrantfile</a>
+        3. <a href="#section-3">Configuring the vagrantfile</a>
       </p> <!-- .post__breakdown__short -->
-      <div class="post__breakdown__long">
-        <span></span>
-      </div> <!-- .post__breakdown__long -->
 
       <p class="post__breakdown__short">
-        4. <a href="#section-4">Getting familiar with our virtual machine</a>
+        4. <a href="#section-4">Getting familiar with the virtual machine</a>
       </p> <!-- .post__breakdown__short -->
-      <div class="post__breakdown__long">
-        <span></span>
-      </div> <!-- .post__breakdown__long -->
 
       <p class="post__breakdown__short">
         5. <a href="#section-5">Working with Django and Vagrant</a>
       </p> <!-- .post__breakdown__short -->
-      <div class="post__breakdown__long">
-        <span></span>
-      </div> <!-- .post__breakdown__long -->
 
       <p class="post__breakdown__short">
-        6. <a href="#section-6">A few tips to keep in mind</a>
+        6. <a href="#section-6">A few points to keep in mind</a>
       </p> <!-- .post__breakdown__short -->
-      <div class="post__breakdown__long">
-        <span></span>
-      </div> <!-- .post__breakdown__long -->
     </div> <!-- .breakdown -->
 
     <div class="post__section" id="section-1">
-<h2 class="post__section__header">1. Installing the needed software</h2>
+<h2 class="post__section__header">1. Installing some software</h2>
 
-<p>Install <a href="http://vagrantup.com">Vagrant</a> and <a href="https://www.virtualbox.org">VirtualBox</a></p>
+<p>In this tutorial, we'll be using <a target="_blank" href="https://git-scm.com/downloads">Git Bash</a> for Windows and the terminal for Mac OS X and Linux.</p>
 
-<p>Choose a <a href="https://vagrantcloud.com">Vagrant box</a>. We'll be using the hashicorp/precise32 box in this example.</p>
+<p class="newbie">With Git Bash, system, user, and folder information is above the <code class="inline">$</code> command input line. To keep things simple, I will omit the extra information. If you are using OS X or Linux, you don't need to download anything, but note that you will see some combination of system, user, and file location like so: <code class="inline">System:~/Folder User$</code></p>
+
+<p>Install <a target="_blank" href="http://vagrantup.com">Vagrant</a> and <a target="_blank" href="https://www.virtualbox.org">VirtualBox</a></p>
+
+<p>Choose a <a target="_blank" href="https://vagrantcloud.com">Vagrant box</a>. We'll be using the hashicorp/precise32 box in this example.</p>
 
 <pre><code class="language-bash">
 $ vagrant box add hashicorp/precise32
 </code></pre>
 
-<p>Now we can create our virtual machine (henceforth VM)!</p>
+<p>Now we can create our virtual machine!</p>
+
+<p class="btw">We will refer to the virtual machine as the VM.</p>
     </div> <!-- .post__section -->
 
 
     <div class="post__section" id="section-2">
-<h2 class="post__section__header">2. Preparing our virtual machine</h2>
+<h2 class="post__section__header">2. Preparing the virtual machine</h2>
 
-<p>Make a folder for our Vagrant project.</p>
+<p>Make a folder for our VM.</p>
 
 <pre><code class="language-bash">
 $ mkdir practice_folder
 $ cd practice_folder
 </code></pre>
 
-<p class="newbie">This folder can be located anywhere, but make sure you keep track of which folder we're currently in!</p>
+<p class="newbie">This folder can be located anywhere, but make sure you keep track of which folder we're currently in using the <code class="inline">pwd</code> command.</p>
 
-<p>Run the following command to create a VM in our new folder</p>
+<p>Run the following command to create a VM in our new folder.</p>
 
 <pre><code class="language-bash">
 #run only once to create our VM; a vagrantfile is also be created
 $ vagrant init hashicorp/precise32
-#double check to see if the vagrantfile was created
+#check that the vagrantfile was created
 $ ls
 </code></pre>
 
@@ -113,17 +124,13 @@ $ vagrant up
 $ vagrant ssh
 </code></pre>
 
-<p class="newbie">This is the set of commands we'll use to turn on our VM and get into it.</p>
+<p class="btw">If Vagrant is uncooperative, try giving it administrative privileges by going to the VirtualBox application in your Program Files. Right click the applications, go to properties, go under the Security tab, and change permissions by clicking Edit. Also click "Yes" if anything pops up asking for permission when running the VM!<br><br>If that doesn't work, try setting the compatibility of VirtualBox to Windows 7. Again, go to the properties of the VirtualBox application. Under the Compatibility tab, check the box that says "Run this program in compatibility mode for:" and select Windows 7.<br>(I'm using Windows 8.1 and setting the compatibility mode solved the problems I had!)</p>
 
-<p class="tip">If Vagrant is uncooperative, try giving it administrative privileges by going to the VirtualBox application in your Program Files. Right click the applications, go to properties, go under the Security tab, and change permissions by clicking Edit. Also click "Yes" if anything pops up asking for permission when running the VM! If that doesn't work, try setting the compatibility of VirtualBox to Windows 7. Again, go to the properties of the VirtualBox application. Under the Compatibility tab, check the box that says "Run this program in compatibility mode for:" and select Windows 7.<br>(I'm using Windows 8.1 and setting the compatibility mode solved the problems I had!)</p>
-
-<p>We should now be inside our VM, so you should see the following:</p>
+<p>Now that we're inside our VM, you should see the following:</p>
 
 <pre><code class="language-bash">
 vagrant@precise32:~$
 </code></pre>
-
-<p class="newbie">It may not be precise32 if you chose a different vagrant box initially</p>
 
 <p>Let's go ahead and get the newest software and security packages before we make some configuration changes to our vagrantfile</p>
 
@@ -134,7 +141,7 @@ vagrant@precise32:~$ sudo apt-get update
 vagrant@precise32:~$ sudo apt-get upgrade
 </code></pre>
 
-<p>Run the following command to get out of our VM and back to our own machine!</p>
+<p>Run the following command to get out of our VM and back to our machine!</p>
 
 <pre><code class="language-bash">
 vagrant@precise32:~$ exit
@@ -143,38 +150,36 @@ vagrant@precise32:~$ exit
 
 
     <div class="post__section" id="section-3">
-<h2 class="post__section__header">3. Configuring our vagrantfile</h2>
+<h2 class="post__section__header">3. Configuring the vagrantfile</h2>
 
-<p>Open up the vagrantfile with a text editor (even Notepad will work!) and look for this block.</p>
-
-<p class="newbie">In the vagrantfile, the guest machine simply refers to our own machine whereas host refers to the VM.</p>
+<p>Open up the vagrantfile for editting, and look for this block.</p>
 
 <pre><code class="language-bash">
-  # Create a private network, which allows host-only access to the machine
-  # using a specific IP.
-  # config.vm.network "private_network", ip: "192.168.33.10"
+# Create a private network, which allows host-only access to the machine
+# using a specific IP.
+# config.vm.network "private_network", ip: "192.168.33.10"
 </code></pre>
 
-<p>Uncomment the last line in that block. This lets us connect to our development environment later using the IP address in that line. Feel free to change the IP address to something easy to remember like 33.33.33.33 !</p>
+<p>Uncomment the last line in that block. This lets us connect to our development environment later using the IP address in that line.</p>
 
 <pre><code class="language-bash">
-  # Create a private network, which allows host-only access to the machine
-  # using a specific IP.
-   config.vm.network "private_network", ip: "33.33.33.33"
+# Create a private network, which allows host-only access to the machine
+# using a specific IP.
+ config.vm.network "private_network", ip: "33.33.33.33"
 </code></pre>
+
+<p class="btw">Feel free to change the IP address to something easy to remember like 33.33.33.33 !</p>
 
 <p>I also recommend uncommenting the last line of the block prior to the one above and making the changes shown below.</p>
 
-<pre class="line-numbers"><code class="language-bash">
-  # Create a forwarded port mapping which allows access to a specific port
-  # within the machine from a port on the host machine. In the example below,
-  # accessing "localhost:8080" will access port 80 on the guest machine.
-   config.vm.network "forwarded_port", guest: 8080, host: 8080
-
-#changes: uncomment line 4 and change "guest:80" to "guest:8080"
+<pre><code class="language-bash">
+# Create a forwarded port mapping which allows access to a specific port
+# within the machine from a port on the host machine. In the example below,
+# accessing "localhost:8080" will access port 80 on the guest machine.
+ config.vm.network "forwarded_port", guest: 8080, host: 8080
 </code></pre>
 
-<p class="newbie">This was something I arrived at by playing around with the vagrantfile. I couldn't connect to the VM server through the guest machine unless the guest and host ports specified above were the same. If you have trouble connecting to your development server later, see if this helps you out!</p>
+<p class="btw">I couldn't connect to the VM server through the guest machine (our machine) unless the guest and host ports specified above were the same. Try this if you have trouble connecting to the development server later!</p>
 
 <p>We'll want to reload the VM whenever we make changes to the vagrantfile, but you don't need to run the following command if the VM is powered off when editting the vagrantfile!</p>
 
@@ -185,7 +190,7 @@ $ vagrant reload
 
 
     <div class="post__section" id="section-4">
-<h2 class="post__section__header">4. Getting familiar with our virtual machine</h2>
+<h2 class="post__section__header">4. Getting familiar with the virtual machine</h2>
 
 <p>At this point we've pretty much set up everything we need to start working in our Vagrant VM! In the next section, we'll install some packages for working with Django/Python, but first let's see how we'll be working with Vagrant.</p>
 
@@ -250,7 +255,7 @@ vagrant@precise32:~$ sudo pip install virtualenv
 #the wrapper makes working with virtualenv easier
 vagrant@precise32:~$ sudo pip install virtualenvwrapper
 
-#show all files (including hidden with -a flag)
+#show all content (including hidden with the -a flag)
 vagrant@precise32:~$ ls -a
 vagrant@precise32:~$ nano ~/.bashrc
 
@@ -295,10 +300,10 @@ vagrant@precise32:~$ mkvirtualenv play
 <p>This list of packages will grow as we install more to our virtual environment. Let's install some more packages to get our development environment ready for development!</p>
 
 <pre><code class="language-bash">
-#install multiple packages at once by separating each one with a space
+#separate multiple packages with a space
 
-(play)vagrant@precise32:~$ sudo apt-get install python-dev libpq-dev postgresql 
-postgresql-contrib libjpeg-dev
+(play)vagrant@precise32:~$ sudo apt-get install python-dev libpq-dev 
+postgresql postgresql-contrib libjpeg-dev
 
 (play)vagrant@precise32:~$ pip install django psycopg2 Pillow
 
@@ -306,9 +311,9 @@ postgresql-contrib libjpeg-dev
 (play)vagrant@precise32:~$ pip list
 </code></pre>
 
-<p class="newbie">I enjoy using postgreSQL for my database, but feel free to play around with other databases!</p>
-
 <p class="newbie">Note that because we are using pip (Python package manager) install while working on our virtual environment, the packages we install will only be useable while working on that virtual environment. If we deactivated our virtual environment and then installed a package with pip, that package would be available globally -- we will have access to that package with or without our virtual environment. Using apt-get will install packages globally, so we don't even have to be working on our virtual environment.</p>
+
+<p class="btw">I enjoy using postgreSQL for my database, but feel free to play around with other databases!</p>
 
 <p>We're almost there. To finish up, let's start a django project so we can start developing (make sure you are on your virtual environment where django is installed)!</p>
 
@@ -323,7 +328,7 @@ postgresql-contrib libjpeg-dev
 
 
     <div class="post__section" id="section-6">
-<h2 class="post__section__header">6. A few tips to keep in mind</h2>
+<h2 class="post__section__header">6. A few points to keep in mind</h2>
 
 <p>Remember to power off your VM when you are finished.</p>
 
@@ -332,7 +337,7 @@ vagrant@precise32:~$ exit
 $ vagrant halt
 </code></pre>
 
-<p class="newbie">I've had problems with my VM getting corrupted or something along those lines. I don't know the exact cause, but I believe it happens when I forget to power off my VM. If this happens to you, don't worry! It's much easier to set up a second time because you won't need to install software and configure the vagrantfile.</p>
+<p class="btw">I've had problems with my VM getting corrupted or something along those lines. I don't know the exact cause, but I believe it happens when I forget to power off my VM. If this happens to you, don't worry! It's much easier to set up a second time because you won't need to install software and configure the vagrantfile.</p>
 
 <p>To remove a VM (whether you don't need it anymore or it's corrupted), use the following command</p>
 
@@ -342,7 +347,7 @@ $ vagrant destroy
 
 <p class="newbie">You can also do this manually using the Oracle VM VirtualBox application.</p>
 
-<p>If you are new to Linux, it can be a little intimidating navigating using commands. Here's a helpful command to keep track of where you are in the VM.</p>
+<p>If you are new to Unix shells, it can be a little intimidating navigating using commands. Here's a helpful command to keep track of where you are in the VM.</p>
 
 <pre><code class="language-bash">
 #pwd = print working directory (current folder)
@@ -351,7 +356,7 @@ vagrant@precise32:~$ cd /vagrant
 vagrant@precise32:/vagrant$ pwd
 </code></pre>
 
-<p class="newbie">Notice how your two results are <code class="inline">/home/vagrant</code> and <code class="inline">/vagrant</code>. These are entirely different vagrant folders!</p>
+<p class="newbie">Notice how your two results are <code class="inline">/home/vagrant</code> and <code class="inline">/vagrant</code>. These are entirely different folders!</p>
     </div> <!-- .post__section -->
 
 
