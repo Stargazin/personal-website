@@ -7,3 +7,6 @@ from django.views.generic.base import TemplateView
 
 class BlogPostView(TemplateView):
 	template_name = 'blog/blog_post.html'
+
+class BlogHomeView(TemplateView):
+	template_name = 'blog/blog_home.html'

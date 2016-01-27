@@ -2,13 +2,18 @@
 ============================================================================ 
 ============================================================================ */
 
-/* Universal
+/* Global
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 * {
   position: relative;
   margin: 0;
   padding: 0;
+}
+
+// Inherit to prevent messing with other libraries
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 ///**
@@ -24,10 +29,6 @@ html {
   -webkit-text-size-adjust: 100%; /* 1 */
 }
 
-// Inherit to prevent messing with other libraries
-*, *:before, *:after {
-  box-sizing: inherit;
-}
 
 /* HTML5 display definitions
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */

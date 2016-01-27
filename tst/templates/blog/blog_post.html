@@ -13,7 +13,7 @@
 <main>
 
 <div class="side-wrapper">
-  <div class="side__home"><a target="_blank" href="../">3 Steps Taken</a></div>
+  <div class="side__home"><a href="../../">3 Steps Taken</a></div>
   <img class="side__pic" src="{% static 'media/poro_square.png' %}" alt="Self Pic">
 
   <a class="side__social side__social--twitter cf" target="_blank" href="https://twitter.com/stargazin3">
@@ -38,7 +38,6 @@
     <a href="#section-5" class="side__scroll">5. Working with Django and Vagrant</a>
     <a href="#section-6" class="side__scroll">6. A few points to keep in mind</a>
   </div> <!-- .side__scroll-container -->
-
 </div> <!-- .side-wrapper -->
 
 <div class="post-wrapper">
@@ -74,6 +73,14 @@
         6. <a href="#section-6">A few points to keep in mind</a>
       </p> <!-- .post__breakdown__short -->
     </div> <!-- .breakdown -->
+
+<!--
+    <div class="post__summary">
+<h2 class="post__summary__header">Taking the first step</h2>
+
+<p>This is a temporary filler summary for the post Vagrant Setup With VirtualBox. This summary will later be expanded once I finish setting up the js for scrolling. I just need to fill this with something that takes up vertical height and looks like a temporary summary. Cheers</p>
+    </div>
+-->
 
     <div class="post__section" id="section-1">
 <h2 class="post__section__header">1. Installing some software</h2>
@@ -124,7 +131,7 @@ $ vagrant up
 $ vagrant ssh
 </code></pre>
 
-<p class="btw">If Vagrant is uncooperative, try giving it administrative privileges by going to the VirtualBox application in your Program Files. Right click the applications, go to properties, go under the Security tab, and change permissions by clicking Edit. Also click "Yes" if anything pops up asking for permission when running the VM!<br><br>If that doesn't work, try setting the compatibility of VirtualBox to Windows 7. Again, go to the properties of the VirtualBox application. Under the Compatibility tab, check the box that says "Run this program in compatibility mode for:" and select Windows 7.<br>(I'm using Windows 8.1 and setting the compatibility mode solved the problems I had!)</p>
+<p class="btw">If Vagrant is uncooperative, try giving it administrative privileges by going to the VirtualBox application in your Program Files. Right click the applications, go to properties, go under the Security tab, and change permissions by clicking Edit. Also click "Yes" if anything pops up asking for permission when running the VM!<br><br>If that doesn't work, try setting the compatibility of VirtualBox to Windows 7. Again, go to the properties of the VirtualBox application. Under the Compatibility tab, check the box that says "Run this program in compatibility mode for:" and select Windows 7.<br><br>I'm using Windows 8.1 and setting the compatibility mode solved the problems I had!</p>
 
 <p>Now that we're inside our VM, you should see the following:</p>
 
@@ -360,6 +367,7 @@ vagrant@precise32:/vagrant$ pwd
     </div> <!-- .post__section -->
 
 
+  <img class="post__to-top" id="to-top" src="{% static 'media/to_top.png' %}" alt="Top">
 
   </div> <!-- .post -->
 </div> <!-- .post-wrapper -->
