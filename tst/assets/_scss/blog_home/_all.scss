@@ -12,13 +12,14 @@
 
 
 @import '../blog/base.scrollbar';
-@import '../blog/base.text';
+@import '../blog/base.page';
 
 @import 'objects.containers';
 @import 'objects.wrappers';
 
 @import '../blog/components.header';
-@import 'components.content';
+@import 'components.header-filters';
+@import 'components.listing';
 @import '../blog/components.footer';
 
 

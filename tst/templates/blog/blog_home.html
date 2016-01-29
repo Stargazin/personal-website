@@ -8,57 +8,64 @@
 
 
 {% block nav %}
-<div class="header__scroll-container">
-  <a href="#section-1" class="header__scroll">1. Installing some software</a>
-  <a href="#section-2" class="header__scroll">2. Preparing the virtual machine</a>
-  <a href="#section-3" class="header__scroll">3. Configuring the vagrantfile</a>
-  <a href="#section-4" class="header__scroll">4. Getting familiar with the virtual machine</a>
-  <a href="#section-5" class="header__scroll">5. Working with Django and Vagrant</a>
-  <a href="#section-6" class="header__scroll">6. A few points to keep in mind</a>
-</div> <!-- .header__scroll-container -->
+<nav class="header__filter-container">
+  <a class="header__filter__link header__filter__link" href="#">
+    <span class="header__filter__link__text">All</span>
+    <div class="header__filter__link__fill header__filter__link__fill--all"></div>
+  </a> <!-- .header__filter__link -->
+  <a class="header__filter__link header__filter__link" href="#life">
+    <span class="header__filter__link__text">Life</span>
+    <div class="header__filter__link__fill header__filter__link__fill--life"></div>
+  </a> <!-- .header__filter__link -->
+  <a class="header__filter__link header__filter__link" href="#music">
+    <span class="header__filter__link__text">Music</span>
+    <div class="header__filter__link__fill header__filter__link__fill--music"></div>
+  </a> <!-- .header__filter__link -->
+  <a class="header__filter__link header__filter__link" href="#web">
+    <span class="header__filter__link__text">Web</span>
+    <div class="header__filter__link__fill header__filter__link__fill--web"></div>
+  </a> <!-- .header__filter__link -->
+</nav> <!-- nav.header__filter-container -->
 {% endblock nav %}
 
 
 {% block content %}
-<main class="content">
-  <nav class="content__nav">
-    <a class="content__nav__link content__nav__link--life" href="#">Life</a>
-    <a class="content__nav__link content__nav__link--music" href="#">Music</a>
-    <a class="content__nav__link content__nav__link--web" href="#">Web</a>
-  </nav> <!-- nav.content__nav-container -->
+<main class="listing-container">
 
-  <div class="content__post-container">
-    <div class="content__post">
-      <h1 class="content__post__title">Vagrant Setup With VirtualBox</h1>
-      <h5 class="content__post__info">Post #1 || January 18th, 2016</h5>
-      <p class="content__post__summary"></p>
-    </div> <!-- .content__post -->
+  <div class="listing">
+    <div class="listing__post">
+      <h2 class="listing__post__title-wrapper">
+        <a class="listing__post__title" href="post">Vagrant Setup With VirtualBox</a>
+      </h2> <!-- h1.listing__post__title-wrapper -->
+      <h5 class="listing__post__info">Post #1 || January 18th, 2016</h5>
+      <p class="listing__post__summary">This is a temporary filler summary for the post Vagrant Setup With VirtualBox. This summary will later be expanded once I finish setting up the js for scrolling. I just need to fill this with something that takes up vertical height and looks like a temporary summary.</p>
+    </div> <!-- .listing__post -->
 
-    <div class="content__post">
-      <h1 class="content__post__title">Filler Second Post Title</h1>
-      <h5 class="content__post__info">Post #2 || January 19th, 2016</h5>
-      <p class="content__post__summary"></p>
-    </div> <!-- .content__post -->
+    <div class="listing__post">
+      <h2 class="listing__post__title-wrapper"><a class="listing__post__title"href="#2">Filler Second Post Title</a></h1>
+      <h5 class="listing__post__info">Post #2 || January 19th, 2016</h5>
+      <p class="listing__post__summary">This is a temporary filler summary for the post Vagrant Setup With VirtualBox. This summary will later be expanded once I finish setting up the js for scrolling. I just need to fill this with something that takes up vertical height and looks like a temporary summary.</p>
+    </div> <!-- .listing__post -->
 
-    <div class="content__post">
-      <h1 class="content__post__title">Filler Third Post Title</h1>
-      <h5 class="content__post__info">Post #3 || January 20th, 2016</h5>
-      <p class="content__post__summary"></p>
-    </div> <!-- .content__post -->
+    <div class="listing__post">
+      <h2 class="listing__post__title-wrapper"><a class="listing__post__title"href="#3">Filler Third Post Title</a></h1>
+      <h5 class="listing__post__info">Post #3 || January 20th, 2016</h5>
+      <p class="listing__post__summary">This is a temporary filler summary for the post Vagrant Setup With VirtualBox. This summary will later be expanded once I finish setting up the js for scrolling. I just need to fill this with something that takes up vertical height and looks like a temporary summary.</p>
+    </div> <!-- .listing__post -->
 
-    <div class="content__post">
-      <h1 class="content__post__title">Filler Fourth Post Title</h1>
-      <h5 class="content__post__info">Post #4 || January 21th, 2016</h5>
-      <p class="content__post__summary"></p>
-    </div> <!-- .content__post -->
+    <div class="listing__post">
+      <h2 class="listing__post__title-wrapper"><a class="listing__post__title"href="#4">Filler Fourth Post Title</a></h1>
+      <h5 class="listing__post__info">Post #4 || January 21th, 2016</h5>
+      <p class="listing__post__summary">This is a temporary filler summary for the post Vagrant Setup With VirtualBox. This summary will later be expanded once I finish setting up the js for scrolling. I just need to fill this with something that takes up vertical height and looks like a temporary summary.</p>
+    </div> <!-- .listing__post -->
 
-    <div class="content__post">
-      <h1 class="content__post__title">Filler Fifth Post Title</h1>
-      <h5 class="content__post__info">Post #5 || January 22th, 2016</h5>
-      <p class="content__post__summary"></p>
-    </div> <!-- .content__post -->
-  </div> <!-- .content__post_container -->
-</main> <!-- main.content -->
+    <div class="listing__post">
+      <h2 class="listing__post__title-wrapper"><a class="listing__post__title"href="#5">Filler Fifth Post Title</a></h1>
+      <h5 class="listing__post__info">Post #5 || January 22th, 2016</h5>
+      <p class="listing__post__summary">This is a temporary filler summary for the post Vagrant Setup With VirtualBox. This summary will later be expanded once I finish setting up the js for scrolling. I just need to fill this with something that takes up vertical height and looks like a temporary summary.</p>
+    </div> <!-- .listing__post -->
+  </div> <!-- .listing__post_container -->
+</main> <!-- main.listing -->
 {% endblock content %}
 
 

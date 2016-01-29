@@ -1,0 +1,25 @@
+/* blog_post/components.header-scroll
+============================================================================ */
+
+
+.header__scroll {
+  display: block;
+  margin-bottom: 1rem;
+  padding: 0 0.7rem;
+  transition: color 0.07s ease-in-out;
+  font-size: 0.9em;
+  color: rgb(150, 150, 150);
+
+  &:first-child {
+    padding: 1rem 0.7rem 0 0.7rem;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+    padding: 0 0.7rem 1rem 0.7rem;
+  }
+
+  &:hover {
+    color: rgb(222, 222, 222);
+  }
+}

@@ -1,4 +1,4 @@
-/* objects.wrappers
+/* blog_home/objects.wrappers
 ============================================================================ */
 
 .header__home-wrapper {
@@ -10,4 +10,8 @@
   @media #{$break-l} {
     margin-top: 1.7rem;
   }
+}
+
+.listing__post__title-wrapper {
+  text-align: center;
 }

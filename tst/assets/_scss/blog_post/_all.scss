@@ -2,7 +2,6 @@
 ============================================================================
 ============================================================================ */
 
-
 @import '../global/settings.breakpoints';
 @import '../global/settings.typography';
 
@@ -13,15 +12,17 @@
 
 
 @import '../blog/base.scrollbar';
-@import '../blog/base.text';
+@import '../blog/base.page';
 
 @import 'objects.containers';
 @import 'objects.wrappers';
 
 @import '../blog/components.header';
-@import 'components.content-post';
+@import 'components.header-scroll';
+@import 'components.post';
 @import 'components.code';
 @import '../blog/components.footer';
 
 @import 'trumps.static';
 @import '../blog/trumps.js-header';
+@import 'trumps.js-header-scroll';

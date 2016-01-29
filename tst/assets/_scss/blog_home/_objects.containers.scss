@@ -1,4 +1,4 @@
-/* objects.containers
+/* blog_home/objects.containers
 ============================================================================ */
 
 .header-container {
@@ -21,5 +21,45 @@
   @media #{$break-m} {
     width: 18rem;
     font-size: 0.85em;
+  }
+}
+
+.header__filter-container {
+  width: 85%;
+  margin: 5rem auto;
+
+  @media #{$break-xl} {
+    width: 88%;
+    margin: 4.5rem auto;
+  }
+
+  @media #{$break-l} {
+    margin: 4rem auto;
+  }
+
+  @media #{$break-m} {
+    width: 95%;
+    margin: 3.5rem auto;
+  }
+}
+
+.listing-container {
+  margin-left: 26rem;
+  padding: 0 2.5rem;
+  background-color: rgb(240, 240, 240);
+  min-height: 100vh;
+
+  @media #{$break-xl} {
+    margin-left: 22rem;
+    padding: 0;
+    background-color: white;
+  }
+
+  @media #{$break-l} {
+    margin-left: 20rem;
+  }
+
+  @media #{$break-m} {
+    margin-left: 18rem;
   }
 }

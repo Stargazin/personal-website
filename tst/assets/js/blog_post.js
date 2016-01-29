@@ -6,8 +6,8 @@ var scrollHighlight = (function() {
   var $bodyHTML = $('body, html');
   var $toTop = $('#to-top');
   var $postSection = $('.post__section');
-  var $sideScrollContainer = $('.side__scroll-container');
-  var $sideScroll = $('.side__scroll');
+  // var $headerScrollContainer = $('.header__scroll-container');
+  var $headerScroll = $('.header__scroll');
 
   var numOfSections = $postSection.length;
   var sectionOffsets = [];
@@ -16,8 +16,8 @@ var scrollHighlight = (function() {
   $window.scroll(_checkScrollPosition);
   $window.on('resize', _checkScrollPosition);
   $toTop.on('click', _scrollToTop);
-  // $sideScroll.hover(_selectSideNav, _unselectSideNav);
-  // $sideScroll.on('click', _unselectSideNav);
+  // $headerScroll.hover(_selectSideNav, _unselectSideNav);
+  // $headerScroll.on('click', _unselectSideNav);
 
   function _getOffsets() {
     $postSection.each(function() {
@@ -45,12 +45,12 @@ var scrollHighlight = (function() {
         };
       }
 
-      $sideScroll.removeClass('current-section');
-      $sideScroll.eq(currentSection).addClass('current-section');
+      $headerScroll.removeClass('current-section');
+      $headerScroll.eq(currentSection).addClass('current-section');
     }
     else {
       $toTop.hide();
-      $sideScroll.removeClass('current-section');
+      $headerScroll.removeClass('current-section');
     };
   }
 

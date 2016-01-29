@@ -1,0 +1,78 @@
+/* blog_home/components.header-filters
+============================================================================ */
+
+.header__filter__link {
+  display: block;
+  width: 96%;
+  border-radius: 4px;
+  margin: 1rem 0 1rem auto;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  background: linear-gradient(rgb(40, 40, 40),
+    rgb(25, 25, 25));
+  color: rgb(225, 225, 225);
+
+  &:after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    top: 0;
+    border-right: 1.6rem solid rgb(53, 53, 53);
+    border-bottom: 1.6rem solid transparent;
+    background-color: transparent;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    bottom: 0;
+    border-bottom: 1.6rem solid rgb(54, 54, 54);
+    border-left: 1.6rem solid transparent;
+    background-color: transparent;
+  }
+
+  &:hover {
+    color: white;
+
+    .header__filter__link__fill {
+      width: 100%;
+    }
+  }
+}
+
+.header__filter__link__text {
+  z-index: 1;
+}
+
+.header__filter__link__fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.15s linear;
+}
+
+.header__filter__link__fill--all {
+  background: linear-gradient(rgb(15, 15, 15),
+    rgb(0, 0, 0));
+}
+
+.header__filter__link__fill--life {
+  background: linear-gradient(rgb(255, 36, 0),
+    rgb(191, 27, 0));
+}
+
+.header__filter__link__fill--music {
+  background: linear-gradient(rgb(127, 0, 181),
+    rgb(95, 0, 141));
+}
+
+.header__filter__link__fill--web {
+  background: linear-gradient(rgb(0, 0, 242),
+    rgb(0, 0, 172));
+}

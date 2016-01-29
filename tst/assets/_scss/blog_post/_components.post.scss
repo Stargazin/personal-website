@@ -1,4 +1,4 @@
-/* components.post
+/* blog_post/components.post
 ============================================================================ */
 
 .post {
@@ -7,10 +7,9 @@
   border-right: 1px solid;
   border-left: 1px solid;
   border-color: rgb(225, 225, 225);
-  padding: 4rem 10rem 0 10rem;
+  padding: 4rem 10rem;
   background-color: white;
   letter-spacing: 0.4px;
-  color: rgb(30, 30, 30);
 
   @media #{$break-xxl} {
     max-width: 88rem;
