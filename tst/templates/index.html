@@ -3,41 +3,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <title>3 Steps Taken</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="{% static 'css/index.min.css' %}">
   <link href='https://fonts.googleapis.com/css?family=EB+Garamond|Dancing+Script' rel='stylesheet' type='text/css'>
-
-  <title>3 Steps Taken</title>
+  <link rel="stylesheet" href="{% static 'css/index.min.css' %}">
 </head>
 <body>
 
-<header>
-  <div class="hero cf">
-    <div class="quote-outer">
-      <div class="quote-inner">
-        <span class="quote quote--1">One step forward</span><br>
-        <span class="quote quote--2">Two steps back</span><br>
-        <span class="quote quote--3">3 Steps Taken</span>
-      </div> <!-- .quote-inner -->
-    </div> <!-- .quote-outer -->
+<header class="header">
+  <div class="header__intro cf">
 
-    <div class="intro-outer">
-      <div class="intro-inner">
-        <span class="intro__text intro__text--1">Hi! I'm Alex 'Stargazin' Sun.</span><br>
-        <span class="intro__text intro__text--2">If you happen to enjoy talking</span><br>
-        <span class="intro__text intro__text--3">life, music, or web development,</span>
-      </div> <!-- .intro-inner -->
-    </div> <!-- .intro-outer -->
-  </div> <!-- .hero -->
-  <a class="cta" href="blog/post">Let's talk!</a>
-</header>
+    <div class="header__intro__quote-wrapper">
+        <span class="header__intro__quote header__intro__quote--1">One step forward</span><br>
+        <span class="header__intro__quote header__intro__quote--2">Two steps back</span><br>
+        <span class="header__intro__quote header__intro__quote--3">3 Steps Taken</span>
+    </div> <!-- .header__intro__quote-wrapper -->
+
+    <div class="header__intro__msg-wrapper">
+      <span class="header__intro__msg">Hi! I'm Alex 'Stargazin' Sun.<br>If you happen to enjoy talking<br>life, music, or web development,</span>
+    </div> <!-- .header__intro__msg-wrapper -->
+
+  </div> <!-- .header__intro.cf -->
+  <a class="header__cta" href="blog/post">Let's talk!</a>
+</header> <!-- header.header -->
 
 <main></main>
 <footer></footer>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="{% static 'js/main.js' %}"></script>
-<script src="http://192.168.1.5:35729/livereload.js?snipver=1"></script>
+<script src="{% static 'js/index.js' %}"></script>
 </body>
 </html>

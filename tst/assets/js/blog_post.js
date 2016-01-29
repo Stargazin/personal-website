@@ -72,18 +72,18 @@ var scrollHighlight = (function() {
 var highlightSocialBtns = (function() {
 
   //*cache DOM
-  var $sideSocial = $('.side__social');
+  var $headerSocial = $('.header__social');
 
   //*bind events
-  $sideSocial.hover(_showSocial, _hideSocial);
-  $sideSocial.on('click', _hideSocial);
+  $headerSocial.hover(_showSocial, _hideSocial);
+  $headerSocial.on('click', _hideSocial);
 
   function _showSocial() {
-    $(this).addClass('social--show');
+    $(this).addClass('social-show');
   }
 
   function _hideSocial() {
-    $(this).removeClass('social--show');
+    $(this).removeClass('social-show');
   }
 
 })();

@@ -1,18 +1,5 @@
-/* modules/variables
- =========================================================================== 
- =========================================================================== */
-
-// /* Typography
-//  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-$dancing-script: 'Dancing Script', cursive;
-$eb-garamond: 'EB Garamond', serif;
-
-// blog_posts
-$oswald: 'Oswald', sans-serif;
-$lato: 'Lato', sans-serif;
-
-// /* Breakpoints
-//  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+// /* global/settings.breakpoints
+// ========================================================================= */
 
 // /* Very Large Devices, Wide Screens */
 $break-xxl: "only screen and (max-width: 1450px)";
@@ -32,5 +19,6 @@ $break-m: "only screen and (max-width: 768px)"; //vertipad
 // /* Extra Small Devices, Phones */ 
 $break-s: "only screen and (max-width: 480px)"; //iphone 6
 
+// /* Affects Devices Only */
 $break-tablet: "only screen and (max-device-width: 768px)";
 $break-phone: "only screen and (max-device-width: 480px)";

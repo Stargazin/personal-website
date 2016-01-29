@@ -1,0 +1,46 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Blog Post | 3 Steps Taken</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,900|Oswald|Dancing+Script' rel='stylesheet' type='text/css'>
+  {% block css %}{% endblock css %}
+</head>
+<body>
+
+<header class="header-container">
+  <div class="header__home-wrapper"><a class="header__home" href="../">3 Steps Taken</a></div>
+  <img class="header__pic" src="{% static 'media/poro_square.png' %}" alt="Self Pic">
+
+  <a class="header__social header__social--twitter cf" href="https://twitter.com/stargazin3" target="_blank">
+    <span class="header__social__text">Follow!</span>
+    <img class="header__social__icon" src="{% static 'media/twitter.png' %}" alt="T">
+  </a> <!-- .header__social-twitter -->
+  <a class="header__social header__social--github cf" href="https://github.com/stargazin" target="_blank">
+    <span class="header__social__text">Browse!</span>
+    <img class="header__social__icon" src="{% static 'media/github.png' %}" alt="G">
+  </a> <!-- .header__social-github -->
+  <a class="header__social header__social--linkedin cf" href="https://www.linkedin.com/in/stargazin" target="_blank">
+    <span class="header__social__text">Connect!</span>
+    <img class="header__social__icon" src="{% static 'media/linkedin.png' %}" alt="L">
+  </a> <!-- .header__social-linkedin -->
+
+  {% block nav %}{% endblock nav %}
+
+</header> <!-- header.header-container -->
+
+
+{% block content %}{% endblock content %}
+
+
+<footer></footer>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+{% block js %}{% endblock js %}
+
+</body>
+</html>

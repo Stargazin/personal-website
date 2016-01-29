@@ -1,0 +1,105 @@
+/* components.sidebar
+============================================================================ */
+
+.header__home {
+  transition: all 0.15s ease-in-out;
+  color: rgb(235, 235, 235);
+  
+  &:hover {
+    text-shadow: 0 0 4px white;
+    color: white;
+  }
+}
+
+.header__pic {
+  display: block;
+  width: 125px;
+  height: 125px;
+  margin: 2.5rem auto;
+  border-radius: 50%;
+
+  @media #{$break-l} {
+    width: 115px;
+    height: 115px;
+    margin: 2rem auto;
+  }
+
+  @media #{$break-l} {
+    width: 105px;
+    height: 105px;
+  }
+}
+
+.header__social {
+  display: block;
+  position: relative;
+  width: 75%;
+  margin: 0.5rem auto;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  border-color: rgb(39, 39, 39);
+  border-radius: 3px;
+  padding: 0.3rem 0;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.12);
+  color: rgb(200, 200, 200);
+
+  @media #{$break-xl} {
+    width: 80%;
+  }
+
+  @media #{$break-m} {
+    width: 90%;
+  }
+}
+
+.header__social__text {
+  float: right;
+  width: 55%;
+  margin-top: 0.1rem;
+  padding-right: 1rem;
+  text-align: left;
+
+  @media #{$break-l} {
+    margin-top: 0.2rem;
+  }
+}
+
+.header__social__icon {
+  float: right;
+  width: 24px;
+  height: 24px;
+  margin-right: 2.5rem;
+  transform: scale(0.8, 0.8);
+  opacity: 0.95;
+
+  @media #{$break-l} {
+    transform: scale(0.72, 0.72);
+  }
+
+  @media #{$break-m} {
+    transform: scale(0.68, 0.68);
+  }
+}
+
+.header__scroll {
+  display: block;
+  margin-bottom: 1rem;
+  padding: 0 0.7rem;
+  transition: color 0.07s ease-in-out;
+  font-size: 0.9em;
+  color: rgb(150, 150, 150);
+
+  &:first-child {
+    padding: 1rem 0.7rem 0 0.7rem;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+    padding: 0 0.7rem 1rem 0.7rem;
+  }
+
+  &:hover {
+    color: rgb(222, 222, 222);
+  }
+}

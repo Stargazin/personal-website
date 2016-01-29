@@ -1,0 +1,13 @@
+/* objects.wrappers
+============================================================================ */
+
+.header__home-wrapper {
+  margin-top: 2.5rem;
+  text-align: center;
+  font-size: 2em;
+  font-family: $dancing-script;
+
+  @media #{$break-l} {
+    margin-top: 1.7rem;
+  }
+}

@@ -1,8 +1,7 @@
-/* modules/variables
- =========================================================================== 
- =========================================================================== */
-/* partials/reset
-============================================================================ 
+/* index
+============================================================================
+============================================================================ */
+/* generic.normalize-resets (https://github.com/necolas/normalize.css/)
 ============================================================================ */
 /* Global
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -10,103 +9,121 @@
   position: relative;
   margin: 0;
   padding: 0; }
+  *::-moz-selection {
+    background: #b2dbff;
+    color: black; }
+  *::selection {
+    background: #b2dbff;
+    color: black; }
 
+/*
+ * 1. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-text-size-adjust: 100%;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 1 */
+  font-size: 62.5%; }
+
+/*
+ * Inherit to prevent messing with other libraries
+ */
 *, *:before, *:after {
   -webkit-box-sizing: inherit;
           box-sizing: inherit; }
 
-html {
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-text-size-adjust: 100%;
-  /* 1 */
-  -webkit-text-size-adjust: 100%;
-  /* 1 */ }
-
 /* HTML5 display definitions
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-footer,
-header,
-main,
-menu,
-nav,
-section {
+/*
+ * Correct `block` display not defined for-- 
+ *  --any HTML5 element in IE 8/9
+ *  --`details` or `summary` in IE 10/11 and Firefox.
+ *  --`main` in IE 11.
+ */
+nav, menu, header, main, section, footer {
   display: block; }
 
 /* Links
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*
+ * 1. Remove the gray background color from active links in IE 10.
+ * 2. Improve readability when focused and also mouse hovered in all browsers.
+ */
 a {
   background-color: transparent;
   /* 1 */ }
-  a a:active,
-  a a:hover {
+  a:active, a:hover {
     outline: 0;
     /* 2 */ }
 
 /* Text-level semantics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-b,
-strong {
+/*
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+b, strong {
   font-weight: bold; }
 
 /* Embedded content
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
 img {
   border: 0; }
 
 /* Grouping content
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*
+ * Address differences between Firefox and other browsers.
+ */
 hr {
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
+  -moz-box-sizing: content-box;
   height: 0; }
 
 /* Forms
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-button,
-input,
-select,
-textarea {
+/*
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited. 
+ */
+button, input, select, textarea {
   color: inherit;
   /* 1 */
   font: inherit;
   /* 2 */ }
 
+/*
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
 button {
   overflow: visible; }
 
-button,
-select {
+/*
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox. 
+ */
+button, select {
   text-transform: none; }
 
-/* partials/global
-============================================================================ 
-============================================================================ */
-*::-moz-selection {
-  background: #b2dbff;
-  color: black; }
-*::selection {
-  background: #b2dbff;
-  color: black; }
-
-html {
-  font-family: arial;
-  font-size: 62.5%; }
-
-body {
-  width: 100%;
-  height: 100%; }
-
+/* Custom
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 ul {
   list-style: none; }
 
 a {
   color: black;
   text-decoration: none; }
-
-button:hover {
-  cursor: pointer; }
 
 /* Clear-fix
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -117,101 +134,89 @@ button:hover {
 .cf:after {
   clear: both; }
 
-/*partials/index
-===============================================================================
-=============================================================================*/
-html {
+/* base.page
+============================================================================ */
+body {
+  margin: 0 auto;
+  max-width: 192rem;
   font-family: "EB Garamond", serif;
+  font-size: 1.6em;
   background-color: #00060d; }
 
-body {
-  max-width: 192rem;
-  margin: 0 auto; }
-
-header {
+/* components.header
+============================================================================ */
+.header {
   background: url(../media/ocean_star_winter_1920x1080.jpg) no-repeat top center;
   min-height: 77rem;
   padding-top: 7rem;
-  font-size: 2em; }
+  font-size: 1.25em; }
   @media only screen and (max-width: 1450px) {
-    header {
+    .header {
       min-height: 70rem; } }
 
-.quote-outer {
+.header__intro__quote-wrapper {
   display: inline-block;
   float: left;
-  width: 60%; }
-
-.quote-inner {
-  width: 85%;
-  margin-left: auto;
+  width: 60%;
+  padding-left: 9%;
   font-size: 4.8em; }
   @media only screen and (max-width: 1450px) {
-    .quote-inner {
-      width: 89%;
+    .header__intro__quote-wrapper {
+      padding-left: 6.6%;
       font-size: 4.2em; } }
   @media only screen and (max-width: 1200px) {
-    .quote-inner {
-      width: 92%;
+    .header__intro__quote-wrapper {
+      padding-left: 4.8%;
       font-size: 3.8em; } }
   @media only screen and (max-width: 1050px) {
-    .quote-inner {
+    .header__intro__quote-wrapper {
       font-size: 3.6em; } }
   @media only screen and (max-width: 480px) {
-    .quote-inner {
+    .header__intro__quote-wrapper {
       font-size: 1.5em; } }
 
-.quote {
+.header__intro__quote {
   display: inline-block;
   text-align: left;
   font-family: "Dancing Script", cursive;
   color: #fafafa; }
 
-.quote--1 {
+.header__intro__quote--1 {
   text-indent: 0.6em; }
 
-.quote--2 {
+.header__intro__quote--2 {
   margin-top: 0.3em; }
 
-.quote--3 {
+.header__intro__quote--3 {
   margin-top: 1em;
   text-indent: 1.6em;
   color: white; }
 
-.intro-outer {
+.header__intro__msg-wrapper {
   float: left;
   width: 40%;
-  margin-top: 31.4rem; }
-
-.intro-inner {
-  width: 90%;
-  margin-right: auto;
-  text-align: left;
-  font-size: 2em;
-  padding-left: 2.3rem; }
+  margin-top: 31.4rem;
+  padding-right: 4%;
+  padding-left: 2.3rem;
+  font-size: 2em; }
   @media only screen and (max-width: 1450px) {
-    .intro-inner {
-      width: 94%;
-      font-size: 1.7em;
-      padding-left: 2rem; } }
+    .header__intro__msg-wrapper {
+      padding-right: 2.4%;
+      padding-left: 2rem;
+      font-size: 1.7em; } }
   @media only screen and (max-width: 1200px) {
-    .intro-inner {
+    .header__intro__msg-wrapper {
       font-size: 1.35em; } }
   @media only screen and (max-width: 1050px) {
-    .intro-inner {
+    .header__intro__msg-wrapper {
       font-size: 1.35em; } }
 
-.intro__text {
+.header__intro__msg {
   display: inline-block;
+  text-align: center;
   color: rgba(255, 255, 255, 0.8); }
 
-.intro__text--1 {
-  text-indent: 0.8em; }
-
-.intro__text--2 {
-  text-indent: 0.4em; }
-
-.cta {
+.header__cta {
   display: block;
   width: 30%;
   margin: 13rem auto 0;
@@ -230,20 +235,20 @@ header {
   background: linear-gradient(-90deg, #002233 0%, #003047 30%, #003047 70%, #002233 100%);
   -webkit-transition: all 0.3s ease-in-out;
           transition: all 0.3s ease-in-out; }
-  .cta:hover {
+  .header__cta:hover {
     border-top: 1px solid #0c2d3d;
-    text-shadow: 0 -1px 11px rgba(200, 200, 200, 0.5);
     -webkit-box-shadow: 0 0 7px rgba(2, 79, 117, 0.8);
             box-shadow: 0 0 7px rgba(2, 79, 117, 0.8);
-    color: #f0f0f0;
     background: -webkit-gradient(linear, left top, left bottom, from(#002233), to(#003047));
     background: -webkit-linear-gradient(#002233, #003047);
-    background: linear-gradient(#002233, #003047); }
+    background: linear-gradient(#002233, #003047);
+    text-shadow: 0 -1px 11px rgba(200, 200, 200, 0.5);
+    color: #f0f0f0; }
   @media only screen and (max-width: 1450px) {
-    .cta {
+    .header__cta {
       width: 32.5%;
       margin: 10rem auto 0; } }
   @media only screen and (max-width: 1200px) {
-    .cta {
+    .header__cta {
       width: 40%;
       font-size: 1.8em; } }

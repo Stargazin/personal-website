@@ -1,79 +1,67 @@
+{% extends 'blog/base_blog.html' %}
 {% load staticfiles %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="{% static 'css/blog_home.min.css' %}">
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,900|Oswald|Dancing+Script' rel='stylesheet' type='text/css'>
-  <title>Blog | 3 Steps Taken</title>
-</head>
-<body>
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/blog_home.min.css' %}">
+{% endblock css %}
 
 
-<nav><a class="home-btn" href="#">3 Steps Taken</a></nav>
+{% block nav %}
+<div class="header__scroll-container">
+  <a href="#section-1" class="header__scroll">1. Installing some software</a>
+  <a href="#section-2" class="header__scroll">2. Preparing the virtual machine</a>
+  <a href="#section-3" class="header__scroll">3. Configuring the vagrantfile</a>
+  <a href="#section-4" class="header__scroll">4. Getting familiar with the virtual machine</a>
+  <a href="#section-5" class="header__scroll">5. Working with Django and Vagrant</a>
+  <a href="#section-6" class="header__scroll">6. A few points to keep in mind</a>
+</div> <!-- .header__scroll-container -->
+{% endblock nav %}
 
-<header class="about">
-  <img class="about__pic" src="{% static 'media/poro_square.png' %}" alt="Self Pic" >
 
-  <div class="about__social-container">
-    <a href="" class="about__social about__social--twitter">
-      <img src="" alt="">
-    </a> <!-- a.about__social-twitter -->
-    <a href="" class="about__social about__social--github">
-      <img src="" alt="">
-    </a> <!-- a.about__social-github -->
-    <a href="" class="about__social about__social--linkedin">
-      <img src="" alt="">
-    </a> <!-- a.about__social-linkedin -->
-  </div> <!-- .about__social-container -->
-
-  <p class="about__description"></p>
-</header> <!-- header.about -->
-
+{% block content %}
 <main class="content">
-  <nav class="nav">
-    <a href="#" class="nav__link nav__link--life">Life</a>
-    <a href="#" class="nav__link nav__link--music">Music</a>
-    <a href="#" class="nav__link nav__link--web">Web</a>
+  <nav class="content__nav">
+    <a class="content__nav__link content__nav__link--life" href="#">Life</a>
+    <a class="content__nav__link content__nav__link--music" href="#">Music</a>
+    <a class="content__nav__link content__nav__link--web" href="#">Web</a>
   </nav> <!-- nav.content__nav-container -->
 
-  <div class="post-container">
-    <div class="post">
-      <h1 class="post__title">Vagrant Setup With VirtualBox</h1>
-      <h5 class="post__info">Post #1 || January 18th, 2016</h5>
-      <p class="post__summary"></p>
-    </div> <!-- .post -->
+  <div class="content__post-container">
+    <div class="content__post">
+      <h1 class="content__post__title">Vagrant Setup With VirtualBox</h1>
+      <h5 class="content__post__info">Post #1 || January 18th, 2016</h5>
+      <p class="content__post__summary"></p>
+    </div> <!-- .content__post -->
 
-    <div class="post">
-      <h1 class="post__title">Filler Second Post Title</h1>
-      <h5 class="post__info">Post #2 || January 19th, 2016</h5>
-      <p class="post__summary"></p>
-    </div> <!-- .post -->
+    <div class="content__post">
+      <h1 class="content__post__title">Filler Second Post Title</h1>
+      <h5 class="content__post__info">Post #2 || January 19th, 2016</h5>
+      <p class="content__post__summary"></p>
+    </div> <!-- .content__post -->
 
-    <div class="post">
-      <h1 class="post__title">Filler Third Post Title</h1>
-      <h5 class="post__info">Post #3 || January 20th, 2016</h5>
-      <p class="post__summary"></p>
-    </div> <!-- .post -->
+    <div class="content__post">
+      <h1 class="content__post__title">Filler Third Post Title</h1>
+      <h5 class="content__post__info">Post #3 || January 20th, 2016</h5>
+      <p class="content__post__summary"></p>
+    </div> <!-- .content__post -->
 
-    <div class="post">
-      <h1 class="post__title">Filler Fourth Post Title</h1>
-      <h5 class="post__info">Post #4 || January 21th, 2016</h5>
-      <p class="post__summary"></p>
-    </div> <!-- .post -->
+    <div class="content__post">
+      <h1 class="content__post__title">Filler Fourth Post Title</h1>
+      <h5 class="content__post__info">Post #4 || January 21th, 2016</h5>
+      <p class="content__post__summary"></p>
+    </div> <!-- .content__post -->
 
-    <div class="post">
-      <h1 class="post__title">Filler Fifth Post Title</h1>
-      <h5 class="post__info">Post #5 || January 22th, 2016</h5>
-      <p class="post__summary"></p>
-    </div> <!-- .post -->
-  </div> <!-- .post_container -->
+    <div class="content__post">
+      <h1 class="content__post__title">Filler Fifth Post Title</h1>
+      <h5 class="content__post__info">Post #5 || January 22th, 2016</h5>
+      <p class="content__post__summary"></p>
+    </div> <!-- .content__post -->
+  </div> <!-- .content__post_container -->
 </main> <!-- main.content -->
+{% endblock content %}
 
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<!--<script src="{% static 'js/main.js' %}"></script>-->
-</body>
-</html>
+{% block js %}
+<script src="{% static 'js/blog_home.js' %}"></script>
+{% endblock js %}
