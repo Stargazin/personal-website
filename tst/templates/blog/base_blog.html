@@ -1,9 +1,12 @@
 {% load staticfiles %}
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Blog Post | 3 Steps Taken</title>
+  {% block title %}
+  <title>3 Steps Taken</title>
+  {% endblock title %}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href='https://fonts.googleapis.com/css?family=Lato:400,900|Oswald|Dancing+Script' rel='stylesheet' type='text/css'>
@@ -11,32 +14,39 @@
 </head>
 <body>
 
-<header class="header-container">
-  <div class="header__home-wrapper"><a class="header__home" href="../">3 Steps Taken</a></div>
-  <img class="header__pic" src="{% static 'media/poro_square.png' %}" alt="Self Pic">
+<header class="header">
+  <div class="header__home-wrapper">
+    <a class="header__home" href="{% url 'blog_home' %}">3 Steps Taken</a>
+  </div> <!-- .header__home-wrapper -->
 
-  <a class="header__social header__social--twitter cf" href="https://twitter.com/stargazin3" target="_blank">
-    <span class="header__social__text">Follow!</span>
-    <img class="header__social__icon" src="{% static 'media/twitter.png' %}" alt="T">
-  </a> <!-- .header__social-twitter -->
-  <a class="header__social header__social--github cf" href="https://github.com/stargazin" target="_blank">
-    <span class="header__social__text">Browse!</span>
-    <img class="header__social__icon" src="{% static 'media/github.png' %}" alt="G">
-  </a> <!-- .header__social-github -->
-  <a class="header__social header__social--linkedin cf" href="https://www.linkedin.com/in/stargazin" target="_blank">
-    <span class="header__social__text">Connect!</span>
-    <img class="header__social__icon" src="{% static 'media/linkedin.png' %}" alt="L">
-  </a> <!-- .header__social-linkedin -->
+  <img class="header__pic" src="{% static 'media/self_picture.png' %}" alt="Self Pic">
+
+  <div class="header__social-container">
+    <a class="header__social header__social--twitter cf" href="https://twitter.com/stargazin3" target="_blank">
+      <span class="header__social__text">Follow!</span>
+      <img class="header__social__icon" src="{% static 'media/twitter.png' %}" alt="T">
+    </a> <!-- .header__social-twitter -->
+    <a class="header__social header__social--github cf" href="https://github.com/stargazin" target="_blank">
+      <span class="header__social__text">Browse!</span>
+      <img class="header__social__icon" src="{% static 'media/github.png' %}" alt="G">
+    </a> <!-- .header__social-github -->
+    <a class="header__social header__social--linkedin cf" href="https://www.linkedin.com/in/stargazin" target="_blank">
+      <span class="header__social__text">Connect!</span>
+      <img class="header__social__icon" src="{% static 'media/linkedin.png' %}" alt="L">
+    </a> <!-- .header__social-linkedin -->
+  </div> <!-- .header__social-container -->
 
   {% block nav %}{% endblock nav %}
+</header> <!-- header.header -->
 
-</header> <!-- header.header-container -->
-
-
+<main class="content-container">
 {% block content %}{% endblock content %}
+</main> <!-- .content-container -->
 
-
-<footer></footer>
+<footer class="footer">
+  <a href="/" class="footer__landing">&larr; Back to Landing</a>
+  <div class="footer__copyright">&copy; 3 Steps Taken</div>
+</footer> <!-- footer.footer -->
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 

@@ -1,14 +1,18 @@
 /* blog_home/objects.wrappers
 ============================================================================ */
 
-.header__home-wrapper {
-  margin-top: 2.5rem;
+.listing__header-wrapper {
+  margin-bottom: 6rem;
   text-align: center;
-  font-size: 2em;
+  font-size: 3em;
   font-family: $dancing-script;
 
+  @media #{$break-xl} {
+    font-size: 2.55em;
+  }
+
   @media #{$break-l} {
-    margin-top: 1.7rem;
+    font-size: 2.05em;
   }
 }
 

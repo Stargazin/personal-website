@@ -8,14 +8,14 @@
   margin: 1rem 0 1rem auto;
   padding: 0.5rem 1rem;
   text-align: center;
-  background: linear-gradient(rgb(40, 40, 40),
-    rgb(25, 25, 25));
+  background: linear-gradient(rgba(40, 40, 40, 0.7),
+    rgba(25, 25, 25, 0.7));
   color: rgb(225, 225, 225);
 
   &:after {
     content: '';
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     right: 0;
     top: 0;
     border-right: 1.6rem solid rgb(53, 53, 53);
@@ -26,7 +26,7 @@
   &:before {
     content: '';
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     right: 0;
     bottom: 0;
     border-bottom: 1.6rem solid rgb(54, 54, 54);
@@ -39,12 +39,16 @@
 
     .header__filter__link__fill {
       width: 100%;
+
+      @media #{$break-touch} {
+        width: 0;
+      }
     }
   }
 }
 
 .header__filter__link__text {
-  z-index: 1;
+  z-index: 2;
 }
 
 .header__filter__link__fill {
@@ -63,16 +67,22 @@
 }
 
 .header__filter__link__fill--life {
-  background: linear-gradient(rgb(255, 36, 0),
-    rgb(191, 27, 0));
+  // background: linear-gradient(rgb(255, 36, 0),
+  //   rgb(191, 27, 0));
+  background: linear-gradient(rgb(229, 32, 0),
+    rgb(171, 24, 0));
 }
 
 .header__filter__link__fill--music {
-  background: linear-gradient(rgb(127, 0, 181),
-    rgb(95, 0, 141));
+  // background: linear-gradient(rgb(127, 0, 181),
+  //   rgb(95, 0, 141));
+  background: linear-gradient(rgb(120, 0, 172),
+    rgb(90, 0, 134));
 }
 
 .header__filter__link__fill--web {
-  background: linear-gradient(rgb(0, 0, 242),
-    rgb(0, 0, 172));
+  // background: linear-gradient(rgb(0, 0, 242),
+  //   rgb(0, 0, 172));
+  background: linear-gradient(rgb(0, 0, 197),
+    rgb(0, 0, 140));
 }

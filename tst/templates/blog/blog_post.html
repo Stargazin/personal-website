@@ -9,50 +9,29 @@
 
 {% block nav %}
 <nav class="header__scroll-container">
-  <a href="#section-1" class="header__scroll">1. Installing some software</a>
-  <a href="#section-2" class="header__scroll">2. Preparing the virtual machine</a>
-  <a href="#section-3" class="header__scroll">3. Configuring the vagrantfile</a>
-  <a href="#section-4" class="header__scroll">4. Getting familiar with the virtual machine</a>
-  <a href="#section-5" class="header__scroll">5. Working with Django and Vagrant</a>
-  <a href="#section-6" class="header__scroll">6. A few points to keep in mind</a>
+{% for section in post.sections.all %}
+  <a href="#" class="header__scroll {{ section.number }}">{{ section.number }}. {{ section.heading }}</a>
+{% endfor %}
 </nav> <!-- .header__scroll-container -->
 {% endblock nav %}
 
 
 {% block content %}
-<main class="post-container">
   <div class="post">
 
-    <h1 class="post__title">Vagrant Setup With VirtualBox</h1>
-    <h5 class="post__info">Post #1 || January 18th, 2016</h5>
+    <h1 class="post__title">{{ post.title }}</h1>
+    <h5 class="post__info">Post #{{ post.number }} || {{ post.date }}</h5>
 
     <div class="post__breakdown">
-      <h2 class="post__breakdown__header">Breakdown and Quicklinks</h2>
+      <h2 class="post__breakdown__header">Quicklinks</h2>
 
+      {% for section in post.sections.all %}
       <p class="post__breakdown__short">
-        1. <a class="text-link" href="#section-1">Installing some software</a>
+        {{ section.number }}. <a class="text-link {{ section.number }}" href="#">{{ section.heading }}</a>
       </p> <!-- .post__breakdown__short -->
+      {% endfor %}
 
-      <p class="post__breakdown__short">
-        2. <a class="text-link" href="#section-2">Preparing the virtual machine</a>
-      </p> <!-- .post__breakdown__short -->
-
-      <p class="post__breakdown__short">
-        3. <a class="text-link" href="#section-3">Configuring the vagrantfile</a>
-      </p> <!-- .post__breakdown__short -->
-
-      <p class="post__breakdown__short">
-        4. <a class="text-link" href="#section-4">Getting familiar with the virtual machine</a>
-      </p> <!-- .post__breakdown__short -->
-
-      <p class="post__breakdown__short">
-        5. <a class="text-link" href="#section-5">Working with Django and Vagrant</a>
-      </p> <!-- .post__breakdown__short -->
-
-      <p class="post__breakdown__short">
-        6. <a class="text-link" href="#section-6">A few points to keep in mind</a>
-      </p> <!-- .post__breakdown__short -->
-    </div> <!-- .breakdown -->
+    </div> <!-- .post__breakdown -->
 
 <!--
     <div class="post__summary">
@@ -62,295 +41,16 @@
     </div>
 -->
 
-    <div class="post__section" id="section-1">
-<h2 class="post__section__header">1. Installing some software</h2>
-
-<p class="post__section__text">In this tutorial, we'll be using <a class="text-link" target="_blank" href="https://git-scm.com/downloads">Git Bash</a> for Windows and the terminal for Mac OS X and Linux.</p>
-
-<p class="post__section__text post__section__text--newbie">With Git Bash, system, user, and folder information is above the <code class="inline">$</code> command input line. To keep things simple, I will omit the extra information. If you are using OS X or Linux, you don't need to download anything, but note that you will see some combination of system, user, and file location like so: <code class="inline">System:~/Folder User$</code></p>
-
-<p class="post__section__text">Install <a class="text-link" target="_blank" href="http://vagrantup.com">Vagrant</a> and <a class="text-link" target="_blank" href="https://www.virtualbox.org">VirtualBox</a></p>
-
-<p class="post__section__text">Choose a <a class="text-link" target="_blank" href="https://vagrantcloud.com">Vagrant box</a>. We'll be using the hashicorp/precise32 box in this example.</p>
-
-<pre><code class="language-bash">
-$ vagrant box add hashicorp/precise32
-</code></pre>
-
-<p class="post__section__text">Now we can create our virtual machine!</p>
-
-<p class="post__section__text post__section__text--btw">We will refer to the virtual machine as the VM.</p>
+    {% for section in post.sections.all %}
+    <div class="post__section" id="section-{{ section.number }}">
+      <h2 class="post__section__header">{{ section.number }}. {{ section.heading }}</h2>
+      {{ section.content|safe }}
     </div> <!-- .post__section -->
+    {% endfor %}
 
-
-    <div class="post__section" id="section-2">
-<h2 class="post__section__header">2. Preparing the virtual machine</h2>
-
-<p class="post__section__text">Make a folder for our VM.</p>
-
-<pre><code class="language-bash">
-$ mkdir practice_folder
-$ cd practice_folder
-</code></pre>
-
-<p class="post__section__text post__section__text--newbie">This folder can be located anywhere, but make sure you keep track of which folder we're currently in using the <code class="inline">pwd</code> command.</p>
-
-<p class="post__section__text">Run the following command to create a VM in our new folder.</p>
-
-<pre><code class="language-bash">
-#run only once to create our VM; a vagrantfile is also be created
-$ vagrant init hashicorp/precise32
-#check that the vagrantfile was created
-$ ls
-</code></pre>
-
-<p class="post__section__text">Let's make sure our VM works!</p>
-
-<pre><code class="language-bash">
-$ vagrant up
-$ vagrant ssh
-</code></pre>
-
-<p class="post__section__text post__section__text--btw">If Vagrant is uncooperative, try giving it administrative privileges by going to the VirtualBox application in your Program Files. Right click the applications, go to properties, go under the Security tab, and change permissions by clicking Edit. Also click "Yes" if anything pops up asking for permission when running the VM!<br><br>If that doesn't work, try setting the compatibility of VirtualBox to Windows 7. Again, go to the properties of the VirtualBox application. Under the Compatibility tab, check the box that says "Run this program in compatibility mode for:" and select Windows 7.<br><br>I'm using Windows 8.1 and setting the compatibility mode solved the problems I had!</p>
-
-<p class="post__section__text">Now that we're inside our VM, you should see the following:</p>
-
-<pre><code class="language-bash">
-vagrant@precise32:~$
-</code></pre>
-
-<p class="post__section__text">Let's go ahead and get the newest software and security packages before we make some configuration changes to our vagrantfile</p>
-
-<pre><code class="language-bash">
-#download newest packages
-vagrant@precise32:~$ sudo apt-get update
-#upgrade packages to the newest version
-vagrant@precise32:~$ sudo apt-get upgrade
-</code></pre>
-
-<p class="post__section__text">Run the following command to get out of our VM and back to our machine!</p>
-
-<pre><code class="language-bash">
-vagrant@precise32:~$ exit
-</code></pre>
-    </div> <!-- .post__section -->
-
-
-    <div class="post__section" id="section-3">
-<h2 class="post__section__header">3. Configuring the vagrantfile</h2>
-
-<p class="post__section__text">Open up the vagrantfile for editting, and look for this block.</p>
-
-<pre><code class="language-bash">
-# Create a private network, which allows host-only access to the machine
-# using a specific IP.
-# config.vm.network "private_network", ip: "192.168.33.10"
-</code></pre>
-
-<p class="post__section__text">Uncomment the last line in that block. This lets us connect to our development environment later using the IP address in that line.</p>
-
-<pre><code class="language-bash">
-# Create a private network, which allows host-only access to the machine
-# using a specific IP.
- config.vm.network "private_network", ip: "33.33.33.33"
-</code></pre>
-
-<p class="post__section__text post__section__text--btw">Feel free to change the IP address to something easy to remember like 33.33.33.33 !</p>
-
-<p class="post__section__text">I also recommend uncommenting the last line of the block prior to the one above and making the changes shown below.</p>
-
-<pre><code class="language-bash">
-# Create a forwarded port mapping which allows access to a specific port
-# within the machine from a port on the host machine. In the example below,
-# accessing "localhost:8080" will access port 80 on the guest machine.
- config.vm.network "forwarded_port", guest: 8080, host: 8080
-</code></pre>
-
-<p class="post__section__text post__section__text--btw">I couldn't connect to the VM server through the guest machine (our machine) unless the guest and host ports specified above were the same. Try this if you have trouble connecting to the development server later!</p>
-
-<p class="post__section__text">We'll want to reload the VM whenever we make changes to the vagrantfile, but you don't need to run the following command if the VM is powered off when editting the vagrantfile!</p>
-
-<pre><code class="language-bash">
-$ vagrant reload
-</code></pre>
-    </div> <!-- .post__section -->
-
-
-    <div class="post__section" id="section-4">
-<h2 class="post__section__header">4. Getting familiar with the virtual machine</h2>
-
-<p class="post__section__text">At this point we've pretty much set up everything we need to start working in our Vagrant VM! In the next section, we'll install some packages for working with Django/Python, but first let's see how we'll be working with Vagrant.</p>
-
-<p class="post__section__text">The Vagrant VM works by syncing a folder with a folder on our machine. By default, the folder on our machine is where the vagrantfile is located, and the folder on the VM is also where the vagrantfile is located. This means our vagrantfile is our first file synced between our virtual and own machines. Let's check it out!</p>
-
-<pre><code class="language-bash">
-$ vagrant ssh
-
-#you should see this
-vagrant@precise32:~$
-
-#change to the /vagrant folder
-vagrant@precise32:~$ cd /vagrant
-#check for the vagrantfile
-vagrant@precise32:/vagrant$ ls
-</code></pre>
-
-
-<p class="post__section__text">Open up the vagrantfile with a text editor such as nano (pre-installed).</p>
-
-<pre><code class="language-bash">
-vagrant@precise32:/vagrant$ nano vagrantfile
-</code></pre>
-
-<p class="post__section__text post__section__text--newbie">Navigate with your arrow keys to look around the file. Press Ctrl + x if you want to close the file.</p>
-
-<p class="post__section__text">The contents of the vagrantfile in the VM is exactly the same as in our machine. Any changes we make to the vagrantfile from either location will result in a synced up vagrantfile! Let's see what happens when we create a file or a folder.</p>
-
-<pre><code class="language-bash">
-vagrant@precise32:/vagrant$ mkdir test_folder
-#test_folder is in our VM
-vagrant@precise32:/vagrant$ ls
-vagrant@precise32:/vagrant$ exit
-
-#test_folder is also in our machine!
-$ ls
-$ rmdir test_folder
-#now test_folder is gone
-$ ls
-$ vagrant ssh
-
-vagrant@precise32:~$ cd /vagrant
-#test_folder is gone on the VM too!
-vagrant@precise32:/vagrant$ ls
-</code></pre>
-
-<p class="post__section__text">As we saw in the above examples, changes we make to our files on our machine, the changes will be synced with the VM (and vice versa). We'll be using our VM as the host server for development. Vagrant is great for this because development environments can have very different dependencies. With a VM for each project, we will have exactly what we need for each project's development, and no conflicts between projects to boot!</p>
-    </div> <!-- .post__section -->
-
-
-    <div class="post__section" id="section-5">
-<h2 class="post__section__header">5. Working with Django and Vagrant</h2>
-
-<p class="post__section__text">Now that we know how we'll be working with the VM, let's get it set up so we can actually start working with it. We'll go ahead and get a virtual environment set up as well as install some packages you'll need to work with Django. If you aren't still in your VM, <code class="inline">vagrant ssh</code> back in.</p>
-
-<p class="post__section__text post__section__text--newbie">The concept behind a the virtual environment is actually very similar to the VM's. Essentially, we can install packages onto a virtual environment and not have it affect the VM. If we're only using the VM for one project, you can argue that we don't need the virtual environment, but it's good practice to use it. Plus there are some cool things we can do with it (more on this in a future post)!</p>
-
-<pre><code class="language-bash">
-vagrant@precise32:~$ sudo apt-get install python-pip
-
-vagrant@precise32:~$ sudo pip install virtualenv
-#the wrapper makes working with virtualenv easier
-vagrant@precise32:~$ sudo pip install virtualenvwrapper
-
-#show all content (including hidden with the -a flag)
-vagrant@precise32:~$ ls -a
-vagrant@precise32:~$ nano ~/.bashrc
-
-#scroll down and add these following lines to the .bashrc file
-#virtualenv
-export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
-</code></pre>
-
-<p class="post__section__text">These lines tell our system where our virtual environments should be located and where the virtual environment script (which we installed earlier) is located. After making changes to our shell startup file, we'll need to reload the file so our changes take effect.</p>
-
-<pre><code class="language-bash">
-vagrant@precise32:~$ source ~/.bashrc
-</code></pre>
-
-<p class="post__section__text">We now have access to the virtual environment commands, so let's make our virtual environment and play around with it!</p>
-
-<pre><code class="language-bash">
-vagrant@precise32:~$ mkvirtualenv practice
-
-#notice how we are on on the virtualenv (practice)
-(practice)vagrant@precise32:~$ deactivate
-vagrant@precise32:~$ workon practice
-
-#show a list of our virtualenvs
-(practice)vagrant@precise32:~$ lsvirtualenv
-
-#deactivate and remove our virtualenv
-(practice)vagrant@precise32:~$ deactivate
-vagrant@precise32:~$ rmvirtualenv practice
-
-vagrant@precise32:~$ mkvirtualenv play
-(play)vagrant@precise32:~$
-</code></pre>
-
-<p class="post__section__text">Notice how when we make a virtual environment, setuptools, pip, and wheel are installed to that environment. Take a look (make sure you're working on the virtual environment!).</p>
-
-<pre><code class="language-bash">
-(play)vagrant@precise32:~$ pip list
-</code></pre>
-
-<p class="post__section__text">This list of packages will grow as we install more to our virtual environment. Let's install some more packages to get our development environment ready for development!</p>
-
-<pre><code class="language-bash">
-#separate multiple packages with a space
-
-(play)vagrant@precise32:~$ sudo apt-get install python-dev libpq-dev 
-postgresql postgresql-contrib libjpeg-dev
-
-(play)vagrant@precise32:~$ pip install django psycopg2 Pillow
-
-#check out our new python packages
-(play)vagrant@precise32:~$ pip list
-</code></pre>
-
-<p class="post__section__text post__section__text--newbie">Note that because we are using pip (Python package manager) install while working on our virtual environment, the packages we install will only be useable while working on that virtual environment. If we deactivated our virtual environment and then installed a package with pip, that package would be available globally -- we will have access to that package with or without our virtual environment. Using apt-get will install packages globally, so we don't even have to be working on our virtual environment.</p>
-
-<p class="post__section__text post__section__text--btw">I enjoy using postgreSQL for my database, but feel free to play around with other databases!</p>
-
-<p class="post__section__text">We're almost there. To finish up, let's start a django project so we can start developing (make sure you are on your virtual environment where django is installed)!</p>
-
-<pre><code class="language-bash">
-#change to the synced folder
-(play)vagrant@precise32:~$ cd /vagrant
-(play)vagrant@precise32:/vagrant$ django-admin.py startproject blog
-</code></pre>
-
-<p class="post__section__text">Now we have our project made and the packages needed to start developing. Happy coding!</p>
-    </div> <!-- .post__section -->
-
-
-    <div class="post__section" id="section-6">
-<h2 class="post__section__header">6. A few points to keep in mind</h2>
-
-<p class="post__section__text">Remember to power off your VM when you are finished.</p>
-
-<pre><code class="language-bash">
-vagrant@precise32:~$ exit
-$ vagrant halt
-</code></pre>
-
-<p class="post__section__text post__section__text--btw">I've had problems with my VM getting corrupted or something along those lines. I don't know the exact cause, but I believe it happens when I forget to power off my VM. If this happens to you, don't worry! It's much easier to set up a second time because you won't need to install software and configure the vagrantfile.</p>
-
-<p class="post__section__text">To remove a VM (whether you don't need it anymore or it's corrupted), use the following command</p>
-
-<pre><code class="language-bash">
-$ vagrant destroy
-</code></pre>
-
-<p class="post__section__text post__section__text--newbie">You can also do this manually using the Oracle VM VirtualBox application.</p>
-
-<p class="post__section__text">If you are new to Unix shells, it can be a little intimidating navigating using commands. Here's a helpful command to keep track of where you are in the VM.</p>
-
-<pre><code class="language-bash">
-#pwd = print working directory (current folder)
-vagrant@precise32:~$ pwd
-vagrant@precise32:~$ cd /vagrant
-vagrant@precise32:/vagrant$ pwd
-</code></pre>
-
-<p class="post__section__text post__section__text--newbie">Notice how your two results are <code class="inline">/home/vagrant</code> and <code class="inline">/vagrant</code>. These are entirely different folders!</p>
-    </div> <!-- .post__section -->
-
-
-  <img class="post__to-top" id="to-top" src="{% static 'media/to_top.png' %}" alt="Top">
+    <img class="post__to-top" id="to-top" src="{% static 'media/to_top.png' %}" alt="Top">
 
   </div> <!-- .post -->
-</main> <!-- .post-container -->
 {% endblock content %}
 
 

@@ -14,13 +14,16 @@
 @import '../blog/base.scrollbar';
 @import '../blog/base.page';
 
+@import '../blog/objects.containers';
+@import '../blog/objects.wrappers';
 @import 'objects.containers';
 @import 'objects.wrappers';
 
 @import '../blog/components.header';
-@import 'components.header-filters';
+@import 'components.header-filter';
 @import 'components.listing';
 @import '../blog/components.footer';
 
 
-@import '../blog/trumps.js-header';
+@import '../blog/trumps.js-classes-header';
+@import 'trumps.js-classes';

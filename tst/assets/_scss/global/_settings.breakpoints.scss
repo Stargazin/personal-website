@@ -20,5 +20,6 @@ $break-m: "only screen and (max-width: 768px)"; //vertipad
 $break-s: "only screen and (max-width: 480px)"; //iphone 6
 
 // /* Affects Devices Only */
+$break-touch: "only screen and (max-device-width: 1450px)";
 $break-tablet: "only screen and (max-device-width: 768px)";
 $break-phone: "only screen and (max-device-width: 480px)";

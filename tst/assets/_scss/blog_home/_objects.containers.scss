@@ -1,29 +1,6 @@
 /* blog_home/objects.containers
 ============================================================================ */
 
-.header-container {
-  position: fixed;
-  left: 0;
-  width: 26rem;
-  height: 100vh; // use js to make this 100% of window
-  background: url(../media/blog_sidebg.png);
-  border-right: 1px solid rgb(230, 230, 230);
-
-  @media #{$break-xl} {
-    width: 22rem;
-  }
-
-  @media #{$break-l} {
-    width: 20rem;
-    font-size: 0.9em;
-  }
-
-  @media #{$break-m} {
-    width: 18rem;
-    font-size: 0.85em;
-  }
-}
-
 .header__filter-container {
   width: 85%;
   margin: 5rem auto;
@@ -41,25 +18,9 @@
     width: 95%;
     margin: 3.5rem auto;
   }
-}
 
-.listing-container {
-  margin-left: 26rem;
-  padding: 0 2.5rem;
-  background-color: rgb(240, 240, 240);
-  min-height: 100vh;
-
-  @media #{$break-xl} {
-    margin-left: 22rem;
-    padding: 0;
-    background-color: white;
-  }
-
-  @media #{$break-l} {
-    margin-left: 20rem;
-  }
-
-  @media #{$break-m} {
-    margin-left: 18rem;
+  @media #{$break-s} {
+    margin: 0 auto 2.5rem auto;
+    width: 80%;
   }
 }

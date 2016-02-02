@@ -1,0 +1,52 @@
+/* blog_home/js-classes
+============================================================================ */
+
+.current-category {
+
+  & .header__filter__link__fill {
+    width: 100% !important;
+  }
+
+  & .header__filter__link__text {
+    color: white !important;
+  }
+}
+
+.listing__header {
+
+  &.all:before, &.all:after {
+    background: linear-gradient(to right,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.9) 40%,
+      rgba(0, 0, 0, 0.7) 80%,
+      rgba(0, 0, 0, 0.45) 90%,
+      rgba(0, 0, 0, 0.2) 100%);
+  }
+
+  &.life:before, &.life:after {
+    background: linear-gradient(to right,
+      rgba(188, 26, 0, 1) 0%,
+      rgba(188, 26, 0, 0.9) 40%,
+      rgba(188, 26, 0, 0.7) 80%,
+      rgba(188, 26, 0, 0.45) 90%,
+      rgba(188, 26, 0, 0.2) 100%);
+  }
+
+  &.music:before, &.music:after {
+    background: linear-gradient(to right,
+      rgba(120, 0, 172, 1) 0%,
+      rgba(120, 0, 172, 0.9) 40%,
+      rgba(120, 0, 172, 0.7) 80%,
+      rgba(120, 0, 172, 0.45) 90%,
+      rgba(120, 0, 172, 0.2) 100%);
+  }
+
+  &.web:before, &.web:after, {
+    background: linear-gradient(to right,
+      rgba(0, 0, 197, 1) 0%,
+      rgba(0, 0, 197, 0.9) 40%,
+      rgba(0, 0, 197, 0.7) 80%,
+      rgba(0, 0, 197, 0.45) 90%,
+      rgba(0, 0, 197, 0.2) 100%);
+  }
+}

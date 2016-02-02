@@ -28,7 +28,8 @@ html {
   /* 1 */
   -webkit-text-size-adjust: 100%;
   /* 1 */
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  height: 100%; }
 
 /*
  * Inherit to prevent messing with other libraries
@@ -118,6 +119,9 @@ button, select {
 
 /* Custom
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+body {
+  height: 100%; }
+
 ul {
   list-style: none; }
 
