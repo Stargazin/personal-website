@@ -2,6 +2,11 @@
 {% load staticfiles %}
 
 
+{% block title %}
+<title>{{ post.title }} | 3 Steps Taken</title>
+{% endblock title %}
+
+
 {% block css %}
 <link rel="stylesheet" href="{% static 'css/blog_post.min.css' %}">
 {% endblock css %}
@@ -33,13 +38,10 @@
 
     </div> <!-- .post__breakdown -->
 
-<!--
     <div class="post__summary">
-<h2 class="post__summary__header">Taking the first step</h2>
-
-<p class="post__section__text">This is a temporary filler summary for the post Vagrant Setup With VirtualBox. This summary will later be expanded once I finish setting up the js for scrolling. I just need to fill this with something that takes up vertical height and looks like a temporary summary. Cheers</p>
-    </div>
--->
+      <h2 class="post__summary__header">0. Taking the first step</h2>
+      <p class="post__summary__section">{{ post.summary }}</p>
+    </div> <!-- .post__summary -->
 
     {% for section in post.sections.all %}
     <div class="post__section" id="section-{{ section.number }}">

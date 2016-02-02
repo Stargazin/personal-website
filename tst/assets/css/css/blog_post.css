@@ -470,6 +470,14 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.1em;
     background-color: #dedede; }
 
+.post__summary {
+  margin-top: 2.5rem;
+  margin-bottom: 4rem; }
+
+.post__summary__section {
+  margin: 1.8rem 0;
+  line-height: 1.35; }
+
 .post__section__header {
   margin-bottom: 2.2rem;
   padding-top: 2rem;

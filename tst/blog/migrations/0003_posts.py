@@ -18,7 +18,7 @@ def load_posts(apps, schema_editor):
 		title='Vagrant Setup With VirtualBox',
 		number='1',
 		date='January 29th, 2016',
-		summary='This is a temporary filler summary for the post Vagrant Setup With VirtualBox. This summary will later be expanded once I finish setting up the js for scrolling. I just need to fill this with something that takes up vertical height and looks like a temporary summary.')
+		summary='Vagrant is a great tool for keeping our projects separate and happy. We can spin up as many different development environments as we need, and simply destroy them when we are done with them! In this post, we\'ll get Vagrant up and running with VirtualBox, and then take a look at how the virtual machine interacts with our own machine. Lastly, we\'ll finish off by setting up our virtual machine for development with Django.')
 	vagrantSetup.save()
 
 	vagrantSetup1 = Section(post=vagrantSetup,
