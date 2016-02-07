@@ -2,9 +2,9 @@
 ============================================================================ */
 
 .header {
-  background: url(../media/ocean_star_winter_1920x1080.jpg) no-repeat top center;
   min-height: 77rem;
   padding-top: 7rem;
+  background: url(../media/ocean_star_winter_1920x1080.jpg) no-repeat top center;
   font-size: 1.25em;
 
   @media #{$break-xxl} {
@@ -12,8 +12,8 @@
   }
 
   @media #{$break-l} {
-    padding-top: 7rem;
     min-height: 88rem;
+    padding-top: 7rem;
   }
 
   @media #{$break-m} {
@@ -21,8 +21,8 @@
   }
 
   @media #{$break-s} {
-    padding-top: 3rem;
     min-height: 67rem;
+    padding-top: 3rem;
   }
 }
 
@@ -50,11 +50,11 @@
   @media #{$break-l} {
     width: 100%;
     float: none;
-    font-size: 4em;
-    letter-spacing: 5px;
-    text-align: center;
-    padding-left: 0;
     padding-right: 0.6em;
+    padding-left: 0;
+    text-align: center;
+    letter-spacing: 5px;
+    font-size: 4em;
   }
 
   @media #{$break-m} {
@@ -123,11 +123,11 @@
   }
 
   @media #{$break-l} {
-    text-align: center;
     width: 100%;
     margin-top: 14rem;
-    font-size: 1.45em;
+    text-align: center;
     letter-spacing: 0.5px;
+    font-size: 1.45em;
   }
 
   @media #{$break-m} {
@@ -157,23 +157,23 @@
   border-top: 1px solid rgb(25, 56, 71);
   border-radius: 5px;
   padding: 1rem 0;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 7px rgba(0, 62, 92, 0.8);
   text-align: center;
+  text-shadow: 0 -1px 6px rgba(200, 200, 200, 0.5);
   font-size: 2em;
   font-family: $dancing-script;
   color: rgb(230, 230, 230);
-  text-shadow: 0 -1px 6px rgba(200, 200, 200, 0.5);
-  box-shadow: 0 0 7px rgba(0, 62, 92, 0.8);
   background: linear-gradient(-90deg,
     rgb(0, 34, 51) 0%, rgb(0, 48, 71) 30%,
     rgb(0, 48, 71) 70%, rgb(0, 34, 51) 100%);
-  transition: all 0.3s ease-in-out;
 
   &:hover {
     border-top: 1px solid rgb(12, 45, 61);
     box-shadow: 0 0 7px rgba(2, 79, 117, 0.8);
+    text-shadow: 0 -1px 11px rgba(200, 200, 200, 0.5);
     background: linear-gradient(rgb(0, 34, 51),
       rgb(0, 48, 71));
-    text-shadow: 0 -1px 11px rgba(200, 200, 200, 0.5);
     color: rgb(240, 240, 240);
   }
 

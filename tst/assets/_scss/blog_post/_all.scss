@@ -11,7 +11,6 @@
 @import '../global/generic.normalize-resets';
 
 
-@import '../blog/base.scrollbar';
 @import '../blog/base.page';
 
 @import '../blog/objects.containers';
@@ -24,6 +23,5 @@
 @import 'components.code';
 @import '../blog/components.footer';
 
-@import 'trumps.static';
-@import '../blog/trumps.js-classes-header';
-@import 'trumps.js-classes';
+@import '../blog/trumps.social-btns';
+@import 'trumps.all';

@@ -2,33 +2,34 @@
 ============================================================================ */
 
 .content-container {
-  min-height: 100%;
-  margin-bottom: -3.5rem;
-  margin-left: 26rem;
-  padding: 0 2.5rem 2.5rem 2.5rem;
-  background-color: rgb(240, 240, 240);
+  max-width: 96rem;
+  margin: 0 auto;
+  border: 1px solid rgb(225, 225, 225);
+  border-top: 0;
+  padding: 3rem 10rem;
+  background-color: white;
+  letter-spacing: 0.4px;
+
+  @media #{$break-xxl} {
+    max-width: 88rem;
+    padding: 3rem 6rem;
+  }
 
   @media #{$break-xl} {
-    margin-left: 22rem;
-    padding: 0;
-    background-color: white;
+    max-width: 82rem;
+    border: none;
+    padding: 3rem;
   }
 
   @media #{$break-l} {
-    margin-left: 20rem;
+    padding: 3rem 2rem;
   }
 
   @media #{$break-m} {
-    margin-left: 18rem;
+    font-size: 0.95em;
   }
 
   @media #{$break-s} {
-    margin-left: 0;
-  }
-
-  &:after {
-    content: '';
-    display: block;
-    height: 3.5rem;
+    padding: 2rem;
   }
 }

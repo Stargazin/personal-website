@@ -1,25 +1,26 @@
-// /* global/settings.breakpoints
-// ========================================================================= */
+// global/settings.breakpoints
+//========================================================================== */
 
-// /* Very Large Devices, Wide Screens */
+// Very Large Devices, Wide Screens
 $break-xxl: "only screen and (max-width: 1450px)";
 
-// /* Large Devices, Wide Screens */
+// Large Devices, Wide Screens
 $break-xl: "only screen and (max-width: 1200px)"; //horipad
 
-// /* Special case for .hero in index.html */
+// Special case for .hero in index.html
 $break-vl: "only screen and (max-width: 1050px)";
 
-// /* Medium Devices, Desktops */
+// Medium Devices, Desktops
 $break-l: "only screen and (max-width: 992px)";
 
-// /* Small Devices, Tablets */
+// Small Devices, Tablets
 $break-m: "only screen and (max-width: 768px)"; //vertipad
 
-// /* Extra Small Devices, Phones */ 
+// Extra Small Devices, Phones 
 $break-s: "only screen and (max-width: 480px)"; //iphone 6
 
-// /* Affects Devices Only */
+
+// Affects Devices Only
 $break-touch: "only screen and (max-device-width: 1450px)";
 $break-tablet: "only screen and (max-device-width: 768px)";
 $break-phone: "only screen and (max-device-width: 480px)";

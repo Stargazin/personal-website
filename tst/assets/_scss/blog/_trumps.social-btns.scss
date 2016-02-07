@@ -1,0 +1,33 @@
+/* blog/trumps.social-btns
+============================================================================ */
+
+.header__social.hovered {
+  color: white;
+
+  &.header__social--twitter {
+    border: 1px solid rgb(59, 107, 171);
+    border-top: 0;
+    border-left: 0;
+    background: linear-gradient(
+      rgb(76, 155, 214),
+      rgb(66, 121, 193));
+  }
+
+  &.header__social--github {
+    border: 1px solid black;
+    border-top: 0;
+    border-left: 0;
+    background: linear-gradient(
+      rgba(25, 25, 25, 0.95),
+      rgba(0, 0, 0, 0.95));
+  }
+
+  &.header__social--linkedin {
+    border: 1px solid rgb(11, 72, 106);
+    border-top: 0;
+    border-left: 0;
+    background: linear-gradient(
+      rgb(24, 121, 169),
+      rgb(13, 80, 117));
+  }
+}

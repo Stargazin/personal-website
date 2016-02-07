@@ -1,18 +1,19 @@
 var highlightSocialBtns = (function() {
 
   //*cache DOM
-  var $headerSocial = $('.header__social');
+  var $socialBtn = $('.header__social');
 
   //*bind events
-  $headerSocial.hover(_showSocial, _hideSocial);
-  $headerSocial.on('click', _hideSocial);
+  $socialBtn.hover(_addEffect, _rmvEffect);
+  $socialBtn.on('click', _rmvEffect);
 
-  function _showSocial() {
-    $(this).addClass('social-show');
+
+  function _addEffect() {
+    $(this).addClass('hovered');
   }
 
-  function _hideSocial() {
-    $(this).removeClass('social-show');
+  function _rmvEffect() {
+    $(this).removeClass('hovered');
   }
 
 })();
@@ -29,6 +30,7 @@ var filters = (function() {
 
   //*bind events
   $headerFilter.on('click', _filterListing);
+
 
   function _filterListing(e) {
     e.preventDefault();

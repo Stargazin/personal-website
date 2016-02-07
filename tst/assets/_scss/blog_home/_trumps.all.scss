@@ -1,16 +1,32 @@
-/* blog_home/js-classes
+/* blog_home/trumps.all
 ============================================================================ */
 
-.current-category {
+.header__filter__link {
 
-  & .header__filter__link__fill {
-    width: 100% !important;
+  &:hover {
+    color: white;
+
+    .header__filter__link__fill {
+      width: 100%;
+
+      @media #{$break-touch} {
+        width: 0;
+      }
+    }
   }
 
-  & .header__filter__link__text {
-    color: white !important;
+  &.current-category {
+
+    & .header__filter__link__fill {
+      width: 100% !important;
+    }
+
+    & .header__filter__link__text {
+      color: white !important;
+    }
   }
 }
+
 
 .listing__header {
 

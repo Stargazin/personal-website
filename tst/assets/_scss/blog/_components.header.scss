@@ -1,4 +1,4 @@
-/* blog/components.sidebar
+/* blog/components.header
 ============================================================================ */
 
 .header {
@@ -6,9 +6,9 @@
   left: 0;
   width: 26rem;
   height: 100vh;
-  background: url(../media/blog_sidebg.png);
   border-right: 1px solid rgb(230, 230, 230);
   overflow-y: auto;
+  background: url(../media/blog_sidebg.png);
 
   @media #{$break-xl} {
     width: 22rem;
@@ -54,11 +54,6 @@
     letter-spacing: 2px;
     font-size: 1.2em;
   }
-
-  &:hover {
-    text-shadow: 0 0 4px white;
-    color: white;
-  }
 }
 
 .header__pic {
@@ -84,22 +79,21 @@
 
   @media #{$break-s} {
     display: inline-block;
-    min-width: 45%;
     float: right;
+    min-width: 45%;
     margin-right: 2.5rem;
     margin-top: 2rem;
   }
 }
-
 
 .header__social {
   display: block;
   position: relative;
   width: 75%;
   margin: 0.5rem auto;
-  border-right: 1px solid;
-  border-bottom: 1px solid;
-  border-color: rgb(39, 39, 39);
+  border: 1px solid rgb(39, 39, 39);
+  border-top: 0;
+  border-left: 0;
   border-radius: 3px;
   padding: 0.3rem 0;
   text-align: center;

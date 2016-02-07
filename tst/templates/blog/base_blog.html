@@ -1,22 +1,14 @@
+{% extends 'base.html' %}
 {% load staticfiles %}
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  {% block title %}
-  <title>3 Steps Taken</title>
-  {% endblock title %}
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,900|Oswald|Dancing+Script' rel='stylesheet' type='text/css'>
-  {% block css %}{% endblock css %}
-</head>
-<body>
-
+{% block body %}
 <header class="header">
+
   <div class="header__home-wrapper">
+    {% block home %}
     <a class="header__home" href="{% url 'blog_home' %}">3 Steps Taken</a>
+    {% endblock home %}
   </div> <!-- .header__home-wrapper -->
 
   <img class="header__pic" src="{% static 'media/self_picture.png' %}" alt="Self Pic">
@@ -37,20 +29,15 @@
   </div> <!-- .header__social-container -->
 
   {% block nav %}{% endblock nav %}
+
 </header> <!-- header.header -->
 
-<main class="content-container">
+<main class="content-wrapper">
 {% block content %}{% endblock content %}
-</main> <!-- .content-container -->
+</main> <!-- .content-wrapper -->
 
 <footer class="footer">
   <a href="/" class="footer__landing">&larr; Back to Landing</a>
   <div class="footer__copyright">&copy; 3 Steps Taken</div>
 </footer> <!-- footer.footer -->
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
-{% block js %}{% endblock js %}
-
-</body>
-</html>
+{% endblock body %}

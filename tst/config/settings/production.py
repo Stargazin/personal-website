@@ -16,12 +16,10 @@ DATABASES = {
 	}
 }
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['.3stepstaken.com']
 
 #static_root is where collectstatic pulls everything
 STATIC_ROOT = BASE_DIR.parent.child("staticfiles")
-
-INSTALLED_APPS += ()
 
 
 # SECURE_CONTENT_TYPE_NOSNIFF = True

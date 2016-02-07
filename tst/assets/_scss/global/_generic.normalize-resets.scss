@@ -79,17 +79,6 @@ img {
   border: 0;
 }
 
-/* Grouping content
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/*
- * Address differences between Firefox and other browsers.
- */
-hr {
-  box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  height: 0;
-}
-
 /* Forms
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /*
@@ -97,7 +86,7 @@ hr {
  *    Known issue: affects color of disabled elements.
  * 2. Correct font properties not being inherited. 
  */
-button, input, select, textarea {
+button, input, select {
   color: inherit; /* 1 */
   font: inherit; /* 2 */
 }

@@ -1,0 +1,47 @@
+/* blog_post/trumps.all
+============================================================================ */
+
+.header__home.hovered {
+  text-shadow: 0 0 4px white !important;
+  color: white !important;
+}
+
+.header__scroll.current-section {
+  color: white !important;
+}
+
+.text-link.hovered {
+  border-bottom: 1px dashed rgb(0, 0, 0) !important;
+}
+
+#to-top {
+  display: none;
+  position: fixed;
+  right: 3%;
+  bottom: 3.7rem;
+  margin: 0;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  border-color: rgb(35, 35, 35);
+  border-radius: 7px;
+  opacity: 0.25;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  z-index: 10;
+  
+  &.hovered {
+    opacity: 1;
+    border-color: rgb(37, 37, 37);
+  }
+}
+
+.text-link {
+  border-bottom: 1px dashed rgb(150, 150, 150) !important;
+}
+
+.inline {
+  padding: 0.1rem 0.2rem 0 0.2rem !important;
+  font-size: 1.1em !important;
+  background-color: rgb(222, 222, 222) !important;
+}

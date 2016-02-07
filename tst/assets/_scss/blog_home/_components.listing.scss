@@ -1,38 +1,6 @@
 /* blog_home/components.listing
 ============================================================================ */
 
-.listing {
-  max-width: 96rem;
-  margin: 0 auto;
-  border: 0 1px 1px 1px solid rgb(225, 225, 225);
-  padding: 3rem 10rem;
-  background-color: white;
-  letter-spacing: 0.4px;
-
-  @media #{$break-xxl} {
-    max-width: 88rem;
-    padding: 3rem 6rem;
-  }
-
-  @media #{$break-xl} {
-    max-width: 82rem;
-    border: none;
-    padding: 3rem;
-  }
-
-  @media #{$break-l} {
-    padding: 3rem 2rem;
-  }
-
-  @media #{$break-m} {
-    font-size: 0.95em;
-  }
-
-  @media #{$break-s} {
-    padding: 2rem;
-  }
-}
-
 .listing__header {
   display: inline-block;
 
@@ -86,7 +54,6 @@
 .listing__post__summary {
   margin-top: 1.5rem;
 }
-
 
 
 .listing__temporary {

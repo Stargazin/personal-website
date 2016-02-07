@@ -2,61 +2,57 @@
 {% load staticfiles %}
 
 
-{% block title %}
-<title>{{ post.title }} | 3 Steps Taken</title>
-{% endblock title %}
-
-
-{% block css %}
+{% block head %}
+<title>Blog Home | 3 Steps Taken</title>
+<link href='https://fonts.googleapis.com/css?family=Lato:400,900|Oswald|Dancing+Script' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="{% static 'css/blog_post.min.css' %}">
-{% endblock css %}
+{% endblock head %}
 
 
 {% block nav %}
 <nav class="header__scroll-container">
-{% for section in post.sections.all %}
+  {% for section in post.sections.all %}
   <a href="#" class="header__scroll {{ section.number }}">{{ section.number }}. {{ section.heading }}</a>
-{% endfor %}
-</nav> <!-- .header__scroll-container -->
+  {% endfor %}
+</nav> <!-- nav.header__scroll-container -->
 {% endblock nav %}
 
 
 {% block content %}
-  <div class="post">
+<div class="content-container post">
 
-    <h1 class="post__title">{{ post.title }}</h1>
-    <h5 class="post__info">Post #{{ post.number }} || {{ post.date }}</h5>
+  <h1 class="post__title">{{ post.title }}</h1>
+  <h5 class="post__info">Post #{{ post.number }} || {{ post.date }}</h5>
 
-    <div class="post__breakdown">
-      <h2 class="post__breakdown__header">Quicklinks</h2>
-
-      {% for section in post.sections.all %}
-      <p class="post__breakdown__short">
-        {{ section.number }}. <a class="text-link {{ section.number }}" href="#">{{ section.heading }}</a>
-      </p> <!-- .post__breakdown__short -->
-      {% endfor %}
-
-    </div> <!-- .post__breakdown -->
-
-    <div class="post__summary">
-      <h2 class="post__summary__header">0. Taking the first step</h2>
-      <p class="post__summary__section">{{ post.summary }}</p>
-    </div> <!-- .post__summary -->
+  <div class="post__breakdown">
+    <h2 class="post__breakdown__header">Quicklinks</h2>
 
     {% for section in post.sections.all %}
-    <div class="post__section" id="section-{{ section.number }}">
-      <h2 class="post__section__header">{{ section.number }}. {{ section.heading }}</h2>
-      {{ section.content|safe }}
-    </div> <!-- .post__section -->
+    <p class="post__breakdown__short">{{ section.number }}. <a class="text-link {{ section.number }}" href="#">{{ section.heading }}</a>
+    </p> <!-- .post__breakdown__short -->
     {% endfor %}
 
-    <img class="post__to-top" id="to-top" src="{% static 'media/to_top.png' %}" alt="Top">
+  </div> <!-- .post__breakdown -->
 
-  </div> <!-- .post -->
+  <div class="post__summary">
+    <h2 class="post__summary__header">0. Taking the first step</h2>
+    <p class="post__summary__section">{{ post.summary }}</p>
+  </div> <!-- .post__summary -->
+
+  {% for section in post.sections.all %}
+  <div class="post__section" id="section-{{ section.number }}">
+    <h2 class="post__section__header">{{ section.number }}. {{ section.heading }}</h2>
+    {{ section.content|safe }}
+  </div> <!-- .post__section -->
+  {% endfor %}
+
+  <img class="post__to-top" id="to-top" src="{% static 'media/to_top.png' %}" alt="Top">
+
+</div> <!-- .content-container.post -->
 {% endblock content %}
 
 
 {% block js %}
-<script src="{% static 'js/prism.js' %}"></script>
+<script src="{% static 'js/prism.min.js' %}"></script>
 <script src="{% static 'js/blog_post.js' %}"></script>
 {% endblock js %}

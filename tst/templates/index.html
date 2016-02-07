@@ -1,19 +1,18 @@
+{% extends 'base.html' %}
 {% load staticfiles %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Landing | 3 Steps Taken</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href='https://fonts.googleapis.com/css?family=EB+Garamond|Dancing+Script' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="{% static 'css/index.min.css' %}">
-</head>
-<body>
 
+{% block head %}
+<title>Landing | 3 Steps Taken</title>
+<link href='https://fonts.googleapis.com/css?family=EB+Garamond|Dancing+Script' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{% static 'css/index.min.css' %}">
+{% endblock head %}
+
+
+{% block body %}
 <header class="header">
-  <div class="header__intro cf">
 
+  <div class="header__intro cf">
     <div class="header__intro__quote-container">
         <span class="header__intro__quote header__intro__quote--1">One step forward</span><br>
         <span class="header__intro__quote header__intro__quote--2">Two steps back</span><br>
@@ -23,15 +22,14 @@
     <div class="header__intro__msg-wrapper">
       <span class="header__intro__msg">Hi! I'm <span class="highlight">Alex</span> 'Stargazin' Sun.<br>If you happen to enjoy talking<br><span class="highlight">life</span>, <span class="highlight">music</span>, or <span class="highlight">web development</span>,</span>
     </div> <!-- .header__intro__msg-wrapper -->
-
   </div> <!-- .header__intro.cf -->
+
   <a class="header__cta" href="blog">Let's talk!</a>
+
 </header> <!-- header.header -->
+{% endblock body %}
 
-<main></main>
-<footer></footer>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+{% block js %}
 <script src="{% static 'js/index.js' %}"></script>
-</body>
-</html>
+{% endblock js %}

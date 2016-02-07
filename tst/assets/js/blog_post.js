@@ -1,4 +1,4 @@
-var scrollHighlight = (function() {
+var pageLocation = (function() {
 
   //*cache DOM
   var $document = $(document);
@@ -19,6 +19,7 @@ var scrollHighlight = (function() {
   $headerScroll.on('click', _scrollToSection);
   $breakdownScroll.on('click', _scrollToSection);
   $toTop.on('click', _scrollToTop);
+
 
   function _getOffsets() {
     sectionOffsets = [];
@@ -66,6 +67,8 @@ var scrollHighlight = (function() {
   }
 
   function _scrollToTop() {
+    $(this).removeClass('hovered');
+
     var postTop = $post.offset().top;
     $bodyHTML.animate({scrollTop: postTop}, 250);
   }
@@ -76,29 +79,28 @@ var scrollHighlight = (function() {
 var highlight = (function() {
 
   //*cache DOM
-  var $headerSocial = $('.header__social');
+  var $homeBtn = $('.header__home')
+  var $socialBtn = $('.header__social');
   var $textLink = $('.text-link');
+  var $toTop = $('#to-top')
 
   //*bind events
-  $headerSocial.hover(_showSocial, _hideSocial);
-  $headerSocial.on('click', _hideSocial);
-  $textLink.hover(_darkenLink, _lightenLink);
-  $textLink.on('click', _lightenLink);
+  $homeBtn.hover(_addEffect, _rmvEffect);
+  $homeBtn.on('click', _rmvEffect);
+  $socialBtn.hover(_addEffect, _rmvEffect);
+  $socialBtn.on('click', _rmvEffect);
+  $textLink.hover(_addEffect, _rmvEffect);
+  $textLink.on('click', _rmvEffect);
+  //Click rmv is executed in _scrollToTop in scrollHighlight
+  $toTop.hover(_addEffect, _rmvEffect);
 
-  function _showSocial() {
-    $(this).addClass('social-show');
+
+  function _addEffect() {
+    $(this).addClass('hovered');
   }
 
-  function _hideSocial() {
-    $(this).removeClass('social-show');
-  }
-
-  function _darkenLink() {
-    $(this).addClass('link-dark');
-  }
-
-  function _lightenLink() {
-    $(this).removeClass('link-dark');
+  function _rmvEffect() {
+    $(this).removeClass('hovered');
   }
 
 })();

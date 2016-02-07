@@ -2,58 +2,67 @@
 {% load staticfiles %}
 
 
-{% block title %}
+{% block head %}
 <title>Blog Home | 3 Steps Taken</title>
-{% endblock title %}
-
-
-{% block css %}
+<link href='https://fonts.googleapis.com/css?family=Lato:400,900|Oswald|Dancing+Script' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="{% static 'css/blog_home.min.css' %}">
-{% endblock css %}
+{% endblock head %}
+
+
+{% block home %}
+<a class="header__home">3 Steps Taken</a>
+{% endblock home %}
 
 
 {% block nav %}
 <nav class="header__filter-container">
-  <a class="header__filter__link all current-category" href="#">
+
+  <a class="header__filter__link all current-category" href="#all">
     <span class="header__filter__link__text">All</span>
     <div class="header__filter__link__fill header__filter__link__fill--all"></div>
   </a> <!-- .header__filter__link.all -->
+
   <a class="header__filter__link life" href="#life">
     <span class="header__filter__link__text">Life</span>
     <div class="header__filter__link__fill header__filter__link__fill--life"></div>
   </a> <!-- .header__filter__link.life -->
+
   <a class="header__filter__link music" href="#music">
     <span class="header__filter__link__text">Music</span>
     <div class="header__filter__link__fill header__filter__link__fill--music"></div>
   </a> <!-- .header__filter__link.music -->
+
   <a class="header__filter__link web" href="#web">
     <span class="header__filter__link__text">Web</span>
     <div class="header__filter__link__fill header__filter__link__fill--web"></div>
   </a> <!-- .header__filter__link.web -->
+
 </nav> <!-- nav.header__filter-container -->
 {% endblock nav %}
 
 
 {% block content %}
-  <div class="listing">
+<div class="content-container listing">
 
-    <h1 class="listing__header-wrapper">
-      <span class="listing__header all">Welcome to the 3 Steps Taken Blog!</span>
-    </h1> <!-- .listing__header-wrapper -->
+  <h1 class="listing__header-wrapper">
+    <span class="listing__header all">Welcome to the 3 Steps Taken Blog!</span>
+  </h1> <!-- .listing__header-wrapper -->
 
-    {% for post in posts %}
-    <div class="listing__post {{ post.topic }}">
-      <h2 class="listing__post__title-wrapper">
-        <a class="listing__post__title" href="{{ post.title_url }}">{{ post.title }}</a>
-      </h2> <!-- h1.listing__post__title-wrapper -->
-      <h5 class="listing__post__info">Post #{{ post.number }} || {{ post.date }}</h5>
-      <p class="listing__post__summary">{{ post.summary }}</p>
-    </div> <!-- .listing__post -->
-    {% endfor %}
+  {% for post in posts %}
+  <div class="listing__post {{ post.topic }}">
+    <h2 class="listing__post__title-wrapper">
+      <a class="listing__post__title" href="{{ post.title_url }}">{{ post.title }}</a>
+    </h2> <!-- h1.listing__post__title-wrapper -->
+    
+    <h5 class="listing__post__info">Post #{{ post.number }} || {{ post.date }}</h5>
 
-    <p class="listing__temporary">This blog just got up and running, so stay tuned for more posts down the road!</p>
+    <p class="listing__post__summary">{{ post.summary }}</p>
+  </div> <!-- .listing__post.{post.topic} -->
+  {% endfor %}
 
-  </div> <!-- .listing -->
+  <p class="listing__temporary">This blog just got up and running, so stay tuned for more posts down the road!</p>
+
+</div> <!-- .content-container.listing -->
 {% endblock content %}
 
 

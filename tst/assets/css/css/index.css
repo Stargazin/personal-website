@@ -78,17 +78,6 @@ b, strong {
 img {
   border: 0; }
 
-/* Grouping content
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/*
- * Address differences between Firefox and other browsers.
- */
-hr {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  height: 0; }
-
 /* Forms
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /*
@@ -96,7 +85,7 @@ hr {
  *    Known issue: affects color of disabled elements.
  * 2. Correct font properties not being inherited. 
  */
-button, input, select, textarea {
+button, input, select {
   color: inherit;
   /* 1 */
   font: inherit;
@@ -141,8 +130,8 @@ a {
 /* base.page
 ============================================================================ */
 body {
-  margin: 0 auto;
   max-width: 192rem;
+  margin: 0 auto;
   font-family: "EB Garamond", serif;
   font-size: 1.6em;
   background-color: #00060d; }
@@ -150,24 +139,24 @@ body {
 /* components.header
 ============================================================================ */
 .header {
-  background: url(../media/ocean_star_winter_1920x1080.jpg) no-repeat top center;
   min-height: 77rem;
   padding-top: 7rem;
+  background: url(../media/ocean_star_winter_1920x1080.jpg) no-repeat top center;
   font-size: 1.25em; }
   @media only screen and (max-width: 1450px) {
     .header {
       min-height: 70rem; } }
   @media only screen and (max-width: 992px) {
     .header {
-      padding-top: 7rem;
-      min-height: 88rem; } }
+      min-height: 88rem;
+      padding-top: 7rem; } }
   @media only screen and (max-width: 768px) {
     .header {
       min-height: 80rem; } }
   @media only screen and (max-width: 480px) {
     .header {
-      padding-top: 3rem;
-      min-height: 67rem; } }
+      min-height: 67rem;
+      padding-top: 3rem; } }
 
 .header__intro__quote-container {
   display: inline-block;
@@ -190,11 +179,11 @@ body {
     .header__intro__quote-container {
       width: 100%;
       float: none;
-      font-size: 4em;
-      letter-spacing: 5px;
-      text-align: center;
+      padding-right: 0.6em;
       padding-left: 0;
-      padding-right: 0.6em; } }
+      text-align: center;
+      letter-spacing: 5px;
+      font-size: 4em; } }
   @media only screen and (max-width: 768px) {
     .header__intro__quote-container {
       font-size: 2.95em;
@@ -250,11 +239,11 @@ body {
       font-size: 1.35em; } }
   @media only screen and (max-width: 992px) {
     .header__intro__msg-wrapper {
-      text-align: center;
       width: 100%;
       margin-top: 14rem;
-      font-size: 1.45em;
-      letter-spacing: 0.5px; } }
+      text-align: center;
+      letter-spacing: 0.5px;
+      font-size: 1.45em; } }
   @media only screen and (max-width: 768px) {
     .header__intro__msg-wrapper {
       font-size: 1.3em; } }
@@ -279,25 +268,25 @@ body {
   -webkit-border-radius: 5px;
           border-radius: 5px;
   padding: 1rem 0;
+  -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+  -webkit-box-shadow: 0 0 7px rgba(0, 62, 92, 0.8);
+          box-shadow: 0 0 7px rgba(0, 62, 92, 0.8);
   text-align: center;
+  text-shadow: 0 -1px 6px rgba(200, 200, 200, 0.5);
   font-size: 2em;
   font-family: "Dancing Script", cursive;
   color: #e6e6e6;
-  text-shadow: 0 -1px 6px rgba(200, 200, 200, 0.5);
-  -webkit-box-shadow: 0 0 7px rgba(0, 62, 92, 0.8);
-          box-shadow: 0 0 7px rgba(0, 62, 92, 0.8);
   background: -webkit-linear-gradient(180deg, #002233 0%, #003047 30%, #003047 70%, #002233 100%);
-  background: linear-gradient(-90deg, #002233 0%, #003047 30%, #003047 70%, #002233 100%);
-  -webkit-transition: all 0.3s ease-in-out;
-          transition: all 0.3s ease-in-out; }
+  background: linear-gradient(-90deg, #002233 0%, #003047 30%, #003047 70%, #002233 100%); }
   .header__cta:hover {
     border-top: 1px solid #0c2d3d;
     -webkit-box-shadow: 0 0 7px rgba(2, 79, 117, 0.8);
             box-shadow: 0 0 7px rgba(2, 79, 117, 0.8);
+    text-shadow: 0 -1px 11px rgba(200, 200, 200, 0.5);
     background: -webkit-gradient(linear, left top, left bottom, from(#002233), to(#003047));
     background: -webkit-linear-gradient(#002233, #003047);
     background: linear-gradient(#002233, #003047);
-    text-shadow: 0 -1px 11px rgba(200, 200, 200, 0.5);
     color: #f0f0f0; }
   @media only screen and (max-width: 1450px) {
     .header__cta {
