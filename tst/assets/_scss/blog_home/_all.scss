@@ -11,7 +11,9 @@
 @import '../global/generic.normalize-resets';
 
 
-@import '../blog/base.page';
+@import '../blog/elements.scrollbar';
+@import '../blog/elements.body';
+@import '../blog/elements.headings';
 
 @import '../blog/objects.containers';
 @import '../blog/objects.wrappers';

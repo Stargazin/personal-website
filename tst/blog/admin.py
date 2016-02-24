@@ -4,7 +4,7 @@ from .models import Topic, Post, Section
 
 
 class TopicAdmin(admin.ModelAdmin):
-	list_display = ('name', 'posts')
+	list_display = ('name', 'posts',)
 
 class PostAdmin(admin.ModelAdmin):
 	list_display = ('number', 'title', 'date', 'topic',)
