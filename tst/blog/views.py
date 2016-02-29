@@ -12,7 +12,7 @@ class BlogHomeView(ListView):
 
 	def get_queryset(self):
 		model = get_model('blog', 'Post')
-		self.posts = get_list_or_404(model.objects.select_related().reverse())
+		self.posts = get_list_or_404(model.objects.select_related())
 		return self.posts
 
 	def get_context_data(self, **kwargs):

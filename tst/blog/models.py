@@ -21,7 +21,7 @@ class Post(models.Model):
 		return self.name
 
 	class Meta:
-		ordering = ['number']
+		ordering = ['-number']
 
 class Section(models.Model):
 	post = models.ForeignKey(Post, related_name='sections')
