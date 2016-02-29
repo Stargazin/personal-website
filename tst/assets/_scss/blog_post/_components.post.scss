@@ -72,7 +72,7 @@
 }
 
 .post__section__text {
-  margin: 1.8rem 0;
+  margin: 2.5rem 0;
   line-height: 1.35;
 }
 
@@ -103,8 +103,8 @@
 }
 
 .post__section__text--newbie {
-  border-color: rgb(200, 230, 240);
-  background-color: rgb(208, 239, 255);
+  border-color: rgba(200, 230, 240, 0.25);
+  background-color: rgba(208, 239, 255, 0.6);
 
   &:before {
     content: 'Beginner Tip!';
@@ -112,8 +112,8 @@
 }
 
 .post__section__text--btw {
-  border-color: rgb(240, 200, 200);
-  background-color: rgb(255, 208, 208);
+  border-color: rgba(240, 200, 200, 0.25);
+  background-color: rgba(255, 208, 208, 0.5);
 
   &:before {
     content: 'By The Way,';

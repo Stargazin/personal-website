@@ -199,7 +199,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: -3.5rem;
   margin-left: 26rem;
   padding: 0 2.5rem 2.5rem 2.5rem;
-  background-color: #f0f0f0; }
+  background-color: #e6e6e6; }
   @media only screen and (max-width: 1200px) {
     .content-wrapper {
       margin-left: 22rem;
@@ -470,7 +470,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 1.3px; }
 
 .post__section__text {
-  margin: 1.8rem 0;
+  margin: 2.5rem 0;
   line-height: 1.35; }
 
 .post__section__text--newbie, .post__section__text--btw {
@@ -496,14 +496,14 @@ h1, h2, h3, h4, h5, h6 {
     background-color: transparent; }
 
 .post__section__text--newbie {
-  border-color: #c8e6f0;
-  background-color: #d0efff; }
+  border-color: rgba(200, 230, 240, 0.25);
+  background-color: rgba(208, 239, 255, 0.6); }
   .post__section__text--newbie:before {
     content: 'Beginner Tip!'; }
 
 .post__section__text--btw {
-  border-color: #f0c8c8;
-  background-color: #ffd0d0; }
+  border-color: rgba(240, 200, 200, 0.25);
+  background-color: rgba(255, 208, 208, 0.5); }
   .post__section__text--btw:before {
     content: 'By The Way,'; }
 
@@ -538,7 +538,7 @@ pre[class*="language-"] {
 /* Code blocks */
 pre[class*="language-"] {
   padding: 1em;
-  margin: .5em 0;
+  margin: 2rem 0;
   overflow: auto;
   -webkit-border-radius: 0.3em;
           border-radius: 0.3em; }
