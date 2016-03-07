@@ -17,12 +17,11 @@ class Migration(migrations.Migration):
                 ('title', models.TextField(unique=True)),
                 ('title_url', models.TextField(blank=True)),
                 ('number', models.TextField(unique=True)),
-                ('date', models.TextField(blank=True)),
-                ('summary', models.TextField(blank=True)),
-                ('review', models.TextField(blank=True)),
+                ('date', models.TextField()),
+                ('summary', models.TextField()),
             ],
             options={
-                'ordering': ['pk'],
+                'ordering': ['-number'],
             },
         ),
         migrations.CreateModel(

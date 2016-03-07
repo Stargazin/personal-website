@@ -29,9 +29,15 @@ class BlogPostView(ListView):
 		return self.post
 
 	def get_context_data(self, **kwargs):
+		if len(self.post.sections.all()) > 1:
+			sectioned_post = True
+		else:
+			sectioned_post = False
+
 		context = super(BlogPostView, self).get_context_data(**kwargs)
 		context['post'] = self.post
+		context['sectioned_post'] = sectioned_post
 		return context
 
-# class DevView(TemplateView):
-# 	template_name = 'blog/blog_post_dev.html'
+class DevView(TemplateView):
+	template_name = 'blog/blog_dev.html'

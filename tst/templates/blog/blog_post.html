@@ -10,11 +10,13 @@
 
 
 {% block nav %}
+{% if sectioned_post %}
 <nav class="header__scroll-container">
   {% for section in post.sections.all %}
   <a href="#" class="header__scroll {{ section.number }}">{{ section.number }}. {{ section.heading }}</a>
   {% endfor %}
 </nav> <!-- nav.header__scroll-container -->
+{% endif %}
 {% endblock nav %}
 
 
@@ -24,6 +26,7 @@
   <h1 class="post__title">{{ post.title }}</h1>
   <h5 class="post__info">Post #{{ post.number }} || {{ post.date }}</h5>
 
+  {% if sectioned_post %}
   <div class="post__breakdown">
     <h2 class="post__breakdown__header">Quicklinks</h2>
 
@@ -33,9 +36,12 @@
     {% endfor %}
 
   </div> <!-- .post__breakdown -->
+  {% else %}
+  <br><br>
+  {% endif %}
 
   <div class="post__summary">
-    <h2 class="post__summary__header">0. Taking the first step</h2>
+    <h2 class="post__summary__header">Taking the first step</h2>
     <p class="post__summary__section">{{ post.summary }}</p>
   </div> <!-- .post__summary -->
 

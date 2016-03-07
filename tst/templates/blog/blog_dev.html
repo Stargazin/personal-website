@@ -1,0 +1,53 @@
+{% extends 'blog/base_blog.html' %}
+{% load staticfiles %}
+
+
+{% block head %}
+<title>{{ post.title }} | 3 Steps Taken</title>
+<link href='https://fonts.googleapis.com/css?family=Lato:400,900|Oswald|Dancing+Script' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{% static 'css/blog_post.min.css' %}">
+{% endblock head %}
+
+
+{% block content %}
+<!-- - - - - - - - - - - - - - - Post Header - - - - - - - - - - - - - - - -->
+<div class="content-container post">
+
+  <h1 class="post__title">TEMPORARY_TITLE</h1>
+  <h5 class="post__info">Post #777 || January 1st, 2016</h5><br><br>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+
+<!-- - - - - - - - - - - - - - - Post Summary - - - - - - - - - - - - - - - -->
+<div class="post__summary">
+  <h2 class="post__summary__header">Taking the first step</h2>
+  <p class="post__summary__section">THIS_IS_A_TEMPORARY_SUMMARY</p>
+</div> <!-- .post__summary -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+
+<!-- - - - - - - - - - - - - - - Post Sections - - - - - - - - - - - - - - -->
+<div class="post__section" id="section-SECTION-NUMBER">
+  <h2 class="post__section__header">#. TEMPORARY_SECTION_HEADING</h2>
+
+<p>TEMPORARY SECTION TEXT</p>
+<p class="btw"></p>
+<p class="newbie"></p>
+<pre><code class="language-"></code></pre>
+<code class="inline"></code>
+
+
+</div> <!-- .post__section -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+
+
+  <img class="post__to-top" id="to-top" src="{% static 'media/to_top.png' %}" alt="Top">
+</div> <!-- .content-container.post -->
+{% endblock content %}
+
+
+{% block js %}
+<script src="{% static 'js/prism.min.js' %}"></script>
+<script src="{% static 'js/blog_post.min.js' %}"></script>
+{% endblock js %}

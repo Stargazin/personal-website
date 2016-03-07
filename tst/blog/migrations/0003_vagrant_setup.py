@@ -5,106 +5,62 @@ from django.db import models, migrations
 from django.template.defaultfilters import slugify
 
 
-def load_posts(apps, schema_editor):
+def load_post(apps, schema_editor):
 	Topic = apps.get_model('blog', 'Topic')
 	Post = apps.get_model('blog', 'Post')
 	Section = apps.get_model('blog', 'Section')
 
-	life = Topic.objects.get(name='life')
-	music = Topic.objects.get(name='music')
 	web = Topic.objects.get(name='web')
+	topic = web
 
-
-	vagrantSetup = Post(topic=web,
+	post = Post(topic=topic,
 		title='Vagrant Setup With VirtualBox',
+		#title_url='',
 		number='1',
-		date='January 29th, 2016',
+		date='February 1st, 2016',
 		summary='Vagrant is a great tool for keeping our projects separate and happy. We can spin up as many different development environments as we need, and simply destroy them when we are done with them! In this post, we\'ll get Vagrant up and running with VirtualBox, and then take a look at how the virtual machine interacts with our own machine. Lastly, we\'ll finish off by setting up our virtual machine for development with Django.')
-	vagrantSetup.save()
+	post.save()
 
-	vagrantSetup1 = Section(post=vagrantSetup,
+	section1 = Section(post=post,
 		number='1',
 		heading='Installing some software',
 		content='<p class="post__section__text">In this tutorial, we\'ll be using <a class="text-link" target="_blank" href="https://git-scm.com/downloads">Git Bash</a> for Windows and the terminal for Mac OS X and Linux.</p>\n\n<p class="post__section__text post__section__text--newbie">With Git Bash, system, user, and folder information are above the <code class="inline">$</code> line. To keep things simple, I will omit the extra information. If you are using OS X or Linux, you don\'t need to download anything, but note that you will see some combination of system, user, and file location like so: <code class="inline">System:~/Folder User$</code></p>\n\n<p class="post__section__text">Install <a class="text-link" target="_blank" href="http://vagrantup.com">Vagrant</a> and <a class="text-link" target="_blank" href="https://www.virtualbox.org">VirtualBox</a></p>\n\n<p class="post__section__text">Choose a <a class="text-link" target="_blank" href="https://vagrantcloud.com">Vagrant box</a>. We\'ll be using the hashicorp/precise32 box in this example.</p>\n\n<pre><code class="language-bash">\n$ vagrant box add hashicorp/precise32\n</code></pre>\n\n<p class="post__section__text">Now we can create our virtual machine!</p>\n\n<p class="post__section__text post__section__text--btw">We may refer to the virtual machine as the VM.</p>')
-	vagrantSetup1.save()
+	section1.save()
 
-	vagrantSetup2 = Section(post=vagrantSetup,
+	section2 = Section(post=post,
 		number='2',
 		heading='Preparing the virtual machine',
 		content='<p class="post__section__text">Make a folder for our VM.</p>\n\n<pre><code class="language-bash">\n$ mkdir practice_folder\n$ cd practice_folder\n</code></pre>\n\n<p class="post__section__text post__section__text--newbie">This folder can be located anywhere, but make sure you keep track of which folder we\'re currently in by using the <code class="inline">pwd</code> command.</p>\n\n<p class="post__section__text">Run the following command to create a VM in our new folder.</p>\n\n<pre><code class="language-bash">\n#run only once to create our VM; a vagrantfile will also be created\n$ vagrant init hashicorp/precise32\n#check that the vagrantfile was created\n$ ls\n</code></pre>\n\n<p class="post__section__text">Let\'s make sure our VM works!</p>\n\n<pre><code class="language-bash">\n$ vagrant up\n$ vagrant ssh\n</code></pre>\n\n<p class="post__section__text post__section__text--btw">If Vagrant is uncooperative, try giving it administrative privileges by going to the VirtualBox application in your Program Files. Right click the application, go to properties, go under the Security tab, and change permissions by clicking "Edit". Also click "Yes" if anything pops up asking for permission when running the VM!<br><br>If that doesn\'t work, try setting the compatibility of VirtualBox to Windows 7. Again, go to the properties of the VirtualBox application. Under the Compatibility tab, check the box that says "Run this program in compatibility mode for:" and select Windows 7.<br><br>I\'m using Windows 8.1 and setting the compatibility mode solved the problems I had!</p>\n\n<p class="post__section__text">Now that we\'re inside our VM, you should see the following:</p>\n\n<pre><code class="language-bash">\nvagrant@precise32:~$\n</code></pre>\n\n<p class="post__section__text">Let\'s go ahead and get the newest software and security packages before we make some configuration changes to our vagrantfile</p>\n\n<pre><code class="language-bash">\n#download newest packages\nvagrant@precise32:~$ sudo apt-get update\n#upgrade packages to the newest version\nvagrant@precise32:~$ sudo apt-get upgrade\n</code></pre>\n\n<p class="post__section__text">Run the following command to get out of our VM and back to our machine!</p>\n\n<pre><code class="language-bash">\nvagrant@precise32:~$ exit\n</code></pre>')
-	vagrantSetup2.save()
+	section2.save()
 
-	vagrantSetup3 = Section(post=vagrantSetup,
+	section3 = Section(post=post,
 		number='3',
 		heading='Configuring the vagrantfile',
 		content='<p class="post__section__text">Open up the vagrantfile for editting and look for this block.</p>\n\n<pre><code class="language-bash">\n# Create a private network, which allows host-only access to the machine\n# using a specific IP.\n# config.vm.network "private_network", ip: "192.168.33.10"\n</code></pre>\n\n<p class="post__section__text">Uncomment the last line in that block. This lets us connect to our development environment later using the IP address in that line.</p>\n\n<pre><code class="language-bash">\n# Create a private network, which allows host-only access to the machine\n# using a specific IP.\n config.vm.network "private_network", ip: "192.168.33.10"\n</code></pre>\n\n<p class="post__section__text post__section__text--btw">Feel free to change the IP address to something easy to remember like 33.33.33.33 !</p>\n\n<p class="post__section__text">I also recommend uncommenting the last line of the block prior to the one above and making the changes shown below.</p>\n\n<pre><code class="language-bash">\n# Create a forwarded port mapping which allows access to a specific port\n# within the machine from a port on the host machine. In the example below,\n# accessing "localhost:8080" will access port 80 on the guest machine.\n config.vm.network "forwarded_port", guest: 8080, host: 8080\n</code></pre>\n\n<p class="post__section__text post__section__text--btw">I couldn\'t connect to the VM server through the guest machine (our machine) unless the guest and host ports specified above were the same. Try this if you have trouble connecting to the development server later!</p>\n\n<p class="post__section__text">We\'ll want to reload the VM whenever we make changes to the vagrantfile!</p>\n\n<pre><code class="language-bash">\n$ vagrant reload\n</code></pre>')
-	vagrantSetup3.save()
+	section3.save()
 
-	vagrantSetup4 = Section(post=vagrantSetup,
+	section4 = Section(post=post,
 		number='4',
 		heading='Getting familiar with the virtual machine',
 		content='<p class="post__section__text">At this point we\'ve pretty much set up everything we need to start working in our VM! In the next section, we\'ll install some packages for working with Django/Python, but first let\'s see how we\'ll be working with Vagrant.</p>\n\n<p class="post__section__text">Vagrant works by syncing a folder in the VM with a folder on our machine. The folder on our machine is where the vagrantfile is located, and the folder on the VM is also where the vagrantfile is located. This means our vagrantfile is our first file synced between our virtual and own machines. Let\'s check it out!</p>\n\n<pre><code class="language-bash">\n$ vagrant ssh\n\nvagrant@precise32:~$\n\n#change to the /vagrant folder\nvagrant@precise32:~$ cd /vagrant\n#check for the vagrantfile\nvagrant@precise32:/vagrant$ ls\n</code></pre>\n\n<p class="post__section__text">Open up the vagrantfile with a text editor such as nano (pre-installed).</p>\n\n<pre><code class="language-bash">\nvagrant@precise32:/vagrant$ nano vagrantfile\n</code></pre>\n\n<p class="post__section__text post__section__text--newbie">Navigate the nano editor with your arrow keys. Press Ctrl + x if you want to close the file.</p>\n\n<p class="post__section__text">The contents of the vagrantfile in the VM is exactly the same as in our machine. Any changes we make to the vagrantfile from either location will result in a synced up vagrantfile! Let\'s see what happens when we create a file or a folder.</p>\n\n<pre><code class="language-bash">\nvagrant@precise32:/vagrant$ mkdir test_folder\n#test_folder is in our VM\nvagrant@precise32:/vagrant$ ls\nvagrant@precise32:/vagrant$ exit\n\n#test_folder is also in our machine!\n$ ls\n$ rmdir test_folder\n#now test_folder is gone\n$ ls\n$ vagrant ssh\n\nvagrant@precise32:~$ cd /vagrant\n#test_folder is gone on the VM too!\nvagrant@precise32:/vagrant$ ls\n</code></pre>\n\n<p class="post__section__text">As we saw in the above examples, changes we make to the files on our machine will be synced with those in the VM\'s <code class="inline">/vagrant</code> folder (and vice versa). We\'ll be using the VM as our development server. Vagrant is great for this because development environments can have very different dependencies. With a VM for each project, we will have exactly what we need for each project\'s development and no conflicts between projects!</p>')
-	vagrantSetup4.save()
+	section4.save()
 
-	vagrantSetup5 = Section(post=vagrantSetup,
+	section5 = Section(post=post,
 		number='5',
 		heading='Working with Django and Vagrant',
 		content='<p class="post__section__text">Now that we know how we\'ll be working with the VM, let\'s set it up so that we can actually start working with it. We will go ahead and get a virtual environment set up as well as install some packages we\'ll need to work with Django. If you aren\'t in the VM, <code class="inline">vagrant ssh</code> back in.</p>\n\n<p class="post__section__text post__section__text--newbie">The concept behind virtual environments is actually very similar to that of virtual machines. Essentially, we can install packages onto a virtual environment and not have it affect the VM unless we are working on said virtual environment. If we\'re only using the VM for one project, you can argue that we don\'t need the virtual environment, but it\'s good practice to use it. Plus there are some cool things we can do with it (more on this in a future post)!</p>\n\n<pre><code class="language-bash">\nvagrant@precise32:~$ sudo apt-get install python-pip\n\nvagrant@precise32:~$ sudo pip install virtualenv\n#the wrapper makes working with virtualenv easier\nvagrant@precise32:~$ sudo pip install virtualenvwrapper\n\n#show all content (including hidden with the -a flag)\nvagrant@precise32:~$ ls -a\n#open up the .bashrc file\nvagrant@precise32:~$ nano ~/.bashrc\n\n#scroll down and add the following lines to the .bashrc file:\n#virtualenv\nexport WORKON_HOME=$HOME/.virtualenvs\nsource /usr/local/bin/virtualenvwrapper.sh\n</code></pre>\n\n<p class="post__section__text">These lines tell our system where our virtual environments should be located and where the virtual environment script (which we installed earlier with pip) is located. After making changes to our shell startup file, we\'ll need to reload the file so our changes take effect.</p>\n\n<pre><code class="language-bash">\nvagrant@precise32:~$ source ~/.bashrc\n</code></pre>\n\n<p class="post__section__text">We now have access to the virtual environment commands, so let\'s make our virtual environment and play around with it!</p>\n\n<pre><code class="language-bash">\nvagrant@precise32:~$ mkvirtualenv practice\n\n#we are now on the virtualenv\n(practice)vagrant@precise32:~$ deactivate\nvagrant@precise32:~$ workon practice\n\n#show a list of our virtualenvs\n(practice)vagrant@precise32:~$ lsvirtualenv\n\n#deactivate and remove our virtualenv\n(practice)vagrant@precise32:~$ deactivate\nvagrant@precise32:~$ rmvirtualenv practice\n\nvagrant@precise32:~$ mkvirtualenv play\n(play)vagrant@precise32:~$\n</code></pre>\n\n<p class="post__section__text">Notice how when we make a virtual environment, setuptools, pip, and wheel are installed to that environment. Take a look (make sure you\'re working on the virtual environment!).</p>\n\n<pre><code class="language-bash">\n(play)vagrant@precise32:~$ pip list\n</code></pre>\n\n<p class="post__section__text">This list will grow as we install more to our virtual environment. Let\'s install a few more packages to get our environment ready for development!</p>\n\n<pre><code class="language-bash">\n#separate multiple packages with a space\n\n(play)vagrant@precise32:~$ sudo apt-get install python-dev libpq-dev \npostgresql postgresql-contrib libjpeg-dev\n\n(play)vagrant@precise32:~$ pip install django psycopg2 Pillow\n\n#check out our new python packages\n(play)vagrant@precise32:~$ pip list\n</code></pre>\n\n<p class="post__section__text post__section__text--newbie">Note that because we are using pip (Python package manager) while working on our virtual environment, the packages we install will only be useable while working on that virtual environment. If we deactivated our virtual environment and then installed a package with pip, that package would be available globally -- we will have access to that package with or without our virtual environment.<br><br>Our apt-get installations will actually be global, so it doesn\'t make a difference if we\'re working on our virtual environment to install packages such as <code class="inline">python-dev</code>.</p>\n\n<p class="post__section__text post__section__text--btw">I use postgreSQL for my database, but feel free to play around with other databases!</p>\n\n<p class="post__section__text">We\'re almost there. To finish up, let\'s start a django project so we can start developing (make sure you are on the virtual environment where django is installed)!</p>\n\n<pre><code class="language-bash">\n#change to the synced folder\n(play)vagrant@precise32:~$ cd /vagrant\n(play)vagrant@precise32:/vagrant$ django-admin.py startproject blog\n</code></pre>\n\n<p class="post__section__text post__section__text--btw">To run the server, <code class="inline">cd</code> into the folder containing <code class="inline">manage.py</code> and type the following: <code class="inline">python manage.py runserver 0.0.0.0:8080</code>. This is the port (8080) we specified in section 3.</p>\n\n<p class="post__section__text">Now we have our project made and the packages needed to start developing. Happy coding!</p>')
-	vagrantSetup5.save()
+	section5.save()
 
-	vagrantSetup6 = Section(post=vagrantSetup,
+	section6 = Section(post=post,
 		number='6',
 		heading='A few things to keep in mind',
 		content='<p class="post__section__text">Remember to power off your VM when you are finished.</p>\n\n<pre><code class="language-bash">\nvagrant@precise32:~$ exit\n$ vagrant halt\n</code></pre>\n\n<p class="post__section__text post__section__text--btw">I\'ve had problems with my VM getting corrupted or something along those lines. I don\'t know the exact cause, but I believe it happens when I forget to power off my VM. If this happens to you, don\'t worry! It\'s much easier to set up a second time because you won\'t need to install software and configure the vagrantfile.</p>\n\n<p class="post__section__text">To remove a VM (whether you don\'t need it anymore or if it\'s corrupted), use the following command</p>\n\n<pre><code class="language-bash">\n$ vagrant destroy\n</code></pre>\n\n<p class="post__section__text post__section__text--newbie">You can also do this manually using the Oracle VM VirtualBox application.</p>\n\n<p class="post__section__text">If you are new to Unix shells, it can be a little intimidating navigating using commands. Here\'s a helpful command to keep track of where you are in the VM.</p>\n\n<pre><code class="language-bash">\n#pwd = print working directory (current folder)\nvagrant@precise32:~$ pwd\nvagrant@precise32:~$ cd /vagrant\nvagrant@precise32:/vagrant$ pwd\n</code></pre>\n\n<p class="post__section__text post__section__text--newbie">Notice how your two results are <code class="inline">/home/vagrant</code> and <code class="inline">/vagrant</code>. These are entirely different folders!</p>')
-	vagrantSetup6.save()
+	section6.save()
 
+	if not post.title_url:
+		post.title_url = slugify(post.title)
+		post.save()
 
-
-	introduction = Post(topic=life,
-		title='What is "3 Steps Taken" You Ask?',
-		number='2',
-		date='February 17th, 2016',
-		summary='3 steps taken this. 3 steps taken that. What does 3 steps taken actually mean? Wait. Who am I? I\'m a biologist. Wait. I\'m also a web developer! Find out more about me and this blog!')
-	introduction.save()
-
-	introduction1 = Section(post=introduction,
-		number='1',
-		heading='Why hello there and welcome to my blog',
-		content='<p class="post__section__text">I\'m Alex, a biologist from UC Santa Barbara turned web developer. Yeah, you\'re right -- there\'s no relation between the two at all. And the only real experience I had was an introductory seminar in my last quarter. So why make the switch?</p>\n\n<p class="post__section__text">The biggest draw for me was the thought of having an idea and being able to create it. Take this blog for example. Four months ago, I didn\'t even know how to follow a tutorial to bootstrap a simple blog layout. Now not only can I do that, I can customize to my heart\'s content and even write from scratch if need be! Four months ago, I didn\'t even know how to solve FizzBuzz. Now not only can I do that (with multiple languages!), I can set up a working backend using an MVC framework like Django! That\'s the second biggest reason: I feel like my learning translates to results.</p>\n\n<p class="post__section__text">Take a look back at my undergrad with me. In my third year, I took the biochemistry series. No matter how much I learned in one quarter, I was not better off in the next. The "knowledge" I gained had no application from quarter to quarter. To be honest, it would be fair to say that there was often very little application even from midterm to midterm. (There were definitely exceptions with great professors though!) To draw a comparison to programming, everything was as high-level as could be. As a result, there was often an emphasis on memorization and rarely a need for understanding.</p>\n\n<p class="post__section__text">Don\'t get me wrong though. I love biology and "biologist from UCSB" is still one of the ways I describe myself. If I had the opportunity to redo it all, I\'d for sure walk the same path (and start learning to program earlier of course).</p>')
-	introduction1.save()
-
-	introduction2 = Section(post=introduction,
-		number='2',
-		heading='3 (steps taken) is the magic number',
-		content='<p class="post__section__text">"One step forward; two steps back." I\'m sure we\'ve all heard this idiom before. I started adding "3 steps taken" to it and making it my motto a few years back. The idea is that even if we end up further away from our goal, we\'ve gained experience that actually puts us closer towards it. I think this is a pattern we are trained not to follow. We think this is fundamentally wrong. If we end up further away from our goal than when we started, we must have regressed. I don\'t believe that\'s true at all.</p>\n\n<p class="post__section__text">Imagine you\'re at an interview and are asked the following question, "Do you tend to waste your time?" What would you respond to that? Obviously, you would say no. But let\'s think back. If we ever end up futher away from our goal than when we started and that\'s all we take away from it, then by definition, we have wasted our time. But did we really? At the very least, we know not to make the same mistake again. Hopefully we also learned why we made the mistake. Maybe we\'ve thought of an alternative solution or can start working towards one. It\'s more than likely that we in fact did not waste our time.</p>')
-	introduction2.save()
-
-	introduction3 = Section(post=introduction,
-		number='3',
-		heading='My 3 steps taken',
-		content='<p class="post__section__text">We can learn from just about every experience. Would I be better off now if I had done a computer science degree? In terms of programming? Sure. But not necessarily as an individual. I used to be very scared of anything and everything outside of my comfort zone. It\'s the people who encouraged me to take on harder projects and supported me along the way that allowed me to become someone who approaches everything with confidence and has a firm belief that success is only a matter of time.</p>\n\n<p class="post__section__text">I would definitely say that my undergraduate career was a success. I know I could get into any school if I wanted to pursue a higher degree. Sadly, my success as a biologist doesn\'t directly translate in a different field, especially an unrelated one like programming. So what\'s my takeaway? How has my degree in biology helped me become a programmer?</p>\n\n<p class="post__section__text">I\'m a much better learner now. I know how I learn, and what I need to do to learn efficiently. I know the importance of fundamentals. I know how to ask effective questions that get me the answers I need.</p>\n\n<p class="post__section__text">I\'m a confident person now. It\'s impossible to do my best unless I believe in myself. I\'m going to go through life with people telling me that I can\'t. Shouldn\'t I at the very least tell myself that I can?</p>\n\n<p class="post__section__text">I love working with people now. With other people, I can share both the success and the hardship. I have people to encourage me and grow with, and so do they.</p>\n\n<p class="post__section__text">The point is, there\'s always a takeaway, but it\'s up to us to take it.</p>')
-	introduction3.save()
-
-	introduction4 = Section(post=introduction,
-		number='4',
-		heading='What else you got?',
-		content='<p class="post__section__text">It\'s just about impossible to stay motivated all the time. There are going to be days when we don\'t feel like doing anything and times when we feel like we want to quit. I think that\'s pretty normal. At the end of the day, it\'s our desire to progress and grow that keeps us on the hustle. That being said, motivation is nice, so here are some other mottos that I\'ll be keeping in mind as I climb to the top.</p>\n\n<p class="post__section__text">"Life is what you make it, but it\'s up to you to take what you deserve. So let\'s go for broke."<br> -- <a href="https://twitter.com/davidsocomedy" class="text-link" target="_blank">David So</a><br><br>Put everything on the line to create the best chances for yourself. Opportunities will knock, so don\'t forget to answer.</p>\n\n<p class="post__section__text">"Dominate humbly."<br> -- <a href="https://twitter.com/barbellbrigade" class="text-link" target="_blank">Barbell Brigade</a><br><br>Being better than someone does not mean you are above them. Always look to grow and help others do the same.</p>\n\n<p class="post__section__text">"Live for today, look forward to tomorrow, and don\'t forget to smile."<br> -- Some fisherman from an old Cartoon Network show<br><br>Everyone has goals they are working towards. Keep hustling, but don\'t forget to enjoy the ride.</p>')
-	introduction4.save()
-
-	introduction5 = Section(post=introduction,
-		number='5',
-		heading='How about this blog? What\'s it all about?',
-		content='<p class="post__section__text">This is first and foremost going to be a web development blog. I love to learn and one of the best ways for me to make sure I understand something is to be able to explain it. I want all developers to be able to benefit from my posts, especially those who are relatively new. I couldn\'t have made it this far without the amazing open source community, and I want to play a part in making it even better.</p>\n\n<p class="post__section__text">I\'ll also be posting my musings and about my career as a way for me to keep track of how far I\'ve come, and hopefully teach others about the things I\'ve learned along the way. In addition, music is huge part of my life and it\'s always great to remember songs that I consider a part of my soundtrack (bonus: "Be the main character of your life and not the side character of someone else\'s."). These are songs that keep me hustling and hopefully can do the same for you.</p>\n\n<p class="post__section__text post__section__text--btw">It\'s a lot of electronic music. I won\'t be offended if that\'s not your thing!</p>\n\n<p class="post__section__text">Thanks for reading and stay tuned for more to come!</p>')
-	introduction5.save()
-
-
-def load_urls(apps, schema_edtior):
-	Post = apps.get_model('blog', 'Post')
-
-	for post in Post.objects.all():
-		if not post.title_url:
-			post.title_url = slugify(post.title)
-			post.save()
 
 class Migration(migrations.Migration):
 
@@ -113,6 +69,5 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-    	migrations.RunPython(load_posts),
-    	migrations.RunPython(load_urls),
+    	migrations.RunPython(load_post),
     ]

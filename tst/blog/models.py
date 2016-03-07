@@ -13,9 +13,8 @@ class Post(models.Model):
 	title = models.TextField(unique=True)
 	title_url = models.TextField(blank=True)
 	number = models.TextField(unique=True)
-	date = models.TextField(blank=True)
-	summary = models.TextField(blank=True)
-	review = models.TextField(blank=True)
+	date = models.TextField()
+	summary = models.TextField()
 
 	def __str__(self):
 		return self.name
@@ -25,9 +24,9 @@ class Post(models.Model):
 
 class Section(models.Model):
 	post = models.ForeignKey(Post, related_name='sections')
-	number = models.TextField(blank=False)
-	heading = models.TextField(blank=False)
-	content = models.TextField(blank=False)
+	number = models.TextField()
+	heading = models.TextField()
+	content = models.TextField()
 
 	def __str__(self):
 		return self.heading
