@@ -1,0 +1,54 @@
+/* components.header-cta
+============================================================================ */
+
+.header__cta {
+  display: block;
+  width: 30%;
+  margin: 13rem auto 0;
+  border-top: 1px solid rgb(25, 56, 71);
+  border-radius: 5px;
+  padding: 1rem 0;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 7px rgba(0, 62, 92, 0.8);
+  text-align: center;
+  text-shadow: 0 -1px 6px rgba(200, 200, 200, 0.5);
+  font-size: 2em;
+  font-family: $dancing-script;
+  color: rgb(230, 230, 230);
+  background: linear-gradient(-90deg,
+    rgb(0, 34, 51) 0%, rgb(0, 48, 71) 30%,
+    rgb(0, 48, 71) 70%, rgb(0, 34, 51) 100%);
+
+  &:hover {
+    border-top: 1px solid rgb(12, 45, 61);
+    box-shadow: 0 0 7px rgba(2, 79, 117, 0.8);
+    text-shadow: 0 -1px 11px rgba(200, 200, 200, 0.5);
+    background: linear-gradient(rgb(0, 34, 51),
+      rgb(0, 48, 71));
+    color: rgb(240, 240, 240);
+  }
+
+  @media #{$break-xxl} {
+    width: 32.5%;
+    margin: 10rem auto 5rem auto;
+  }
+
+  @media #{$break-xl} {
+    width: 40%;
+    font-size: 1.8em;
+  }
+
+  @media #{$break-l} {
+    width: 50%;
+    margin: 5rem auto;
+  }
+
+  @media #{$break-m} {
+    width: 55%;
+  }
+
+  @media #{$break-s} {
+    width: 65%;
+    margin: 4rem auto;
+  }
+}

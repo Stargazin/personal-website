@@ -1,0 +1,23 @@
+/* blog/components.header-home
+============================================================================ */
+
+.header__home-wrapper {
+  margin-top: 2.5rem;
+  text-align: center;
+  font-size: 2em;
+  font-family: $dancing-script;
+
+  @media #{$break-l} {
+    margin-top: 1.7rem;
+  }
+}
+
+.header__home {
+  transition: all 0.15s linear;
+  color: rgb(235, 235, 235);
+  
+  @media #{$break-s} {
+    letter-spacing: 2px;
+    font-size: 1.2em;
+  }
+}

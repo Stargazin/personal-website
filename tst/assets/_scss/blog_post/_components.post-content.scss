@@ -1,0 +1,93 @@
+/* blog_post/components.post-content
+============================================================================ */
+
+.post__summary {
+  margin: 2.5rem 0 4rem;
+}
+
+.post__summary__section {
+  margin: 1.8rem 0;
+  line-height: 1.35;
+}
+
+.post__section {
+  margin-bottom: 7rem;
+
+  p {
+    margin: 2.5rem 0;
+    line-height: 1.35;
+  }
+
+  .new, .btw {
+    width: 100%;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    border-radius: 4px;
+    padding: 1.4rem 1rem 1.1rem 1.9rem;
+
+    &:before {
+      display: block;
+      margin-bottom: 0.7rem;
+      text-shadow: 1px 1px 1px black;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-top: 2.5rem solid white;
+      border-right: 2.5rem solid transparent;
+      background-color: transparent;
+    }
+  }
+
+  .new {
+    border-color: rgba(200, 230, 240, 0.25);
+    background-color: rgba(208, 239, 255, 0.6);
+
+    &:before {
+      content: 'Beginner Tip!';
+    }
+  }
+
+  .btw {
+    border-color: rgba(240, 200, 200, 0.25);
+    background-color: rgba(255, 208, 208, 0.5);
+
+    &:before {
+      content: 'By The Way,';
+    }
+  }
+
+  pre {
+    margin: 2.2rem 0;
+    padding: 3rem 2rem;
+
+    & > code {
+      font-size: 1.1em;
+
+      &::selection {
+        color: white;
+      }
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+    padding-bottom: 5rem;
+  }
+
+  .inline {
+    padding: 0.1rem 0.2rem 0 0.2rem;
+    font-size: 1.1em;
+    background-color: rgb(222, 222, 222);
+  }
+}
+
+.post__section__header {
+  margin-bottom: 2.2rem;
+  padding-top: 2rem;
+  letter-spacing: 1.3px;
+}

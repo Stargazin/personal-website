@@ -154,110 +154,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 1.1px;
   font-family: "Oswald", sans-serif; }
 
-/* blog/objects.containers
-============================================================================ */
-.content-container {
-  max-width: 96rem;
-  margin: 0 auto;
-  border: 1px solid #e1e1e1;
-  border-top: 0;
-  padding: 3rem 10rem;
-  background-color: white;
-  letter-spacing: 0.4px; }
-  @media only screen and (max-width: 1450px) {
-    .content-container {
-      max-width: 88rem;
-      padding: 3rem 6rem; } }
-  @media only screen and (max-width: 1200px) {
-    .content-container {
-      max-width: 82rem;
-      border: none;
-      padding: 3rem; } }
-  @media only screen and (max-width: 992px) {
-    .content-container {
-      padding: 3rem 2rem; } }
-  @media only screen and (max-width: 768px) {
-    .content-container {
-      font-size: 0.95em; } }
-  @media only screen and (max-width: 480px) {
-    .content-container {
-      padding: 2rem; } }
-
-/* blog/objects.wrappers
-============================================================================ */
-.header__home-wrapper {
-  margin-top: 2.5rem;
-  text-align: center;
-  font-size: 2em;
-  font-family: "Dancing Script", cursive; }
-  @media only screen and (max-width: 992px) {
-    .header__home-wrapper {
-      margin-top: 1.7rem; } }
-
-.content-wrapper {
-  min-height: 100%;
-  margin-bottom: -3.5rem;
-  margin-left: 26rem;
-  padding: 0 2.5rem 2.5rem 2.5rem;
-  background-color: #e6e6e6; }
-  @media only screen and (max-width: 1200px) {
-    .content-wrapper {
-      margin-left: 22rem;
-      padding: 0;
-      background-color: white; } }
-  @media only screen and (max-width: 992px) {
-    .content-wrapper {
-      margin-left: 20rem; } }
-  @media only screen and (max-width: 768px) {
-    .content-wrapper {
-      margin-left: 18rem; } }
-  @media only screen and (max-width: 480px) {
-    .content-wrapper {
-      margin-left: 0; } }
-  .content-wrapper:after {
-    content: '';
-    display: block;
-    height: 3.5rem; }
-
-/* blog_home/objects.containers
-============================================================================ */
-.header__filter-container {
-  width: 85%;
-  margin: 5rem auto; }
-  @media only screen and (max-width: 1200px) {
-    .header__filter-container {
-      width: 88%;
-      margin: 4.5rem auto; } }
-  @media only screen and (max-width: 992px) {
-    .header__filter-container {
-      margin: 4rem auto; } }
-  @media only screen and (max-width: 768px) {
-    .header__filter-container {
-      width: 95%;
-      margin: 3.5rem auto; } }
-  @media only screen and (max-width: 480px) {
-    .header__filter-container {
-      width: 80%;
-      margin: 0 auto 2.5rem auto; } }
-
-/* blog_home/objects.wrappers
-============================================================================ */
-.listing__header-wrapper {
-  margin-bottom: 6rem;
-  text-align: center;
-  font-size: 3em;
-  font-family: "Dancing Script", cursive; }
-  @media only screen and (max-width: 1200px) {
-    .listing__header-wrapper {
-      font-size: 2.55em; } }
-  @media only screen and (max-width: 992px) {
-    .listing__header-wrapper {
-      font-size: 2.05em; } }
-
-.listing__post__title-wrapper {
-  text-align: center; }
-
-/* blog/components.header
+/* blog/objects.blocks
 ============================================================================ */
 .header {
   position: fixed;
@@ -294,6 +191,89 @@ h1, h2, h3, h4, h5, h6 {
             border-radius: 10px;
     -webkit-box-shadow: inset 0 0 4px #969696; }
 
+.content-wrapper {
+  min-height: 100%;
+  margin-bottom: -3.5rem;
+  margin-left: 26rem;
+  padding: 0 2.5rem 2.5rem 2.5rem;
+  background-color: #e6e6e6; }
+  @media only screen and (max-width: 1200px) {
+    .content-wrapper {
+      margin-left: 22rem;
+      padding: 0;
+      background-color: white; } }
+  @media only screen and (max-width: 992px) {
+    .content-wrapper {
+      margin-left: 20rem; } }
+  @media only screen and (max-width: 768px) {
+    .content-wrapper {
+      margin-left: 18rem; } }
+  @media only screen and (max-width: 480px) {
+    .content-wrapper {
+      margin-left: 0; } }
+  .content-wrapper:after {
+    content: '';
+    display: block;
+    height: 3.5rem; }
+
+.content-container {
+  max-width: 96rem;
+  margin: 0 auto;
+  border: 1px solid #e1e1e1;
+  border-top: 0;
+  padding: 3rem 10rem;
+  background-color: white;
+  letter-spacing: 0.4px; }
+  @media only screen and (max-width: 1450px) {
+    .content-container {
+      max-width: 88rem;
+      padding: 3rem 6rem; } }
+  @media only screen and (max-width: 1200px) {
+    .content-container {
+      max-width: 82rem;
+      border: none;
+      padding: 3rem; } }
+  @media only screen and (max-width: 992px) {
+    .content-container {
+      padding: 3rem 2rem; } }
+  @media only screen and (max-width: 768px) {
+    .content-container {
+      font-size: 0.95em; } }
+  @media only screen and (max-width: 480px) {
+    .content-container {
+      padding: 2rem; } }
+
+.footer {
+  z-index: 10;
+  height: 3.5rem;
+  margin-left: 25.9rem;
+  border-top: 1px solid #dedede;
+  line-height: 3.2rem;
+  background-color: #e6e6e6; }
+  @media only screen and (max-width: 1200px) {
+    .footer {
+      margin-left: 21.9rem; } }
+  @media only screen and (max-width: 992px) {
+    .footer {
+      margin-left: 19.9rem; } }
+  @media only screen and (max-width: 768px) {
+    .footer {
+      margin-left: 17.9rem; } }
+  @media only screen and (max-width: 480px) {
+    .footer {
+      margin-left: 0; } }
+
+/* blog/components.header-home
+============================================================================ */
+.header__home-wrapper {
+  margin-top: 2.5rem;
+  text-align: center;
+  font-size: 2em;
+  font-family: "Dancing Script", cursive; }
+  @media only screen and (max-width: 992px) {
+    .header__home-wrapper {
+      margin-top: 1.7rem; } }
+
 .header__home {
   -webkit-transition: all 0.15s linear;
           transition: all 0.15s linear;
@@ -303,6 +283,8 @@ h1, h2, h3, h4, h5, h6 {
       letter-spacing: 2px;
       font-size: 1.2em; } }
 
+/* blog/components.header-pic
+============================================================================ */
 .header__pic {
   display: block;
   width: 140px;
@@ -320,6 +302,8 @@ h1, h2, h3, h4, h5, h6 {
       display: inline-block;
       margin-left: 2.5rem; } }
 
+/* blog/components.header-social
+============================================================================ */
 @media only screen and (max-width: 480px) {
   .header__social-container {
     display: inline-block;
@@ -385,6 +369,25 @@ h1, h2, h3, h4, h5, h6 {
 
 /* blog_home/components.header-filters
 ============================================================================ */
+.header__filter-container {
+  width: 85%;
+  margin: 5rem auto; }
+  @media only screen and (max-width: 1200px) {
+    .header__filter-container {
+      width: 88%;
+      margin: 4.5rem auto; } }
+  @media only screen and (max-width: 992px) {
+    .header__filter-container {
+      margin: 4rem auto; } }
+  @media only screen and (max-width: 768px) {
+    .header__filter-container {
+      width: 95%;
+      margin: 3.5rem auto; } }
+  @media only screen and (max-width: 480px) {
+    .header__filter-container {
+      width: 80%;
+      margin: 0 auto 2.5rem auto; } }
+
 .header__filter__link {
   display: block;
   width: 96%;
@@ -446,34 +449,13 @@ h1, h2, h3, h4, h5, h6 {
   background: -webkit-linear-gradient(#0000c5, #00008c);
   background: linear-gradient(#0000c5, #00008c); }
 
-/* blog_home/components.listing
+/* blog_home/components.listing-post
 ============================================================================ */
-.listing__header {
-  display: inline-block; }
-  @media only screen and (max-width: 480px) {
-    .listing__header {
-      font-size: 1.1em; } }
-  .listing__header:before, .listing__header:after {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 98.5%;
-    height: 3px; }
-  .listing__header:before {
-    bottom: 0.4rem;
-    left: 0; }
-    @media only screen and (max-width: 992px) {
-      .listing__header:before {
-        bottom: 0.2rem; } }
-  .listing__header:after {
-    right: 0;
-    bottom: -0.5rem; }
-    @media only screen and (max-width: 992px) {
-      .listing__header:after {
-        bottom: -0.4rem; } }
-
 .listing__post {
   margin: 5rem 0; }
+
+.listing__post__title-wrapper {
+  text-align: center; }
 
 .listing__post__title {
   letter-spacing: 1.5px;
@@ -515,28 +497,46 @@ h1, h2, h3, h4, h5, h6 {
     border-right: 2.5rem solid transparent;
     background-color: transparent; }
 
+/* blog_home/components.listing-header
+============================================================================ */
+.listing__header-wrapper {
+  margin-bottom: 6rem;
+  text-align: center;
+  font-size: 3em;
+  font-family: "Dancing Script", cursive; }
+  @media only screen and (max-width: 1200px) {
+    .listing__header-wrapper {
+      font-size: 2.55em; } }
+  @media only screen and (max-width: 992px) {
+    .listing__header-wrapper {
+      font-size: 2.05em; } }
+
+.listing__header {
+  display: inline-block; }
+  @media only screen and (max-width: 480px) {
+    .listing__header {
+      font-size: 1.1em; } }
+  .listing__header:before, .listing__header:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 98.5%;
+    height: 3px; }
+  .listing__header:before {
+    bottom: 0.4rem;
+    left: 0; }
+    @media only screen and (max-width: 992px) {
+      .listing__header:before {
+        bottom: 0.2rem; } }
+  .listing__header:after {
+    right: 0;
+    bottom: -0.5rem; }
+    @media only screen and (max-width: 992px) {
+      .listing__header:after {
+        bottom: -0.4rem; } }
+
 /* blog/components.footer
 ============================================================================ */
-.footer {
-  z-index: 10;
-  height: 3.5rem;
-  margin-left: 25.9rem;
-  border-top: 1px solid #dedede;
-  line-height: 3.2rem;
-  background-color: #e6e6e6; }
-  @media only screen and (max-width: 1200px) {
-    .footer {
-      margin-left: 21.9rem; } }
-  @media only screen and (max-width: 992px) {
-    .footer {
-      margin-left: 19.9rem; } }
-  @media only screen and (max-width: 768px) {
-    .footer {
-      margin-left: 17.9rem; } }
-  @media only screen and (max-width: 480px) {
-    .footer {
-      margin-left: 0; } }
-
 .footer__landing {
   position: absolute;
   left: 0;

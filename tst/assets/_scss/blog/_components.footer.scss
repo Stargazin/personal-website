@@ -1,31 +1,6 @@
 /* blog/components.footer
 ============================================================================ */
 
-.footer {
-  z-index: 10;
-  height: 3.5rem;
-  margin-left: 25.9rem;
-  border-top: 1px solid rgb(222, 222, 222);
-  line-height: 3.2rem;
-  background-color: rgb(230, 230, 230);
-
-  @media #{$break-xl} {
-    margin-left: 21.9rem;
-  }
-
-  @media #{$break-l} {
-    margin-left: 19.9rem;
-  }
-
-  @media #{$break-m} {
-    margin-left: 17.9rem;
-  }
-
-  @media #{$break-s} {
-    margin-left: 0;
-  }
-}
-
 .footer__landing {
   position: absolute;
   left: 0;

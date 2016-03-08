@@ -1,42 +1,12 @@
-/* blog_home/components.listing
+/* blog_home/components.listing-post
 ============================================================================ */
-
-.listing__header {
-  display: inline-block;
-
-  @media #{$break-s} {
-    font-size: 1.1em;
-  }
-
-  &:before, &:after {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 98.5%;
-    height: 3px;
-  }
-
-  &:before {
-    bottom: 0.4rem;
-    left: 0;
-
-    @media #{$break-l} {
-      bottom: 0.2rem;
-    }
-  }
-
-  &:after {
-    right: 0;
-    bottom: -0.5rem;
-
-    @media #{$break-l} {
-      bottom: -0.4rem;
-    }
-  }
-}
 
 .listing__post {
   margin: 5rem 0;
+}
+
+.listing__post__title-wrapper {
+  text-align: center;
 }
 
 .listing__post__title {

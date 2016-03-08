@@ -1,6 +1,30 @@
 /* blog_home/components.header-filters
 ============================================================================ */
 
+.header__filter-container {
+  width: 85%;
+  margin: 5rem auto;
+
+  @media #{$break-xl} {
+    width: 88%;
+    margin: 4.5rem auto;
+  }
+
+  @media #{$break-l} {
+    margin: 4rem auto;
+  }
+
+  @media #{$break-m} {
+    width: 95%;
+    margin: 3.5rem auto;
+  }
+
+  @media #{$break-s} {
+    width: 80%;
+    margin: 0 auto 2.5rem auto;
+  }
+}
+
 .header__filter__link {
   display: block;
   width: 96%;

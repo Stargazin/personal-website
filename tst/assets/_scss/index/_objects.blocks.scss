@@ -1,0 +1,27 @@
+/* objects.blocks
+============================================================================ */
+
+.header {
+  min-height: 77rem;
+  padding-top: 7rem;
+  background: url(../media/ocean_star_winter_1920x1080.jpg) no-repeat top center;
+  font-size: 1.25em;
+
+  @media #{$break-xxl} {
+    min-height: 70rem;
+  }
+
+  @media #{$break-l} {
+    min-height: 88rem;
+    padding-top: 7rem;
+  }
+
+  @media #{$break-m} {
+    min-height: 80rem;
+  }
+
+  @media #{$break-s} {
+    min-height: 67rem;
+    padding-top: 3rem;
+  }
+}

@@ -1,0 +1,21 @@
+/* blog/components.header-pic
+============================================================================ */
+
+.header__pic {
+  display: block;
+  width: 140px;
+  height: 140px;
+  margin: 2.5rem auto;
+  border-radius: 50%;
+
+  @media #{$break-l} {
+    width: 125px;
+    height: 125px;
+    margin: 2rem auto;
+  }
+
+  @media #{$break-s} {
+    display: inline-block;
+    margin-left: 2.5rem;
+  }
+}

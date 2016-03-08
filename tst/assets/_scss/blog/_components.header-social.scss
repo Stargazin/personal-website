@@ -1,0 +1,70 @@
+/* blog/components.header-social
+============================================================================ */
+
+.header__social-container {
+
+  @media #{$break-s} {
+    display: inline-block;
+    float: right;
+    min-width: 45%;
+    margin-right: 2.5rem;
+    margin-top: 2rem;
+  }
+}
+
+.header__social {
+  display: block;
+  position: relative;
+  width: 75%;
+  margin: 0.5rem auto;
+  border: 1px solid rgb(39, 39, 39);
+  border-top: 0;
+  border-left: 0;
+  border-radius: 3px;
+  padding: 0.3rem 0;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.12);
+  color: rgb(200, 200, 200);
+
+  @media #{$break-xl} {
+    width: 80%;
+  }
+
+  @media #{$break-m} {
+    width: 90%;
+  }
+
+  @media #{$break-s} {
+    width: 100%;
+    margin: 0.7rem auto;
+  }
+}
+
+.header__social__text {
+  float: right;
+  width: 55%;
+  margin-top: 0.1rem;
+  padding-right: 1rem;
+  text-align: left;
+
+  @media #{$break-l} {
+    margin-top: 0.2rem;
+  }
+}
+
+.header__social__icon {
+  float: right;
+  width: 24px;
+  height: 24px;
+  margin-right: 2.5rem;
+  transform: scale(0.8, 0.8);
+  opacity: 0.95;
+
+  @media #{$break-l} {
+    transform: scale(0.72, 0.72);
+  }
+
+  @media #{$break-m} {
+    transform: scale(0.68, 0.68);
+  }
+}

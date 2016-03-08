@@ -10,8 +10,12 @@
   color: white !important;
 }
 
-.text-link.hovered {
-  border-bottom: 1px dashed rgb(0, 0, 0) !important;
+.text-link {
+  border-bottom: 1px dashed rgb(150, 150, 150) !important;
+
+  &.hovered {
+    border-bottom: 1px dashed rgb(0, 0, 0) !important;
+  }
 }
 
 #to-top {
@@ -34,14 +38,4 @@
     opacity: 1;
     border-color: rgb(37, 37, 37);
   }
-}
-
-.text-link {
-  border-bottom: 1px dashed rgb(150, 150, 150) !important;
-}
-
-.inline {
-  padding: 0.1rem 0.2rem 0 0.2rem !important;
-  font-size: 1.1em !important;
-  background-color: rgb(222, 222, 222) !important;
 }

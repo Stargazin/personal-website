@@ -15,13 +15,14 @@
 @import '../blog/elements.body';
 @import '../blog/elements.headings';
 
-@import '../blog/objects.containers';
-@import '../blog/objects.wrappers';
-@import 'objects.containers';
+@import '../blog/objects.blocks';
 
-@import '../blog/components.header';
+@import '../blog/components.header-home';
+@import '../blog/components.header-pic';
+@import '../blog/components.header-social';
 @import 'components.header-scroll';
-@import 'components.post';
+@import 'components.post-header';
+@import 'components.post-content';
 @import 'components.code';
 @import '../blog/components.footer';
 

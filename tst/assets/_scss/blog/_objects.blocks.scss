@@ -1,0 +1,137 @@
+/* blog/objects.blocks
+============================================================================ */
+
+.header {
+  position: fixed;
+  left: 0;
+  width: 26rem;
+  height: 100vh;
+  border-right: 1px solid rgb(230, 230, 230);
+  overflow-y: auto;
+  background: url(../media/blog_sidebg.png);
+
+  @media #{$break-xl} {
+    width: 22rem;
+  }
+
+  @media #{$break-l} {
+    width: 20rem;
+    font-size: 0.9em;
+  }
+
+  @media #{$break-m} {
+    width: 18rem;
+    font-size: 0.85em;
+  }
+
+  @media #{$break-s} {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border: none;
+  }
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    background-color: rgb(40, 40, 40);
+  }
+
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(150, 150, 150, 0.9);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 4px rgba(150, 150, 150, 1);
+  }
+}
+
+.content-wrapper {
+  min-height: 100%;
+  margin-bottom: -3.5rem;
+  margin-left: 26rem;
+  padding: 0 2.5rem 2.5rem 2.5rem;
+  background-color: rgb(230, 230, 230);
+
+  @media #{$break-xl} {
+    margin-left: 22rem;
+    padding: 0;
+    background-color: white;
+  }
+
+  @media #{$break-l} {
+    margin-left: 20rem;
+  }
+
+  @media #{$break-m} {
+    margin-left: 18rem;
+  }
+
+  @media #{$break-s} {
+    margin-left: 0;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    height: 3.5rem;
+  }
+}
+
+.content-container {
+  max-width: 96rem;
+  margin: 0 auto;
+  border: 1px solid rgb(225, 225, 225);
+  border-top: 0;
+  padding: 3rem 10rem;
+  background-color: white;
+  letter-spacing: 0.4px;
+
+  @media #{$break-xxl} {
+    max-width: 88rem;
+    padding: 3rem 6rem;
+  }
+
+  @media #{$break-xl} {
+    max-width: 82rem;
+    border: none;
+    padding: 3rem;
+  }
+
+  @media #{$break-l} {
+    padding: 3rem 2rem;
+  }
+
+  @media #{$break-m} {
+    font-size: 0.95em;
+  }
+
+  @media #{$break-s} {
+    padding: 2rem;
+  }
+}
+
+.footer {
+  z-index: 10;
+  height: 3.5rem;
+  margin-left: 25.9rem;
+  border-top: 1px solid rgb(222, 222, 222);
+  line-height: 3.2rem;
+  background-color: rgb(230, 230, 230);
+
+  @media #{$break-xl} {
+    margin-left: 21.9rem;
+  }
+
+  @media #{$break-l} {
+    margin-left: 19.9rem;
+  }
+
+  @media #{$break-m} {
+    margin-left: 17.9rem;
+  }
+
+  @media #{$break-s} {
+    margin-left: 0;
+  }
+}

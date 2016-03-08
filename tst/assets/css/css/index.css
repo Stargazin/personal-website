@@ -127,7 +127,7 @@ a {
 .cf:after {
   clear: both; }
 
-/* base.page
+/* elements.body
 ============================================================================ */
 body {
   max-width: 192rem;
@@ -136,7 +136,7 @@ body {
   font-size: 1.6em;
   background-color: #00060d; }
 
-/* components.header
+/* objects.blocks
 ============================================================================ */
 .header {
   min-height: 77rem;
@@ -158,6 +158,8 @@ body {
       min-height: 67rem;
       padding-top: 3rem; } }
 
+/* components.header-quote
+============================================================================ */
 .header__intro__quote-container {
   display: inline-block;
   float: left;
@@ -179,7 +181,7 @@ body {
     .header__intro__quote-container {
       width: 100%;
       float: none;
-      padding-right: 0.6em;
+      padding-right: 0.4em;
       padding-left: 0;
       text-align: center;
       letter-spacing: 5px;
@@ -205,7 +207,8 @@ body {
   margin-top: 0.3em; }
   @media only screen and (max-width: 992px) {
     .header__intro__quote--2 {
-      margin-top: 0; } }
+      margin-top: 0.1em;
+      text-indent: -1.3em; } }
 
 .header__intro__quote--3 {
   margin-top: 1em;
@@ -213,8 +216,10 @@ body {
   color: white; }
   @media only screen and (max-width: 992px) {
     .header__intro__quote--3 {
-      margin-top: 0.5em; } }
+      margin-top: 0.4em; } }
 
+/* components.header-msg
+============================================================================ */
 .header__intro__msg-wrapper {
   display: inline-block;
   float: left;
@@ -255,11 +260,15 @@ body {
 .header__intro__msg {
   display: inline-block;
   text-align: center;
+  line-height: 1.2;
+  letter-spacing: 1px;
   color: rgba(255, 255, 255, 0.75); }
 
 .highlight {
   color: white; }
 
+/* components.header-cta
+============================================================================ */
 .header__cta {
   display: block;
   width: 30%;

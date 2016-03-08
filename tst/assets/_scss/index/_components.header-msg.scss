@@ -1,0 +1,59 @@
+/* components.header-msg
+============================================================================ */
+
+
+.header__intro__msg-wrapper {
+  display: inline-block;
+  float: left;
+  width: 40%;
+  margin-top: 16rem;
+  padding-right: 4%;
+  padding-left: 2.3rem;
+  font-size: 2em;
+
+  @media #{$break-xxl} {
+    margin-top: 14rem;
+    padding-right: 2.4%;
+    padding-left: 2rem;
+    font-size: 1.7em;
+  }
+
+  @media #{$break-xl} {
+    margin-top: 13rem;
+    font-size: 1.35em;
+  }
+
+  @media #{$break-vl} {
+    margin-top: 12rem;
+    font-size: 1.35em;
+  }
+
+  @media #{$break-l} {
+    width: 100%;
+    margin-top: 14rem;
+    text-align: center;
+    letter-spacing: 0.5px;
+    font-size: 1.45em;
+  }
+
+  @media #{$break-m} {
+    font-size: 1.3em;
+  }
+
+  @media #{$break-s} {
+    margin-top: 9.5rem;
+    font-size: 1.1em;
+  }
+}
+
+.header__intro__msg {
+  display: inline-block;
+  text-align: center;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  color: rgba(white, 0.75);
+}
+
+.highlight {
+  color: white;
+}
