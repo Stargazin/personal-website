@@ -1,19 +1,7 @@
-from os import environ
-
 from .base import *
 
-DEBUG = False
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'tst',
-        'USER': environ['DB_USERNAME'],
-        'PASSWORD': environ['DB_PASSWORD'],
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
+DEBUG = False
 
 ALLOWED_HOSTS = ['.3stepstaken.com']
 
