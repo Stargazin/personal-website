@@ -1,13 +1,11 @@
 {% extends 'blog/base_blog.html' %}
 {% load staticfiles %}
-{% load disqus_tags %}
 
 
 {% block head %}
 <title>{{ post.title }} | 3 Steps Taken</title>
 <link href='https://fonts.googleapis.com/css?family=Lato:400,900|Oswald|Dancing+Script' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="{% static 'css/blog_post.min.css' %}">
-{% disqus_dev %}
 {% endblock head %}
 
 
@@ -56,7 +54,6 @@
 
   <img class="post__to-top" id="to-top" src="{% static 'media/to_top.png' %}" alt="Top">
 
-{% disqus_show_comments %}
 </div> <!-- .content-container.post -->
 {% endblock content %}
 

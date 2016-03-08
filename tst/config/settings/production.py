@@ -1,13 +1,23 @@
+from os import environ
+
 from .base import *
 
-
 DEBUG = False
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'tst',
+        'USER': environ['DB_USERNAME'],
+        'PASSWORD': environ['DB_PASSWORD'],
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
 
 ALLOWED_HOSTS = ['.3stepstaken.com']
 
 STATIC_ROOT = BASE_DIR.parent.child("staticfiles")
-
-DISQUS_WEBSITE_SHORTNAME = '3stepstaken'
 
 # SECURE_CONTENT_TYPE_NOSNIFF = True
 # SECURE_BROWSER_XSS_FILTER = True
