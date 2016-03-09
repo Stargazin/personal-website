@@ -3,9 +3,9 @@ from .base import *
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['.3stepstaken.com']
-
 STATIC_ROOT = BASE_DIR.parent.child("staticfiles")
+
+ALLOWED_HOSTS = ['.3stepstaken.com']
 
 # SECURE_CONTENT_TYPE_NOSNIFF = True
 # SECURE_BROWSER_XSS_FILTER = True

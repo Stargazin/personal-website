@@ -6,6 +6,7 @@
 <title>{{ post.title }} | 3 Steps Taken</title>
 <link href='https://fonts.googleapis.com/css?family=Lato:400,900|Oswald|Dancing+Script' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="{% static 'css/blog_post.min.css' %}">
+<link rel="canonical" href="http://www.3stepstaken.com/blog/{{ post.title_url }}/">
 {% endblock head %}
 
 
@@ -53,6 +54,10 @@
   {% endfor %}
 
   <img class="post__to-top" id="to-top" src="{% static 'media/to_top.png' %}" alt="Top">
+
+  <div id="disqus_thread"></div>
+  <script>var disqus_config=function(){this.page.url="http://www.3stepstaken.com/blog/{{ post.title_url }}/",this.page.identifier=PAGE_IDENTIFIER};!function(){var t=document,e=t.createElement("script");e.src="//3stepstaken.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}();</script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
 </div> <!-- .content-container.post -->
 {% endblock content %}

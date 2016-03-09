@@ -64,20 +64,14 @@ PREREQ_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'django.contrib.sites',
 )
 
 PROJECT_APPS = (
     'blog',
     'core',
-    # 'disqus',
 )
 
 INSTALLED_APPS = PREREQ_APPS + PROJECT_APPS
-
-# DISQUS_API_KEY = os.environ['DISQUS_API_KEY']
-# DISQUS_WEBSITE_SHORTNAME = '3stepstaken'
-# SITE_ID = 1
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
