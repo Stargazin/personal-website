@@ -18,32 +18,32 @@
 {% block nav %}
 <nav class="header__filter-container">
 
-  <a class="header__filter__link all current-category" href="#all">
-    <span class="header__filter__link__text">All</span>
-    <div class="header__filter__link__fill header__filter__link__fill--all"></div>
-  </a> <!-- .header__filter__link.all -->
+  <a class="header__filter all current-category" href="#all">
+    <span class="header__filter-text">All</span>
+    <div class="header__filter-fill header__filter-fill--all"></div>
+  </a> <!-- .header__filter.all -->
 
-  <a class="header__filter__link life" href="#life">
-    <span class="header__filter__link__text">Life</span>
-    <div class="header__filter__link__fill header__filter__link__fill--life"></div>
-  </a> <!-- .header__filter__link.life -->
+  <a class="header__filter life" href="#life">
+    <span class="header__filter-text">Life</span>
+    <div class="header__filter-fill header__filter-fill--life"></div>
+  </a> <!-- .header__filter.life -->
 
-  <a class="header__filter__link music" href="#music">
-    <span class="header__filter__link__text">Music</span>
-    <div class="header__filter__link__fill header__filter__link__fill--music"></div>
-  </a> <!-- .header__filter__link.music -->
+  <a class="header__filter music" href="#music">
+    <span class="header__filter-text">Music</span>
+    <div class="header__filter-fill header__filter-fill--music"></div>
+  </a> <!-- .header__filter.music -->
 
-  <a class="header__filter__link web" href="#web">
-    <span class="header__filter__link__text">Web</span>
-    <div class="header__filter__link__fill header__filter__link__fill--web"></div>
-  </a> <!-- .header__filter__link.web -->
+  <a class="header__filter web" href="#web">
+    <span class="header__filter-text">Web</span>
+    <div class="header__filter-fill header__filter-fill--web"></div>
+  </a> <!-- .header__filter.web -->
 
 </nav> <!-- nav.header__filter-container -->
 {% endblock nav %}
 
 
 {% block content %}
-<div class="content-container listing">
+<div class="content listing">
 
   <h1 class="listing__header-wrapper">
     <span class="listing__header all">Welcome to the 3 Steps Taken Blog!</span>
@@ -51,19 +51,19 @@
 
   {% for post in posts %}
   <div class="listing__post {{ post.topic }}">
-    <h2 class="listing__post__title-wrapper">
-      <a class="listing__post__title" href="{{ post.title_url }}">{{ post.title }}</a>
-    </h2> <!-- h1.listing__post__title-wrapper -->
+    <h2 class="listing__post-title-wrapper">
+      <a class="listing__post-title" href="{{ post.title_url }}">{{ post.title }}</a>
+    </h2> <!-- h1.listing__post-title-wrapper -->
     
-    <h5 class="listing__post__info">Post #{{ post.number }} || {{ post.date }}</h5>
+    <h5 class="listing__post-meta">Post #{{ post.number }} || {{ post.date }}</h5>
 
-    <p class="listing__post__summary">{{ post.summary }}</p>
+    <p class="listing__post-summary">{{ post.summary }}</p>
   </div> <!-- .listing__post.{post.topic} -->
   {% endfor %}
 
-  <p class="listing__temporary">This blog just got up and running. I am also in the process of applying to jobs. Follow on Twitter for more posts in the near future!</p>
+  <p class="listing__temporary-msg">This blog just got up and running. I am also in the process of applying to jobs. Follow on Twitter for more posts in the near future!</p>
 
-</div> <!-- .content-container.listing -->
+</div> <!-- .content.listing -->
 {% endblock content %}
 
 

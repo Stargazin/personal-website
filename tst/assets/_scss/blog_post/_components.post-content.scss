@@ -1,11 +1,11 @@
 /* blog_post/components.post-content
 ============================================================================ */
 
-.post__summary {
+.post__summary-container {
   margin: 2.5rem 0 4rem;
 }
 
-.post__summary__section {
+.post__summary {
   margin: 1.8rem 0;
   line-height: 1.35;
 }
@@ -86,7 +86,7 @@
   }
 }
 
-.post__section__header {
+.post__section-header {
   margin-bottom: 2.2rem;
   padding-top: 2rem;
   letter-spacing: 1.3px;

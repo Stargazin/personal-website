@@ -22,44 +22,44 @@
 
 
 {% block content %}
-<div class="content-container post">
+<div class="content post">
 
   <h1 class="post__title">{{ post.title }}</h1>
   <h5 class="post__info">Post #{{ post.number }} || {{ post.date }}</h5>
 
   {% if sectioned_post %}
-  <div class="post__breakdown">
-    <h2 class="post__breakdown__header">Quicklinks</h2>
+  <div class="post__quicklinks-container">
+    <h2 class="post__quicklinks-header">Quicklinks</h2>
 
     {% for section in post.sections.all %}
-    <p class="post__breakdown__short">{{ section.number }}. <a class="text-link {{ section.number }}" href="#">{{ section.heading }}</a>
-    </p> <!-- .post__breakdown__short -->
+    <p class="post__quicklinks">{{ section.number }}. <a class="text-link {{ section.number }}" href="#">{{ section.heading }}</a>
+    </p> <!-- .post__quicklinks -->
     {% endfor %}
 
-  </div> <!-- .post__breakdown -->
+  </div> <!-- .post__quicklinks-container -->
   {% else %}
   <br><br>
   {% endif %}
 
-  <div class="post__summary">
-    <h2 class="post__summary__header">Taking the first step</h2>
-    <p class="post__summary__section">{{ post.summary }}</p>
-  </div> <!-- .post__summary -->
+  <div class="post__summary-container">
+    <h2 class="post__summary-header">Taking the first step</h2>
+    <p class="post__summary">{{ post.summary }}</p>
+  </div> <!-- .post__summary-container -->
 
   {% for section in post.sections.all %}
   <div class="post__section" id="section-{{ section.number }}">
-    <h2 class="post__section__header">{{ section.number }}. {{ section.heading }}</h2>
+    <h2 class="post__section-header">{{ section.number }}. {{ section.heading }}</h2>
     {{ section.content|safe }}
   </div> <!-- .post__section -->
   {% endfor %}
 
-  <img class="post__to-top" id="to-top" src="{% static 'media/to_top.png' %}" alt="Top">
+  <img class="post__to-top-btn" id="to-top" src="{% static 'media/to_top.png' %}" alt="Top">
 
   <div id="disqus_thread"></div>
   <script>var disqus_config=function(){this.page.url="http://www.3stepstaken.com/blog/{{ post.title_url }}/",this.page.identifier=PAGE_IDENTIFIER};!function(){var t=document,e=t.createElement("script");e.src="//3stepstaken.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}();</script>
   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
-</div> <!-- .content-container.post -->
+</div> <!-- .content.post -->
 {% endblock content %}
 
 

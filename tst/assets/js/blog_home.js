@@ -1,7 +1,7 @@
 var highlightSocialBtns = (function() {
 
   //*cache DOM
-  var $socialBtn = $('.header__social'); // Social media buttons.
+  var $socialBtn = $('.header__social-btn'); // Social media buttons.
 
   //*bind events
   $socialBtn.hover(_addEffect, _rmvEffect);
@@ -22,7 +22,7 @@ var highlightSocialBtns = (function() {
 var filterPosts = (function() {
 
   //*cache DOM
-  var $headerFilter = $('.header__filter__link'); // Filter buttons.
+  var $headerFilter = $('.header__filter'); // Filter buttons.
   var $listing = $('.listing'); // Contains all posts.
   var $listingHeader = $('.listing__header'); // Blog welcome message.
   var $listingPost = $('.listing__post'); // Individual posts.

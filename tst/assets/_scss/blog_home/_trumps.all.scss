@@ -1,12 +1,12 @@
 /* blog_home/trumps.all
 ============================================================================ */
 
-.header__filter__link {
+.header__filter {
 
   &:hover {
     color: white;
 
-    .header__filter__link__fill {
+    .header__filter-fill {
       width: 100%;
 
       @media #{$break-touch} {
@@ -17,11 +17,11 @@
 
   &.current-category {
 
-    & .header__filter__link__fill {
+    & .header__filter-fill {
       width: 100% !important;
     }
 
-    & .header__filter__link__text {
+    & .header__filter-text {
       color: white !important;
     }
   }

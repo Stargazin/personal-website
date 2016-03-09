@@ -1,7 +1,7 @@
 /* components.header-quote
 ============================================================================ */
 
-.header__intro__quote-container {
+.header__quote-container {
   display: inline-block;
   float: left;
   width: 60%;
@@ -42,18 +42,18 @@
   }
 }
 
-.header__intro__quote {
+.header__quote {
   display: inline-block;
   text-align: left;
   font-family: $dancing-script;
   color: rgb(250, 250, 250);
 }
 
-.header__intro__quote--1 {
+.header__quote--1 {
   text-indent: 0.6em;
 }
 
-.header__intro__quote--2 {
+.header__quote--2 {
   margin-top: 0.3em;
 
   @media #{$break-l} {
@@ -62,7 +62,7 @@
   }
 }
 
-.header__intro__quote--3 {
+.header__quote--3 {
   margin-top: 1em;
   text-indent: 1.7em;
   color: rgb(255, 255, 255);

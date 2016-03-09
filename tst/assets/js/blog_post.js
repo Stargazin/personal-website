@@ -8,7 +8,7 @@ var pageScrolling = (function() {
   var $postSection = $('.post__section');
   var $headerScroll = $('.header__scroll'); // Sidebar scroll-to links.
   // Quicklinks.
-  var $breakdownScroll = $('.post__breakdown__short > .text-link');
+  var $breakdownScroll = $('.post__quicklinks > .text-link');
 
   var numberOfSections = $postSection.length;
   var sectionOffsets = [];
@@ -91,7 +91,7 @@ var hoverEffects = (function() {
 
   //*cache DOM
   var $homeBtn = $('.header__home') // 3 Steps Taken button.
-  var $socialBtn = $('.header__social'); // Social media buttons.
+  var $socialBtn = $('.header__social-btn'); // Social media buttons.
   var $textLink = $('.text-link');
   var $toTop = $('#to-top') // To-top button.
 

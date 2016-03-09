@@ -216,7 +216,7 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
     height: 3.5rem; }
 
-.content-container {
+.content {
   max-width: 96rem;
   margin: 0 auto;
   border: 1px solid #e1e1e1;
@@ -225,22 +225,22 @@ h1, h2, h3, h4, h5, h6 {
   background-color: white;
   letter-spacing: 0.4px; }
   @media only screen and (max-width: 1450px) {
-    .content-container {
+    .content {
       max-width: 88rem;
       padding: 3rem 6rem; } }
   @media only screen and (max-width: 1200px) {
-    .content-container {
+    .content {
       max-width: 82rem;
       border: none;
       padding: 3rem; } }
   @media only screen and (max-width: 992px) {
-    .content-container {
+    .content {
       padding: 3rem 2rem; } }
   @media only screen and (max-width: 768px) {
-    .content-container {
+    .content {
       font-size: 0.95em; } }
   @media only screen and (max-width: 480px) {
-    .content-container {
+    .content {
       padding: 2rem; } }
 
 .footer {
@@ -312,7 +312,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: 2.5rem;
     margin-top: 2rem; } }
 
-.header__social {
+.header__social-btn {
   display: block;
   position: relative;
   width: 75%;
@@ -327,27 +327,27 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(0, 0, 0, 0.12);
   color: #c8c8c8; }
   @media only screen and (max-width: 1200px) {
-    .header__social {
+    .header__social-btn {
       width: 80%; } }
   @media only screen and (max-width: 768px) {
-    .header__social {
+    .header__social-btn {
       width: 90%; } }
   @media only screen and (max-width: 480px) {
-    .header__social {
+    .header__social-btn {
       width: 100%;
       margin: 0.7rem auto; } }
 
-.header__social__text {
+.header__social-text {
   float: right;
   width: 55%;
   margin-top: 0.1rem;
   padding-right: 1rem;
   text-align: left; }
   @media only screen and (max-width: 992px) {
-    .header__social__text {
+    .header__social-text {
       margin-top: 0.2rem; } }
 
-.header__social__icon {
+.header__social-icon {
   float: right;
   width: 24px;
   height: 24px;
@@ -357,12 +357,12 @@ h1, h2, h3, h4, h5, h6 {
           transform: scale(0.8, 0.8);
   opacity: 0.95; }
   @media only screen and (max-width: 992px) {
-    .header__social__icon {
+    .header__social-icon {
       -webkit-transform: scale(0.72, 0.72);
           -ms-transform: scale(0.72, 0.72);
               transform: scale(0.72, 0.72); } }
   @media only screen and (max-width: 768px) {
-    .header__social__icon {
+    .header__social-icon {
       -webkit-transform: scale(0.68, 0.68);
           -ms-transform: scale(0.68, 0.68);
               transform: scale(0.68, 0.68); } }
@@ -439,7 +439,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   color: #5a5a5a; }
 
-.post__breakdown {
+.post__quicklinks-container {
   display: inline-block;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -456,18 +456,18 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.05em;
   background-color: whitesmoke; }
 
-.post__breakdown__header {
+.post__quicklinks-text {
   margin-bottom: 1.1rem; }
 
-.post__breakdown__short {
+.post__quicklinks {
   margin-left: 1rem; }
 
 /* blog_post/components.post-content
 ============================================================================ */
-.post__summary {
+.post__summary-container {
   margin: 2.5rem 0 4rem; }
 
-.post__summary__section {
+.post__summary {
   margin: 1.8rem 0;
   line-height: 1.35; }
 
@@ -523,7 +523,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.1em;
     background-color: #dedede; }
 
-.post__section__header {
+.post__section-header {
   margin-bottom: 2.2rem;
   padding-top: 2rem;
   letter-spacing: 1.3px; }
@@ -689,23 +689,23 @@ pre.line-numbers > code {
 
 /* blog/trumps.social-btns
 ============================================================================ */
-.header__social.hovered {
+.header__social-btn.hovered {
   color: white; }
-  .header__social.hovered.header__social--twitter {
+  .header__social-btn.hovered.header__social-btn--twitter {
     border: 1px solid #3b6bab;
     border-top: 0;
     border-left: 0;
     background: -webkit-gradient(linear, left top, left bottom, from(#4c9bd6), to(#4279c1));
     background: -webkit-linear-gradient(#4c9bd6, #4279c1);
     background: linear-gradient(#4c9bd6, #4279c1); }
-  .header__social.hovered.header__social--github {
+  .header__social-btn.hovered.header__social-btn--github {
     border: 1px solid black;
     border-top: 0;
     border-left: 0;
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(25, 25, 25, 0.95)), to(rgba(0, 0, 0, 0.95)));
     background: -webkit-linear-gradient(rgba(25, 25, 25, 0.95), rgba(0, 0, 0, 0.95));
     background: linear-gradient(rgba(25, 25, 25, 0.95), rgba(0, 0, 0, 0.95)); }
-  .header__social.hovered.header__social--linkedin {
+  .header__social-btn.hovered.header__social-btn--linkedin {
     border: 1px solid #0b486a;
     border-top: 0;
     border-left: 0;

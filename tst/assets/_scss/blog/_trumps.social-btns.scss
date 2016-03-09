@@ -1,10 +1,10 @@
 /* blog/trumps.social-btns
 ============================================================================ */
 
-.header__social.hovered {
+.header__social-btn.hovered {
   color: white;
 
-  &.header__social--twitter {
+  &.header__social-btn--twitter {
     border: 1px solid rgb(59, 107, 171);
     border-top: 0;
     border-left: 0;
@@ -13,7 +13,7 @@
       rgb(66, 121, 193));
   }
 
-  &.header__social--github {
+  &.header__social-btn--github {
     border: 1px solid black;
     border-top: 0;
     border-left: 0;
@@ -22,7 +22,7 @@
       rgba(0, 0, 0, 0.95));
   }
 
-  &.header__social--linkedin {
+  &.header__social-btn--linkedin {
     border: 1px solid rgb(11, 72, 106);
     border-top: 0;
     border-left: 0;

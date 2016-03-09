@@ -25,7 +25,7 @@
   }
 }
 
-.header__filter__link {
+.header__filter {
   display: block;
   width: 96%;
   border-radius: 4px;
@@ -57,11 +57,11 @@
   }
 }
 
-.header__filter__link__text {
+.header__filter-text {
   z-index: 2;
 }
 
-.header__filter__link__fill {
+.header__filter-fill {
   position: absolute;
   top: 0;
   left: 0;
@@ -71,22 +71,22 @@
   transition: width 0.15s linear;
 }
 
-.header__filter__link__fill--all {
+.header__filter-fill--all {
   background: linear-gradient(rgb(15, 15, 15),
     rgb(0, 0, 0));
 }
 
-.header__filter__link__fill--life {
+.header__filter-fill--life {
   background: linear-gradient(rgb(229, 32, 0),
     rgb(171, 24, 0));
 }
 
-.header__filter__link__fill--music {
+.header__filter-fill--music {
   background: linear-gradient(rgb(120, 0, 172),
     rgb(90, 0, 134));
 }
 
-.header__filter__link__fill--web {
+.header__filter-fill--web {
   background: linear-gradient(rgb(0, 0, 197),
     rgb(0, 0, 140));
 }

@@ -160,25 +160,25 @@ body {
 
 /* components.header-quote
 ============================================================================ */
-.header__intro__quote-container {
+.header__quote-container {
   display: inline-block;
   float: left;
   width: 60%;
   padding-left: 9%;
   font-size: 4.8em; }
   @media only screen and (max-width: 1450px) {
-    .header__intro__quote-container {
+    .header__quote-container {
       padding-left: 6.6%;
       font-size: 4.2em; } }
   @media only screen and (max-width: 1200px) {
-    .header__intro__quote-container {
+    .header__quote-container {
       padding-left: 4.8%;
       font-size: 3.8em; } }
   @media only screen and (max-width: 1050px) {
-    .header__intro__quote-container {
+    .header__quote-container {
       font-size: 3.6em; } }
   @media only screen and (max-width: 992px) {
-    .header__intro__quote-container {
+    .header__quote-container {
       width: 100%;
       float: none;
       padding-right: 0.4em;
@@ -187,40 +187,40 @@ body {
       letter-spacing: 5px;
       font-size: 4em; } }
   @media only screen and (max-width: 768px) {
-    .header__intro__quote-container {
+    .header__quote-container {
       font-size: 2.95em;
       letter-spacing: 1px; } }
   @media only screen and (max-width: 480px) {
-    .header__intro__quote-container {
+    .header__quote-container {
       font-size: 2.4em; } }
 
-.header__intro__quote {
+.header__quote {
   display: inline-block;
   text-align: left;
   font-family: "Dancing Script", cursive;
   color: #fafafa; }
 
-.header__intro__quote--1 {
+.header__quote--1 {
   text-indent: 0.6em; }
 
-.header__intro__quote--2 {
+.header__quote--2 {
   margin-top: 0.3em; }
   @media only screen and (max-width: 992px) {
-    .header__intro__quote--2 {
+    .header__quote--2 {
       margin-top: 0.1em;
       text-indent: -1.3em; } }
 
-.header__intro__quote--3 {
+.header__quote--3 {
   margin-top: 1em;
   text-indent: 1.7em;
   color: white; }
   @media only screen and (max-width: 992px) {
-    .header__intro__quote--3 {
+    .header__quote--3 {
       margin-top: 0.4em; } }
 
 /* components.header-msg
 ============================================================================ */
-.header__intro__msg-wrapper {
+.header__msg-wrapper {
   display: inline-block;
   float: left;
   width: 40%;
@@ -229,35 +229,35 @@ body {
   padding-left: 2.3rem;
   font-size: 2em; }
   @media only screen and (max-width: 1450px) {
-    .header__intro__msg-wrapper {
+    .header__msg-wrapper {
       margin-top: 14rem;
       padding-right: 2.4%;
       padding-left: 2rem;
       font-size: 1.7em; } }
   @media only screen and (max-width: 1200px) {
-    .header__intro__msg-wrapper {
+    .header__msg-wrapper {
       margin-top: 13rem;
       font-size: 1.35em; } }
   @media only screen and (max-width: 1050px) {
-    .header__intro__msg-wrapper {
+    .header__msg-wrapper {
       margin-top: 12rem;
       font-size: 1.35em; } }
   @media only screen and (max-width: 992px) {
-    .header__intro__msg-wrapper {
+    .header__msg-wrapper {
       width: 100%;
       margin-top: 14rem;
       text-align: center;
       letter-spacing: 0.5px;
       font-size: 1.45em; } }
   @media only screen and (max-width: 768px) {
-    .header__intro__msg-wrapper {
+    .header__msg-wrapper {
       font-size: 1.3em; } }
   @media only screen and (max-width: 480px) {
-    .header__intro__msg-wrapper {
+    .header__msg-wrapper {
       margin-top: 9.5rem;
       font-size: 1.1em; } }
 
-.header__intro__msg {
+.header__msg {
   display: inline-block;
   text-align: center;
   line-height: 1.2;
