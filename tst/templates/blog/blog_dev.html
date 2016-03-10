@@ -14,36 +14,164 @@
 <!-- - - - - - - - - - - - - - - Post Header - - - - - - - - - - - - - - - -->
 <div class="content post">
 
-  <h1 class="post__title">TEMPORARY_TITLE</h1>
+  <h1 class="post__title">BEM To The Rescue</h1>
   <h5 class="post__info">Post #777 || January 1st, 2016</h5><br><br>
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
 <!-- - - - - - - - - - - - - - - Post Summary - - - - - - - - - - - - - - - -->
 <div class="post__summary-container">
   <h2 class="post__summary-header">Taking the first step</h2>
-  <p class="post__summary">THIS_IS_A_TEMPORARY_SUMMARY</p>
+  <p class="post__summary">Reading code is hard. Reading unorganized code is even harder. HTML and CSS can get jumbled up into a mess because of elements with random names and selector nesting in CSS. This can lead to large technical debts due to specificity issues, unintentional overrides, and overall unmaintainable code. In this post, we'll take a look at how to keep our HTML and CSS consistent and organized using the BEM methodology.</p>
 </div>
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
-<!--
-<p></p>
-<p class="btw"></p>
-<p class="newbie"></p>
-<pre><code class="language-xx"></code></pre>
-<code class="inline"></code>
--->
 
 <!-- - - - - - - - - - - - - - - Post Sections - - - - - - - - - - - - - - -->
-<div class="post__section" id="section-SECTION-NUMBER">
-  <h2 class="post__section-header">1. TEMPORARY_SECTION_HEADING</h2>
 
-<p>TEMPORARY SECTION TEXT</p>
+<div class="post__section">
+  <h2 class="post__section-header">1. Starting with an example</h2>
 
+<p>We'll start by looking at an example containing a header and footer. The header will have some navigation links, a greeting message, and a call-to-action (cta) button. The footer will have two navigation links also found in the header.</p>
+
+<pre><code class="language-markup">
+&lt;header>
+
+  &lt;div class="nav">
+    &lt;a class="home">&lt;Home/a>
+    &lt;a>&lt;About/a>
+    &lt;a>&lt;Blog/a>
+  &lt;/div>
+
+  &lt;div class="greeting">
+    &lt;p class="text">Hey you!&lt;/p>
+  &lt;/div>
+  
+  &lt;button class="cta">
+    &lt;p class="text">Click here!&lt;/p>
+  &lt;/button>
+
+&lt;/header>
+
+&lt;footer>
+  &lt;a class="home">Back Home&lt;/a>
+  &lt;a class="about">More About Us&lt;/a>
+&lt;/footer>
+</code></pre>
+
+<p>This is easy to understand and work with, but there are things that may lead to headaches in larger projects. Here are a two points as an example:</p>
+
+<p>We have a <code class="inline">&lt;p></code> element inside both <code class="inline">.greeting</code> and <code class="inline">.cta</code> with the same class name (<code class="inline">.text</code>). If we want to style the two <code class="inline">.text</code> elements differently, we would have to nest our selectors.</p>
+
+<pre><code class="language-scss">
+.text {} //Styles both elements.
+
+/* Styles specific element. */
+.greeting .text { color: white; }
+
+.cta .text { color: black; }
+</code></pre>
+
+<p>Similarly, we can't just style the "Back Home" link in our <code class="inline">&lt;footer></code> using <code class="inline">.home</code> because it would affect the "Home" link in our header, and vice versa.</p>
+
+<pre><code class="language-scss">
+.home {} //Styles both elements.
+
+/* Styles specific element. */
+.nav .home {}
+
+footer .home {}
+</code></pre>
+
+<p class="btw">The trend is that we are making our CSS more complex in order to make our styles work correctly. The more we nest selectors, the more likely we are to find <a href="https://css-tricks.com/specifics-on-css-specificity/" class="text-link" target="_blank">specificity</a> issues.</p>
+
+<p>At this point, you might be thinking that you would never write your HTML and CSS like this, so you would never actually run into the problems in this example. That may true, but as projects get bigger, coming up with consistent, unique, and descriptive class names becomes harder. You may end up naming one class <code class="inline">.home-link-header</code> early on and name another class <code class="inline">.footer-home-link</code> somewhere down the line, resulting in inconsistent naming. It's possible that you might use <code class="inline">.home-link</code>, forget, and use it again. You may be forced to use very specific selectors in order to deal with overrides that you can't undo otherwise. Or you may have to use <code class="inline">!important</code> just to get your styles to work, which could end up overriding styles somewhere else on your page. In addition, lots of nesting can often lead to unreadable selectors in our CSS (ex: <code class="inline">header .nav a.home</code>). With BEM, we'll move some of the complexity from the CSS to the HTML.</p>
+
+<p class="new">In most cases, HTML is much easier to read than CSS. By making our HTML slightly more detailed (specifically the class names), we can make our CSS more readable and manageable.</p>
 
 </div> <!-- .post__section -->
 
 
-<div class="post__section" id="section-SECTION-NUMBER">
+<div class="post__section">
+  <h2 class="post__section-header">2. Introducing the BEM methodology</h2>
+
+<p><a href="http://getbem.com/" class="text-link" target="_blank">BEM</a> stands for Block Element Modifier. It is a methodology/naming convention for our classes. Essentially, it gives every piece of HTML a consistent and descriptive class name, so each <strong>element</strong> (or <strong>modified-element</strong>) can be easily related to a larger <strong>block</strong>.</p>
+
+<p class="new">Think of a large jigsaw puzzle. It can be difficult to keep track of tiny pieces, but once you connect a few of them to make part of the picture, it's a lot easier to keep track of the parts.</p>
+
+<p>BEM has a couple of <a href="https://en.bem.info/method/naming-convention/" class="text-link" target="_blank">variants</a>. Until recently, I actually didn't even know I was using BEM. It turns out that the variant I use is by <a href="https://twitter.com/csswizardry" class="text-link" target="_blank">Harry Roberts</a> (who also happens to be the creator of ITCSS -- more on this in a future post). The general idea is as follows:</p>
+
+<pre><code class="language-scss">
+.block {}
+.block__element {}
+.block__element--modifier {}
+</code></pre>
+
+<p class="btw">To use more than one word for any part of the naming, use a hyphen. Example: <code class="inline">.header__social-btn--twitter</code>.<br><br>If you have nested elements like in <code class="inline">.block__elem__elem2</code>, do <code class="inline">.block__elem2</code> instead. Couple each element to the block, not its parent element.</p>
+
+<p>The goal is to split our page into <strong>blocks</strong>. Inside each block, we have <strong>elements</strong> and possibly elements with <strong>modifiers</strong> that are contextually coupled to their parent block. The result is that we no longer need to nest our selectors and don't have to deal with possible overrides due to specificity.</p>
+
+</div> <!-- .post__section -->
+
+
+<div class="post__section">
+  <h2 class="post__section-header">3. Applying BEM to our example</h2>
+
+<p>Let's transform our previous example into markup that follows the BEM methodology.</p>
+
+<pre><code class="language-markup">
+&lt;header class="header">
+
+  &lt;div class="header__nav-container">
+    &lt;a class="header__nav header__nav--home">Home&lt;/a>
+    &lt;a class="header__nav header__nav--about">About&lt;/a>
+    &lt;a class="header__nav header__nav--blog">Blog&lt;/a>
+  &lt;/div> &lt;!-- .header__nav-container -->
+
+  &lt;div class="header__greeting-wrapper">
+    &lt;p class="header__greeting">Hey you!&lt;/p>
+  &lt;/div> &lt;!-- .header__greeting-wrapper -->
+  
+  &lt;button class="header__cta">
+    &lt;p class="header__cta-msg">Click here!&lt;/p>
+  &lt;/button> &lt;!-- button.header__cta -->
+
+&lt;/header> &lt;!-- header.header -->
+
+&lt;footer class="footer">
+  &lt;a class="footer__nav footer__nav--home">Back Home&lt;/a>
+  &lt;a class="footer__nav footer__nav--about">More About Us&lt;/a>
+&lt;/footer> &lt;!-- footer.footer -->
+</code></pre>
+
+<p class="btw">I don't believe comments are part of the BEM methodology, but I learned to add comments whenever an element contains nested element(s).<br><br>If the element is a div: <br><code class="inline">&lt;-- .class.class2#id#id2 --></code><br> For elements other than divs: <br><code class="inline">&lt;-- element.class#id --></code><br><br>I find that this it helps with readability, especially with a large parent element.</p>
+
+<p class="new">Wrappers and containers are essentially interchangeable. Semantically, a <code class="inline">wrapper</code> wraps around one element, and a <code class="inline">container</code> contains multiple elements.</p>
+
+<p class="btw">I'm not too sure about the convention for containers and wrappers. I found that attaching them with a hyphen works well for me.</p>
+
+<p>We split our HTML into two blocks: <code class="inline">.header</code> and <code class="inline">.footer</code>. Looking specifically at the latter, we see two <code class="inline">.footer__nav</code> elements, and each element has a modifier (ex: <code class="inline">.footer__nav--home</code>). Now take a look at the CSS we get when styling our navigation links.</p>
+
+<pre><code class="language-scss">
+.header__nav {} //Applies to all header nav links
+
+/* Affects specific nav link in header */
+.header__nav--home {}
+.header__nav--about {}
+.header__nav--blog {}
+
+.footer__nav {} //Applies to all footer nav links
+
+/* Affects specific nav link in footer */
+.footer__nav--home {}
+.footer__nav--about {}
+</code></pre>
+
+<p>The result is very readable and structured. We can easily see which elements belong to which blocks. We can also apply styles to elements of a similar type in a block and make modifications to specific elements if we want. In addition, every selector is just a single class, so there is no selector nesting and no specificity issues!</p>
+
+</div> <!-- .post__section -->
+
+
+<div class="post__section">
   <h2 class="post__section-header">#. TEMPORARY_SECTION_HEADING</h2>
 
 <p>TEMPORARY SECTION TEXT</p>

@@ -55,10 +55,6 @@
   .btw {
     border-color: rgba(240, 200, 200, 0.25);
     background-color: rgba(255, 208, 208, 0.5);
-
-    &:before {
-      content: 'By The Way,';
-    }
   }
 
   pre {
