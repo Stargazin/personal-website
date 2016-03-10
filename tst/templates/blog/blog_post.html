@@ -5,7 +5,7 @@
 {% block head %}
 <title>{{ post.title }} | 3 Steps Taken</title>
 <link href='https://fonts.googleapis.com/css?family=Lato:400,900|Oswald|Dancing+Script' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="{% static 'css/blog_post.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/blog_post_v1.1.min.css' %}">
 <link rel="canonical" href="http://www.3stepstaken.com/blog/{{ post.title_url }}/">
 {% endblock head %}
 
@@ -65,5 +65,5 @@
 
 {% block js %}
 <script src="{% static 'js/prism.min.js' %}"></script>
-<script src="{% static 'js/blog_post.min.js' %}"></script>
+<script src="{% static 'js/blog_post_v1.1.min.js' %}"></script>
 {% endblock js %}
