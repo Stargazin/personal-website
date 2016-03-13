@@ -14,10 +14,10 @@ def load_post(apps, schema_editor):
 	topic = web
 
 	post = Post(topic=topic,
-		title='BEM To The Rescue',
+		title='Class Naming With BEM Methodology',
 		#title_url='',
 		number='3',
-		date='March 9th, 2016',
+		date='March 1st, 2016',
 		summary='Reading code is hard. Reading unorganized code is even harder. HTML and CSS can get jumbled up into a mess because of elements with random names and selector nesting in CSS. This can lead to large technical debts due to specificity issues, unintentional overrides, and overall unmaintainable code. In this post, we\'ll take a look at how to keep our HTML and CSS consistent and organized using the BEM methodology.')
 	post.save()
 
